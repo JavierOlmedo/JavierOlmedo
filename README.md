@@ -38,14 +38,14 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 
 <!-- Links -->
 <div>
-<a href="https://hackpuntes.com" target="_blank"><img height="20" src=""></a>
-<a href="https://www.facebook.com/hackpuntes" target="_blank"><i class="fab fa-facebook"></i></a>
-<a href="https://twitter.com/jjavierolmedo" target="_blank"><i class="fab fa-twitter"></i></a>
-<a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
-<a href="https://github.com/JavierOlmedo" target="_blank"><i class="fab fa-github"></i></a>
-<a href="https://www.youtube.com/channel/UCBYLZkWHGMYo12nAD_HMRJw" target="_blank"><i class="fab fa-youtube"></i></a>
-<a href="https://medium.com/@javierolmedo" target="_blank"><i class="fab fa-medium"></i></a>
-<a href="https://www.exploit-db.com/?author=9580" target="_blank"><i class="fas fa-spider"></i></a>
+<a href="https://hackpuntes.com" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress-brands.svg"></a>
+<a href="https://www.facebook.com/hackpuntes" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/facebook-brands.svg"></a>
+<a href="https://twitter.com/jjavierolmedo" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/twitter-brands.svg"></a>
+<a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/linkedin-in-brands.svg"></a>
+<a href="https://github.com/JavierOlmedo" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/github-brands.svg"></a>
+<a href="https://www.youtube.com/channel/UCBYLZkWHGMYo12nAD_HMRJw" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/youtube-brands.svg"></a>
+<a href="https://medium.com/@javierolmedo" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/medium-brands.svg"></a>
+<a href="https://www.exploit-db.com/?author=9580" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/spider-solid.svg"></a>
 </div>
 
 <!-- ❤️ -->

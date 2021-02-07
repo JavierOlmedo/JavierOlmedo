@@ -36,6 +36,8 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" />
 </a>
 
+<br>
+
 <!-- Links -->
 <div>
 <a href="https://hackpuntes.com" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress-brands.svg"></a>
@@ -47,6 +49,8 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <a href="https://medium.com/@javierolmedo" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/medium-brands.svg"></a>
 <a href="https://www.exploit-db.com/?author=9580" target="_blank"><img height="20" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/spider-solid.svg"></a>
 </div>
+
+<br>
 
 <!-- ❤️ -->
 

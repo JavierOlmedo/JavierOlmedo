@@ -19,7 +19,10 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 
 <div align="center">
 
-<h3>Hi there, I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a> 👋</h3>
+<h2>Hi there, I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a> 👋</h2>
+<h3>I am a Spanish Cybersecurity enthusiast, author of <a href="https://hackpuntes.com" target="_blank">Hackpuntes</a> blog<h3>
+
+<!-- Languages-->
 
 <!-- GitHub Stats -->
 <a href="https://hackpuntes.com" target="_blank">
@@ -32,5 +35,21 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" />
 </a>
+
+<!-- Links -->
+<div>
+<a href="https://hackpuntes.com" target="_blank"><img height="20" src=""></a>
+<a href="https://www.facebook.com/hackpuntes" target="_blank"><i class="fab fa-facebook"></i></a>
+<a href="https://twitter.com/jjavierolmedo" target="_blank"><i class="fab fa-twitter"></i></a>
+<a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+<a href="https://github.com/JavierOlmedo" target="_blank"><i class="fab fa-github"></i></a>
+<a href="https://www.youtube.com/channel/UCBYLZkWHGMYo12nAD_HMRJw" target="_blank"><i class="fab fa-youtube"></i></a>
+<a href="https://medium.com/@javierolmedo" target="_blank"><i class="fab fa-medium"></i></a>
+<a href="https://www.exploit-db.com/?author=9580" target="_blank"><i class="fas fa-spider"></i></a>
+</div>
+
+<!-- ❤️ -->
+
+Made with ❤️ in Spain
 
 </div>

@@ -51,15 +51,8 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 
 <tr>
 <td>✅ Linux/Windows</td>
-<td>&nbsp;</td>
-<td>✅ Powershell</td>
-<td>✅ Javascript</td>
-</tr>
-
-<tr>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>✅ C#</td>
+<td>✅ Nessus</td>
+<td>✅ C# and Powershell</td>
 <td>✅ Vue.js</td>
 </tr>
 
@@ -112,9 +105,8 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <div style="width: 100%;">
 <!--
 <h2>Contact me</h2>
--->
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/handshake.gif" width="75px">
-
+-->
 <a href="https://hackpuntes.com" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.facebook.com/hackpuntes" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/facebook.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://twitter.com/jjavierolmedo" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/twitter.svg"></a>&nbsp;&nbsp;&nbsp;

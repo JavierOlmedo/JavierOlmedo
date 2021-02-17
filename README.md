@@ -22,6 +22,9 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <h2>Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a> <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"></h2>
 <h3>I am a Cybersecurity enthusiast, author of <a href="https://hackpuntes.com" target="_blank">Hackpuntes</a> blog<h3>
 
+<!-- About me -->
+<h2>About me</h2>
+
 <!-- Languages-->
 
 <!-- GitHub Stats -->
@@ -40,6 +43,8 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <br>
 
 <!-- Links -->
+<h2>Contact me</h2>
+<h3><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"><h3>
 <a href="https://hackpuntes.com" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.facebook.com/hackpuntes" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/facebook.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://twitter.com/jjavierolmedo" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/twitter.svg"></a>&nbsp;&nbsp;&nbsp;

@@ -18,12 +18,11 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 -->
 
 <div align="center">
-
+<h3><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="100px"><h3>
 <h2>Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a> <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"></h2>
 <h3>I am a Cybersecurity enthusiast, author of <a href="https://hackpuntes.com" target="_blank">Hackpuntes</a> blog<h3>
 
 <!-- About me -->
-<h3><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="100px"><h3>
 <h2>About me</h2>
 
 <!-- Languages-->
@@ -45,10 +44,24 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 </tr>
 
 <tr>
+<td>✅ Reversing APK</td>
+<td>✅ Nmap</td>
+<td>✅ Golang</td>
+<td>✅ PHP</td>
+</tr>
+
+<tr>
+<td>✅ Linux/Windows</td>
+<td>&nbsp;</td>
+<td>✅ Powershell</td>
+<td>✅ Javascript</td>
+</tr>
+
+<tr>
 <td>&nbsp;</td>
 <td>&nbsp;</td>
-<td>&nbsp;</td>
-<td>&nbsp;</td>
+<td>✅ C#</td>
+<td>✅ Vue.js</td>
 </tr>
 
 </tbody>
@@ -88,21 +101,27 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 -->
 
 <!-- GitHub Stats -->
+<div style="width: 100%;">
+
+<div style="float: left; width: 50%;">
 <a href="https://hackpuntes.com" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" alt="Javier Olmedo's github stats"  />
 </a>
+</div>
 
-<br>
-
-<!-- Most Used Languages -->
+<div style="float: left; width: 50%;">
 <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" />
 </a>
+</div>
+
+</div>
 
 <br>
 <br>
 
 <!-- Links -->
+<div style="width: 100%;">
 <h2>Contact me</h2>
 <h3><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/handshake.gif" width="100px"><h3>
 <a href="https://hackpuntes.com" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress.svg"></a>&nbsp;&nbsp;&nbsp;
@@ -115,6 +134,9 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <a href="https://www.hackthebox.eu/profile/37005" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/htb.png"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.exploit-db.com/?author=9580" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/spider.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://0day.today/author/33736" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/worm.svg"></a>&nbsp;&nbsp;&nbsp;
+
+</div>
+
 <br>
 <br>
 

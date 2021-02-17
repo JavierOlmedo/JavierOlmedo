@@ -27,7 +27,34 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <h2>About me</h2>
 
 <!-- Languages-->
+<h3>🐞 Penetration Testing</h3>
+<div style="width: 25%; margin: 0 auto; text-align: left">
+<p>✅ Web Application<p>
+<p>✅ Reversing APK<p>
+<p>✅ Linux/Windows<p>
+</div>
 
+<h3>🛠️ Hacking Tools</h3>
+<div style="width: 25%; margin: 0 auto; text-align: left">
+<p>✅ Burp Suite<p>
+<p>✅ Nmap<p>
+</div>
+
+<h3>👨🏻‍💻 Programming Language</h3>
+<div style="width: 25%; margin: 0 auto; text-align: left">
+<p>✅ Python<p>
+<p>✅ Golang<p>
+<p>✅ Powershell<p>
+<p>✅ C#<p>
+</div>
+
+<h3>🌐 Web Development</h3>
+<div style="width: 25%; margin: 0 auto; text-align: left">
+<p>✅ HTML, CSS and Javascript<p>
+<p>✅ PHP<p>
+<p>✅ Javascript<p>
+<p>✅ Vue.js<p>
+</div>
 <!-- GitHub Stats -->
 <a href="https://hackpuntes.com" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" alt="Javier Olmedo's github stats"  />

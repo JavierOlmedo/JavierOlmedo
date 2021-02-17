@@ -108,9 +108,6 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" height="150"/>
 </a>
 
-<br>
-<br>
-
 <!-- Links -->
 <div style="width: 100%;">
 <h2>Contact me</h2>
@@ -128,9 +125,6 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <a href="https://0day.today/author/33736" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/worm.svg"></a>&nbsp;&nbsp;&nbsp;
 
 </div>
-
-<br>
-<br>
 
 <!-- ❤️ -->
 Made with ❤️ in Spain

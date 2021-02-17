@@ -110,7 +110,9 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 
 <!-- Links -->
 <div style="width: 100%;">
+<!--
 <h2>Contact me</h2>
+-->
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/handshake.gif" width="75px">
 
 <a href="https://hackpuntes.com" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress.svg"></a>&nbsp;&nbsp;&nbsp;
@@ -122,8 +124,7 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <a href="https://medium.com/@javierolmedo" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/medium.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.hackthebox.eu/profile/37005" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/htb.png"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.exploit-db.com/?author=9580" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/spider.svg"></a>&nbsp;&nbsp;&nbsp;
-<a href="https://0day.today/author/33736" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/worm.svg"></a>&nbsp;&nbsp;&nbsp;
-
+<a href="https://0day.today/author/33736" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/worm.svg"></a>
 </div>
 
 <!-- ❤️ -->

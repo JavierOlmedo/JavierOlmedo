@@ -18,13 +18,12 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 -->
 
 <div align="center">
-<h3><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="100px"><h3>
-<h2>Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a> <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"></h2>
+<img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="100px">
+<h2><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"> Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a>, a Cybersecurity enthusiast</h2>
+<!--
 <h3>I am a Cybersecurity enthusiast, author of <a href="https://hackpuntes.com" target="_blank">Hackpuntes</a> blog<h3>
-
+-->
 <!-- About me -->
-<h2>About me</h2>
-
 <!-- Languages-->
 <div style="width: 100%;">
 <table>
@@ -101,21 +100,13 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 -->
 
 <!-- GitHub Stats -->
-<div style="width: 100%;">
-
-<div style="float: left; width: 50%;">
 <a href="https://hackpuntes.com" target="_blank">
-  <img align="center" src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" alt="Javier Olmedo's github stats"  />
+  <img align="center" src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" height="150" alt="Javier Olmedo's github stats"  />
 </a>
-</div>
 
-<div style="float: left; width: 50%;">
 <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
-  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" />
+  <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" height="150"/>
 </a>
-</div>
-
-</div>
 
 <br>
 <br>
@@ -123,7 +114,8 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <!-- Links -->
 <div style="width: 100%;">
 <h2>Contact me</h2>
-<h3><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/handshake.gif" width="100px"><h3>
+<img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/handshake.gif" width="75px">
+
 <a href="https://hackpuntes.com" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.facebook.com/hackpuntes" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/facebook.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://twitter.com/jjavierolmedo" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/twitter.svg"></a>&nbsp;&nbsp;&nbsp;

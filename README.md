@@ -93,6 +93,7 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 -->
 
 <!-- GitHub Stats -->
+<div style="width: 100%;">
 <a href="https://hackpuntes.com" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" height="150" alt="Javier Olmedo's github stats"  />
 </a>
@@ -100,7 +101,7 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" height="150"/>
 </a>
-
+</div>
 <!-- Links -->
 <div style="width: 100%;">
 <!--

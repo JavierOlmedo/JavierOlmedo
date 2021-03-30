@@ -19,7 +19,7 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 
 <div align="center">
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="100px">
-<h2><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"> Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a>, a Cybersecurity enthusiast</h2>
+<h2><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"> Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a></h2>
 <!--
 <h3>I am a Cybersecurity enthusiast, author of <a href="https://hackpuntes.com" target="_blank">Hackpuntes</a> blog<h3>
 -->

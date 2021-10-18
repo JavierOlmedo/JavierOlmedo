@@ -1,0 +1,16 @@
+{
+    "n": "getObjectInfo",
+    "descriptor": "aura://RecordUiController/ACTION$getObjectInfo",
+    "at": "SERVER",
+    "rt": "java://sfdc.uisdk.connect.api.output.ObjectInfoRepresentation",
+    "pa": [
+        {
+            "name": "clientOptions",
+            "type": "java://core.connect.api.utils.ClientOptions"
+        },
+        {
+            "name": "objectApiName",
+            "type": "java://java.lang.string"
+        }
+    ]
+}

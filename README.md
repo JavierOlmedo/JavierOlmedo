@@ -1,34 +1,14 @@
-<!--
-### Hi there 👋
-
-**JavierOlmedo/JavierOlmedo** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-
-Here are some ideas to get you started:
-
-- 🔭 I’m currently working on ...
-- 🌱 I’m currently learning ...
-- 👯 I’m looking to collaborate on ...
-- 🤔 I’m looking for help with ...
-- 💬 Ask me about ...
-- 📫 How to reach me: ...
-- 😄 Pronouns: ...
-- ⚡ Fun fact: ...
-
-https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
--->
-
 <div align="center">
+
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="125px">
 <h2><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"> Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a></h2>
 
 <!-- About me -->
 <h4>Author of <a title="Hackpuntes" target="_blank" href="https://hackpuntes.com">Hackpuntes</a> Blog | Cybersecurity enthusiast and CTF Player | 🌏 Toledo, Spain </h4>
-<h5>My Hack The Box Profile</h5>
 <a title="Hack The Box Profile" href="https://www.hackthebox.eu/profile/37005">
 <img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile"></a>
   
 <!-- Skills -->
-## Skills
 <!-- Languages-->
 <div style="width: 100%;">
 <table>
@@ -65,54 +45,24 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 </table>
 </div>
 
-<!-- 
-<div style="float: left; width: 25%; margin: 0 auto; text-align: left">
-<h3>🐞 Penetration Testing</h3>
-<p>✅ Web Application<p>
-<p>✅ Reversing APK<p>
-<p>✅ Linux/Windows<p>
-</div>
-
-
-<div style="float: left; width: 25%; margin: 0 auto; text-align: left">
-<h3>🛠️ Hacking Tools</h3>
-<p>✅ Burp Suite<p>
-<p>✅ Nmap<p>
-</div>
-
-<div style="float: left; width: 25%; margin: 0 auto; text-align: left">
-<h3>👨🏻‍💻 Programming Language</h3>
-<p>✅ Python<p>
-<p>✅ Golang<p>
-<p>✅ Powershell<p>
-<p>✅ C#<p>
-</div>
-
-<div style="float: left; width: 25%; margin: 0 auto; text-align: left">
-<h3>🌐 Web Development</h3>
-<p>✅ HTML, CSS and Javascript<p>
-<p>✅ PHP<p>
-<p>✅ Javascript<p>
-<p>✅ Vue.js<p>
-</div>
--->
 
 <!-- GitHub Stats -->
-## GitHub Stats
 <div style="width: 100%;">
 <a href="https://hackpuntes.com" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" height="150" alt="Javier Olmedo's github stats"  />
 </a>
 
-<a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
+<a href="https://github.com/JavierOlmedo" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" height="150"/>
 </a>
-  <a href="https://github.com/JavierOlmedo"><img src="https://activity-graph.herokuapp.com/graph?username=JavierOlmedo&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" /></a>
+  <a href="https://github.com/JavierOlmedo"><img src="https://activity-graph.herokuapp.com/graph?username=JavierOlmedo&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" />
+  </a>
 </div>
 
 <br>
 
-## Fav Tech
+<!-- Fav Tech -->
+<!-- ## Fav Tech -->
 <p>
   <img width="15%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg" />
   <img width="15%" src="https://www.vectorlogo.zone/logos/java/java-ar21.svg" />
@@ -125,17 +75,16 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
   <img width="15%" src="https://www.vectorlogo.zone/logos/php/php-ar21.svg" />
   <img width="15%" src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-ar21.svg" />
   <img width="15%" src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-ar21.svg" />
-  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
   <img width="7.5%"  src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/kali.png" />
 </p>
 
-## Links
 <!-- Links -->
+<!--## Links -->
+## Contact me
+
 <div style="width: 100%;">
-<!--
-<h2>Contact me</h2>
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/handshake.gif" width="75px">
--->
+
 <a href="https://hackpuntes.com" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://www.facebook.com/hackpuntes" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/facebook.svg"></a>&nbsp;&nbsp;&nbsp;
 <a href="https://twitter.com/jjavierolmedo" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/twitter.svg"></a>&nbsp;&nbsp;&nbsp;
@@ -150,4 +99,5 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 
 <!-- ❤️ -->
 Made with ❤️ in Spain
+
 </div>

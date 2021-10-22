@@ -55,8 +55,10 @@
 <a href="https://github.com/JavierOlmedo" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" height="150"/>
 </a>
-  <a href="https://github.com/JavierOlmedo"><img src="https://activity-graph.herokuapp.com/graph?username=JavierOlmedo&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" />
-  </a>
+<!--
+<a href="https://github.com/JavierOlmedo"><img src="https://activity-graph.herokuapp.com/graph?username=JavierOlmedo&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" />
+</a>
+-->
 </div>
 
 <br>
@@ -64,18 +66,18 @@
 <!-- Fav Tech -->
 <!-- ## Fav Tech -->
 <p>
-  <img width="15%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/java/java-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/debian/debian-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/android/android-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/php/php-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-ar21.svg" />
-  <img width="15%" src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-ar21.svg" />
-  <img width="7.5%"  src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/kali.png" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/java/java-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/debian/debian-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/android/android-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/php/php-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-ar21.svg" />
+  <img width="5%" src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-ar21.svg" />
+  <img width="2.5%"  src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/kali.png" />
 </p>
 
 <!-- Links -->

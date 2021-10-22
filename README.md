@@ -18,12 +18,17 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 -->
 
 <div align="center">
-<img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="100px">
+<img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="125px">
 <h2><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"> Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a></h2>
-<!--
-<h3>I am a Cybersecurity enthusiast, author of <a href="https://hackpuntes.com" target="_blank">Hackpuntes</a> blog<h3>
--->
+
 <!-- About me -->
+<h4>Author of <a title="Hackpuntes" target="_blank" href="https://hackpuntes.com">Hackpuntes</a> Blog | Cybersecurity enthusiast and CTF Player | 🌏 Toledo, Spain </h4>
+<h5>My Hack The Box Profile</h5>
+<a title="Hack The Box Profile" href="https://www.hackthebox.eu/profile/37005">
+<img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile"></a>
+  
+<!-- Skills -->
+## Skills
 <!-- Languages-->
 <div style="width: 100%;">
 <table>
@@ -93,6 +98,7 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 -->
 
 <!-- GitHub Stats -->
+## GitHub Stats
 <div style="width: 100%;">
 <a href="https://hackpuntes.com" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" height="150" alt="Javier Olmedo's github stats"  />
@@ -101,10 +107,29 @@ https://github.com/anuraghazra/github-readme-stats/blob/master/themes/README.md
 <a href="https://github.com/anuraghazra/github-readme-stats" target="_blank">
   <img align="center" src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" height="150"/>
 </a>
+  <a href="https://github.com/JavierOlmedo"><img src="https://activity-graph.herokuapp.com/graph?username=JavierOlmedo&bg_color=0D1117&color=5BCDEC&line=5BCDEC&point=FFFFFF&hide_border=true" /></a>
 </div>
 
 <br>
 
+## Fav Tech
+<p>
+  <img width="15%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/java/java-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/debian/debian-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/android/android-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/php/php-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-ar21.svg" />
+  <img width="15%" src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-ar21.svg" />
+  &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+  <img width="7.5%"  src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/kali.png" />
+</p>
+
+## Links
 <!-- Links -->
 <div style="width: 100%;">
 <!--

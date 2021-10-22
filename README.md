@@ -9,6 +9,7 @@
 <img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile"></a>
   
 <!-- Skills -->
+## Skills
 <!-- Languages-->
 <div style="width: 100%;">
 <table>
@@ -67,15 +68,12 @@
 <!-- ## Fav Tech -->
 <p>
   <img width="10%" src="https://www.vectorlogo.zone/logos/python/python-ar21.svg" />
+  <img width="10%" src="https://www.vectorlogo.zone/logos/golang/golang-ar21.svg" />
+  <img width="10%" src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-ar21.svg" />
   <img width="10%" src="https://www.vectorlogo.zone/logos/java/java-ar21.svg" />
   <img width="10%" src="https://www.vectorlogo.zone/logos/linux/linux-ar21.svg" />
-  <img width="10%" src="https://www.vectorlogo.zone/logos/debian/debian-ar21.svg" />
-  <img width="10%" src="https://www.vectorlogo.zone/logos/gnu_bash/gnu_bash-ar21.svg" />
-  <img width="10%" src="https://www.vectorlogo.zone/logos/github/github-ar21.svg" />
   <img width="10%" src="https://www.vectorlogo.zone/logos/android/android-ar21.svg" />
-  <img width="10%" src="https://www.vectorlogo.zone/logos/git-scm/git-scm-ar21.svg" />
   <img width="10%" src="https://www.vectorlogo.zone/logos/php/php-ar21.svg" />
-  <img width="10%" src="https://www.vectorlogo.zone/logos/raspberrypi/raspberrypi-ar21.svg" />
   <img width="10%" src="https://www.vectorlogo.zone/logos/visualstudio_code/visualstudio_code-ar21.svg" />
   <img width="5%"  src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/kali.png" />
 </p>

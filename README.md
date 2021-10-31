@@ -5,9 +5,13 @@
 
 <!-- About me -->
 <h4>Author of <a title="Hackpuntes" target="_blank" href="https://hackpuntes.com">Hackpuntes</a> Blog | Cybersecurity enthusiast and CTF Player | 🌏 Toledo, Spain </h4>
-<a title="Hack The Box Profile" href="https://www.hackthebox.eu/profile/37005">
+
+<a title="Hack The Box Profile" href="https://www.hackthebox.eu/profile/37005" target="_blank">
 <img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile"></a>
-  
+<br>
+<a title="Github Pages - Javier Olmedo" href="https://javierolmedo.github.io" target="_blank">
+<img src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo"></a>
+
 <!-- Skills -->
 ## Skills
 <!-- Languages-->

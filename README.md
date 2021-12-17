@@ -9,8 +9,10 @@
 <a title="Hack The Box Profile" href="https://www.hackthebox.eu/profile/37005" target="_blank">
 <img align="center" src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile"></a>
 <br>
+<br>
 <a title="Github Pages - Javier Olmedo" href="https://javierolmedo.github.io" target="_blank">
 <img align="center" src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo"></a>
+<br>
 <br>
 <a title="OSWE Certification" href="https://www.credly.com/badges/818636d7-b447-42be-8f4f-cde81c44e26f" target="_blank">
 <img align="center" src="https://images.credly.com/size/340x340/images/c8c413ce-fce6-4b61-89e6-6a1b9f1e358a/AWAE-OSWE-badge.png" alt="OSWE Certification" height="100"></a>

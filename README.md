@@ -18,7 +18,7 @@
 <img align="center" src="https://images.credly.com/size/340x340/images/0a375324-4f9e-412d-b276-b6e96c428709/image.png" alt="OSWE Certification" height="100"></a>
 
 <a title="ICSI | CNSS Certified Network Security Specialist" href="https://www.credential.net/ccca6121-5126-4eb4-b85e-618d3e9d668b#gs.0z7no9" target="_blank">
-<img align="center" src="https://images.credly.com/size/340x340/images/0a375324-4f9e-412d-b276-b6e96c428709/image.png" alt="OSWE Certification" height="100"></a>
+<img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" alt="OSWE Certification" height="100"></a>
 <br>
 
 <!-- Skills -->

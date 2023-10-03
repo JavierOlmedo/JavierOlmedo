@@ -1,7 +1,7 @@
 <div align="center">
 
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/developer.gif" width="125px">
-<h2><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"> Hi there! I'm <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a></h2>
+<h2><img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/hi.gif" width="25px"> Hi there! Im <a href="https://www.linkedin.com/in/jjavierolmedo/" target="_blank">Javier Olmedo</a></h2>
 
 <!-- About me -->
 <h4>Author of <a title="Hackpuntes" target="_blank" href="https://hackpuntes.com">Hackpuntes</a> Blog | Cybersecurity enthusiast and CTF Player | 🌏 Toledo, Spain </h4>

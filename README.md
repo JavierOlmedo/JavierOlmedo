@@ -19,7 +19,6 @@
 
 <a title="ICSI | CNSS Certified Network Security Specialist" href="https://www.credential.net/ccca6121-5126-4eb4-b85e-618d3e9d668b#gs.0z7no9" target="_blank">
 <img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" alt="OSWE Certification" height="100"></a>
-<br>
 
 <a title="Offshore Pro Lab" href="https://app.hackthebox.com/profile/37005" target="_blank">
 <img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/offshore.gif" alt="Offshore Pro Lab" height="100"></a>

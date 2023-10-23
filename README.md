@@ -21,6 +21,10 @@
 <img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" alt="OSWE Certification" height="100"></a>
 <br>
 
+<a title="Offshore Pro Lab" href="https://app.hackthebox.com/profile/37005" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/offshore.gif" alt="Offshore Pro Lab" height="100"></a>
+<br>
+
 <!-- Skills -->
 ## Skills
 <!-- Languages-->

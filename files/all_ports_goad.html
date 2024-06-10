@@ -1,0 +1,3734 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html xmlns:fo="http://www.w3.org/1999/XSL/Format">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<!--generated with nmap.xsl - version 0.9c by Benjamin Erb - http://www.benjamin-erb.de/nmap_xsl.php --><style type="text/css">
+/* stylesheet print */
+@media print
+{
+  #menu {
+    display:none;
+  }
+
+  body {
+    font-family: Verdana, Helvetica, sans-serif;
+  }
+  
+  h1 {
+    font-size: 13pt;
+    font-weight:bold;
+    margin:4pt 0pt 0pt 0pt;
+    padding:0;
+  }
+
+  h2 {
+    font-size: 12pt;
+    font-weight:bold;
+    margin:3pt 0pt 0pt 0pt;
+    padding:0;
+  }
+
+  h3, a:link, a:visited {
+    font-size: 9pt;
+    font-weight:bold;
+    margin:1pt 0pt 0pt 20pt;
+    padding:0;
+    text-decoration: none;
+    color: #000000;
+  }
+
+  p,ul {
+    font-size: 9pt;
+    margin:1pt 0pt 8pt 40pt;
+    padding:0;
+    text-align:left;
+  }
+
+  li {
+    font-size: 9pt;
+    margin:0;
+    padding:0;
+    text-align:left;
+  }
+
+  table {
+    margin:1pt 0pt 8pt 40pt;
+    border:0px;
+    width:90%
+  }
+
+  td {
+    border:0px;
+    border-top:1px solid black;
+    font-size: 9pt;
+  }
+
+  .head td {
+    border:0px;
+    font-weight:bold;
+    font-size: 9pt;
+  }
+  .noprint { display: none; }
+}
+
+/* stylesheet screen */
+@media screen
+{
+  body {
+    font-family: Verdana, Helvetica, sans-serif;
+    margin: 0px;
+    background-color: #FFFFFF;
+    color: #000000;
+    text-align: center;
+  }
+
+  #container {
+    text-align:left;
+    margin: 10px auto;
+    width: 90%;
+  }
+
+  h1 {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 14pt;
+    color: #FFFFFF;
+    background-color:#2A0D45;
+    margin:10px 0px 0px 0px;
+    padding:5px 4px 5px 4px;
+    width: 100%;
+    border:1px solid black;
+    text-align: left;
+  }
+
+  h2 {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 11pt;
+    color: #000000;
+    margin:30px 0px 0px 0px;
+    padding:4px;
+    width: 100%;
+    background-color:#F0F8FF;
+    text-align: left;
+  }
+
+  h2.green {
+    color: #000000;
+    background-color:#CCFFCC;
+    border-color:#006400;
+  }
+
+  h2.red {
+    color: #000000;
+    background-color:#FFCCCC;
+    border-color:#8B0000;
+  }
+   
+  h3 {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-weight:bold;
+    font-size: 10pt;
+    color:#000000;
+    background-color: #FFFFFF;
+    width: 75%;
+    text-align: left;
+  }
+
+  p {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #FFFFFF;
+    width: 75%;
+    text-align: left;
+  }
+
+  p i {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #CCCCCC;
+  }
+
+  ul {
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #FFFFFF;
+    width: 75%;
+    text-align: left;
+  }
+
+  a {
+    font-family: Verdana, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 8pt;
+    color:#000000;
+    font-weight:bold;
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  li a {
+    font-family: Verdana, Helvetica, sans-serif;
+    text-decoration: none;
+    font-size: 10pt;
+    color:#000000;
+    font-weight:bold;
+    background-color: #FFFFFF;
+    color: #000000;
+  }
+
+  a:hover {
+    text-decoration: underline;
+  }
+
+  a.up {
+      color:#006400;
+  }
+
+  table {
+    width: 80%;
+    border:0px;
+    color: #000000;
+    background-color: #000000;
+    margin:10px;
+  }
+
+  tr {
+    vertical-align:top;
+    font-family: Verdana, Helvetica, sans-serif;
+    font-size: 8pt;
+    color:#000000;
+    background-color: #FFFFFF;
+  }
+
+  tr.head {
+    background-color: #E1E1E1;
+    color: #000000;
+    font-weight:bold;
+  }
+
+  tr.open {
+    background-color: #CCFFCC;
+    color: #000000;
+  }
+	
+  tr.script {
+    background-color: #EFFFF7;
+    color: #000000;
+  }
+
+  tr.filtered {
+    background-color: #F2F2F2;
+    color: #000000;
+  }
+
+  tr.closed {
+    background-color: #F2F2F2;
+    color: #000000;
+  }
+    
+  td {
+    padding:2px;
+  }
+        
+  #menu li {
+    display         : inline;
+    margin          : 0;
+    /*margin-right    : 10px;*/
+    padding         : 0;
+    list-style-type : none;
+  }    
+ 
+  #menubox {
+    position: fixed;
+    bottom: 0px;
+    right: 0px;
+    width: 120px;
+  }
+  
+  
+  
+  /* This section handle's IE's refusal to honor the fixed CSS attribute */
+  
+  * html div#menubox {
+    position: absolute;
+    top:expression(eval(
+      document.compatMode && document.compatMode=='CSS1Compat') ?
+      documentElement.scrollTop+(documentElement.clientHeight-this.clientHeight) 
+      : document.body.scrollTop +(document.body.clientHeight-this.clientHeight));
+  }
+  /* This fixes the jerky effect when scrolling in IE*/
+  * html,* html body {
+    background: #fff url(nosuchfile) fixed;
+  }
+
+  
+ 
+  .up {
+    color: #000000;
+    background-color:#CCFFCC;
+  }
+  
+  .down {
+    color:#626262;
+    background-color: #F2F2F2;
+  }
+
+  .print_only { display: none; }
+  .hidden { display: none; }
+  .unhidden { display: block; }
+  
+}
+</style>
+<title>Nmap Scan Report - Scanned at Mon Jun 10 11:46:18 2024</title>
+<script type="text/javascript">
+     
+      
+                
+      function toggle(divID) {
+        var item = document.getElementById(divID);
+        if (item) {
+          item.className=(item.className=='hidden')?'unhidden':'hidden';
+        }
+      }
+           
+      function togglePorts(tableID,portState) {
+        var table = document.getElementById(tableID);    
+        var tbody = table.getElementsByTagName("tbody")[0];
+        var rows = tbody.getElementsByTagName("tr");
+        for (var i=0; i < rows.length; i++) {
+          var value = rows[i].getElementsByTagName("td")[2].firstChild.nodeValue;
+          if (value == portState) {
+            rows[i].style.display = (rows[i].style.display == 'none')?'':'none';
+          }
+        }
+      }
+      
+      function toggleAll(portState) {
+        var allTables = document.getElementsByTagName("table");
+        for (var c=0; c < allTables.length; c++) {
+          if (allTables[c].id != "") {
+            togglePorts(allTables[c].id, portState)
+          }
+        }
+      }
+      
+      function init (){
+        toggleAll('closed');
+        toggleAll('filtered');     
+      }     
+            
+      window.onload = init; 
+      
+      
+    
+    </script>
+</head>
+<body>
+<a name="top"></a><div id="container">
+<h1>Nmap Scan Report - Scanned at Mon Jun 10 11:46:18 2024</h1>
+<ul id="menu">
+<li><a href="#scansummary">Scan Summary</a></li>
+<li> | <a href="#host_192_168_56_10" class="up">192.168.56.10</a>
+</li>
+<li> | <a href="#host_192_168_56_11" class="up">192.168.56.11</a>
+</li>
+<li> | <a href="#host_192_168_56_12" class="up">192.168.56.12</a>
+</li>
+<li> | <a href="#host_192_168_56_22" class="up">192.168.56.22</a>
+</li>
+<li> | <a href="#host_192_168_56_23" class="up">192.168.56.23</a>
+</li>
+<li> | <a href="#postscript">Post-Scan Script Output</a>
+</li>
+</ul>
+<a name="scansummary"></a><hr class="print_only">
+<h2>Scan Summary</h2>
+<p>
+      Nmap 7.94SVN was initiated at Mon Jun 10 11:46:18 2024 with these arguments:<br><i>nmap -sSCV -version-all --min-rate 5000 -Pn -A -n -p- --open -vvv -oA all_ports 192.168.56.10-12,22-23</i><br></p>
+<p>
+    Verbosity: 3; Debug level 0</p>
+<p>Nmap done at Mon Jun 10 11:55:13 2024; 5 IP addresses (5 hosts up) scanned in 534.83 seconds</p>
+<hr class="print_only">
+<a name="host_192_168_56_10"></a><h2 class="up">192.168.56.10<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.56.10" class="unhidden">
+<h3>Address</h3>
+<ul><li>192.168.56.10
+            (ipv4)
+          </li></ul>
+
+
+<h3>Ports</h3>
+<p>The 62144 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>62144 ports replied with: <b>reset</b></p></li></ul>
+<p>The 3363 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>3363 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.56.10" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.56.10','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.56.10','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+
+
+
+<tr class="open">
+<td>53</td>
+<td>tcp</td>
+<td>open</td>
+<td>domain </td>
+<td>syn-ack</td>
+<td>Simple DNS Plus </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>80</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft IIS httpd </td>
+<td>10.0 </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>IIS Windows Server </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-IIS/10.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-methods </td>
+<td colspan="6"><pre>
+  Supported Methods: OPTIONS TRACE GET HEAD POST
+  Potentially risky methods: TRACE </pre></td>
+</tr>
+<tr class="open">
+<td>88</td>
+<td>tcp</td>
+<td>open</td>
+<td>kerberos-sec </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Kerberos </td>
+<td> </td>
+<td>server time: 2024-06-10 09:48:59Z </td>
+</tr>
+<tr class="open">
+<td>135</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>139</td>
+<td>tcp</td>
+<td>open</td>
+<td>netbios-ssn </td>
+<td>syn-ack</td>
+<td>Microsoft Windows netbios-ssn </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: sevenkingdoms.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=kingslanding.sevenkingdoms.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:kingslanding.sevenkingdoms.local
+Issuer: commonName=SEVENKINGDOMS-CA/domainComponent=sevenkingdoms
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:39
+Not valid after:  2025-02-04T12:28:39
+MD5:   26c2:4554:9d7b:b860:4c1e:31f3:b7c6:6edd
+SHA-1: 1740:8bf5:f6d7:6fb7:7a16:3ff1:e9a0:7ff9:6f4b:f229
+-----BEGIN CERTIFICATE-----
+MIIGIjCCBQqgAwIBAgITWQAAAAJfc3KxOMIfAgAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBRMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxHTAbBgoJkiaJk/IsZAEZFg1zZXZl
+bmtpbmdkb21zMRkwFwYDVQQDExBTRVZFTktJTkdET01TLUNBMB4XDTI0MDIwNTEy
+MjgzOVoXDTI1MDIwNDEyMjgzOVowKzEpMCcGA1UEAxMga2luZ3NsYW5kaW5nLnNl
+dmVua2luZ2RvbXMubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+AQDHi2KJTMU2FDyg4dFd3tVyyzvkomhMZkNcPAt7LnRILpbXCTI15ufE4TtFI2gr
+wyXm94SkrOh/yRL0mlY12Ry9AUcnAyHC3bNgCqFYiyqZyD0Zzhuwz+X9ByJxVwaW
+WO+70SmluggmDMePoNUw/E768HpxaJDn5nXBmakAq7ZoUEDD4wf99maZRbedt61V
+Dc8Wrs3c+2NuY44ClZgBiEtlClQ54PZR/1qGh0WcM3B8HI3QC4Ggvv2Yjxx7RBJC
+EDN0GREpBPRIXJ77yTGal7eoxNmHbVuc+PDYpnoUErhIJJrdnc4glSriGbwlmBMF
+Usf4jFsRrQfuMMd/I+J27aMtAgMBAAGjggMXMIIDEzAvBgkrBgEEAYI3FAIEIh4g
+AEQAbwBtAGEAaQBuAEMAbwBuAHQAcgBvAGwAbABlAHIwHQYDVR0lBBYwFAYIKwYB
+BQUHAwIGCCsGAQUFBwMBMA4GA1UdDwEB/wQEAwIFoDB4BgkqhkiG9w0BCQ8EazBp
+MA4GCCqGSIb3DQMCAgIAgDAOBggqhkiG9w0DBAICAIAwCwYJYIZIAWUDBAEqMAsG
+CWCGSAFlAwQBLTALBglghkgBZQMEAQIwCwYJYIZIAWUDBAEFMAcGBSsOAwIHMAoG
+CCqGSIb3DQMHMB0GA1UdDgQWBBScuey0PbIKBstTUbb3p+xx4l5vPDAfBgNVHSME
+GDAWgBSmtCSkNjNgCWIgONkch0fKGVw0SDCB2wYDVR0fBIHTMIHQMIHNoIHKoIHH
+hoHEbGRhcDovLy9DTj1TRVZFTktJTkdET01TLUNBLENOPWtpbmdzbGFuZGluZyxD
+Tj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049
+Q29uZmlndXJhdGlvbixEQz1zZXZlbmtpbmdkb21zLERDPWxvY2FsP2NlcnRpZmlj
+YXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRp
+b25Qb2ludDCBygYIKwYBBQUHAQEEgb0wgbowgbcGCCsGAQUFBzAChoGqbGRhcDov
+Ly9DTj1TRVZFTktJTkdET01TLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBT
+ZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNldmVua2lu
+Z2RvbXMsREM9bG9jYWw/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNl
+cnRpZmljYXRpb25BdXRob3JpdHkwTAYDVR0RBEUwQ6AfBgkrBgEEAYI3GQGgEgQQ
+uFLlEpsheUigkPBSPD1KXoIga2luZ3NsYW5kaW5nLnNldmVua2luZ2RvbXMubG9j
+YWwwDQYJKoZIhvcNAQELBQADggEBAAZHPH0rBP8/oc/tRBQdbh6AScNgtW11WEsE
+toRSJ4Cm8To3SO7S/1v/KjdiVTzHv05c1ZVGKRp2J+HKEbJMX3x8I+X3fQcOX4DM
+oXQ+GEpRfvmOW25IiGdl4pdGudYa+AUSDq9Azm04+7xx7XkDGOe6BVbCiCjAbpWG
+Zj2UZ1SA+uTEmW3ect81yQmdgnjmDMdKXfo6oGnfGzeTMVayUfGOHpaGCbmk3dhW
+UpHLbEMpkau1LUtClYgAIbICjSToJ88KUy9TDTg1tr7vKwj4GBOFvptoVjFGh+3/
+bsbPoC92BEh+TvX32ZFg0wvhQFb5Isrmojk/F2Z/87tKZOtuZMM=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:49+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>445</td>
+<td>tcp</td>
+<td>open</td>
+<td>microsoft-ds </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>464</td>
+<td>tcp</td>
+<td>open</td>
+<td>kpasswd5 </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>593</td>
+<td>tcp</td>
+<td>open</td>
+<td>ncacn_http </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC over HTTP </td>
+<td>1.0 </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>636</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: sevenkingdoms.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=kingslanding.sevenkingdoms.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:kingslanding.sevenkingdoms.local
+Issuer: commonName=SEVENKINGDOMS-CA/domainComponent=sevenkingdoms
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:39
+Not valid after:  2025-02-04T12:28:39
+MD5:   26c2:4554:9d7b:b860:4c1e:31f3:b7c6:6edd
+SHA-1: 1740:8bf5:f6d7:6fb7:7a16:3ff1:e9a0:7ff9:6f4b:f229
+-----BEGIN CERTIFICATE-----
+MIIGIjCCBQqgAwIBAgITWQAAAAJfc3KxOMIfAgAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBRMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxHTAbBgoJkiaJk/IsZAEZFg1zZXZl
+bmtpbmdkb21zMRkwFwYDVQQDExBTRVZFTktJTkdET01TLUNBMB4XDTI0MDIwNTEy
+MjgzOVoXDTI1MDIwNDEyMjgzOVowKzEpMCcGA1UEAxMga2luZ3NsYW5kaW5nLnNl
+dmVua2luZ2RvbXMubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+AQDHi2KJTMU2FDyg4dFd3tVyyzvkomhMZkNcPAt7LnRILpbXCTI15ufE4TtFI2gr
+wyXm94SkrOh/yRL0mlY12Ry9AUcnAyHC3bNgCqFYiyqZyD0Zzhuwz+X9ByJxVwaW
+WO+70SmluggmDMePoNUw/E768HpxaJDn5nXBmakAq7ZoUEDD4wf99maZRbedt61V
+Dc8Wrs3c+2NuY44ClZgBiEtlClQ54PZR/1qGh0WcM3B8HI3QC4Ggvv2Yjxx7RBJC
+EDN0GREpBPRIXJ77yTGal7eoxNmHbVuc+PDYpnoUErhIJJrdnc4glSriGbwlmBMF
+Usf4jFsRrQfuMMd/I+J27aMtAgMBAAGjggMXMIIDEzAvBgkrBgEEAYI3FAIEIh4g
+AEQAbwBtAGEAaQBuAEMAbwBuAHQAcgBvAGwAbABlAHIwHQYDVR0lBBYwFAYIKwYB
+BQUHAwIGCCsGAQUFBwMBMA4GA1UdDwEB/wQEAwIFoDB4BgkqhkiG9w0BCQ8EazBp
+MA4GCCqGSIb3DQMCAgIAgDAOBggqhkiG9w0DBAICAIAwCwYJYIZIAWUDBAEqMAsG
+CWCGSAFlAwQBLTALBglghkgBZQMEAQIwCwYJYIZIAWUDBAEFMAcGBSsOAwIHMAoG
+CCqGSIb3DQMHMB0GA1UdDgQWBBScuey0PbIKBstTUbb3p+xx4l5vPDAfBgNVHSME
+GDAWgBSmtCSkNjNgCWIgONkch0fKGVw0SDCB2wYDVR0fBIHTMIHQMIHNoIHKoIHH
+hoHEbGRhcDovLy9DTj1TRVZFTktJTkdET01TLUNBLENOPWtpbmdzbGFuZGluZyxD
+Tj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049
+Q29uZmlndXJhdGlvbixEQz1zZXZlbmtpbmdkb21zLERDPWxvY2FsP2NlcnRpZmlj
+YXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRp
+b25Qb2ludDCBygYIKwYBBQUHAQEEgb0wgbowgbcGCCsGAQUFBzAChoGqbGRhcDov
+Ly9DTj1TRVZFTktJTkdET01TLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBT
+ZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNldmVua2lu
+Z2RvbXMsREM9bG9jYWw/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNl
+cnRpZmljYXRpb25BdXRob3JpdHkwTAYDVR0RBEUwQ6AfBgkrBgEEAYI3GQGgEgQQ
+uFLlEpsheUigkPBSPD1KXoIga2luZ3NsYW5kaW5nLnNldmVua2luZ2RvbXMubG9j
+YWwwDQYJKoZIhvcNAQELBQADggEBAAZHPH0rBP8/oc/tRBQdbh6AScNgtW11WEsE
+toRSJ4Cm8To3SO7S/1v/KjdiVTzHv05c1ZVGKRp2J+HKEbJMX3x8I+X3fQcOX4DM
+oXQ+GEpRfvmOW25IiGdl4pdGudYa+AUSDq9Azm04+7xx7XkDGOe6BVbCiCjAbpWG
+Zj2UZ1SA+uTEmW3ect81yQmdgnjmDMdKXfo6oGnfGzeTMVayUfGOHpaGCbmk3dhW
+UpHLbEMpkau1LUtClYgAIbICjSToJ88KUy9TDTg1tr7vKwj4GBOFvptoVjFGh+3/
+bsbPoC92BEh+TvX32ZFg0wvhQFb5Isrmojk/F2Z/87tKZOtuZMM=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="open">
+<td>3268</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: sevenkingdoms.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=kingslanding.sevenkingdoms.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:kingslanding.sevenkingdoms.local
+Issuer: commonName=SEVENKINGDOMS-CA/domainComponent=sevenkingdoms
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:39
+Not valid after:  2025-02-04T12:28:39
+MD5:   26c2:4554:9d7b:b860:4c1e:31f3:b7c6:6edd
+SHA-1: 1740:8bf5:f6d7:6fb7:7a16:3ff1:e9a0:7ff9:6f4b:f229
+-----BEGIN CERTIFICATE-----
+MIIGIjCCBQqgAwIBAgITWQAAAAJfc3KxOMIfAgAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBRMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxHTAbBgoJkiaJk/IsZAEZFg1zZXZl
+bmtpbmdkb21zMRkwFwYDVQQDExBTRVZFTktJTkdET01TLUNBMB4XDTI0MDIwNTEy
+MjgzOVoXDTI1MDIwNDEyMjgzOVowKzEpMCcGA1UEAxMga2luZ3NsYW5kaW5nLnNl
+dmVua2luZ2RvbXMubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+AQDHi2KJTMU2FDyg4dFd3tVyyzvkomhMZkNcPAt7LnRILpbXCTI15ufE4TtFI2gr
+wyXm94SkrOh/yRL0mlY12Ry9AUcnAyHC3bNgCqFYiyqZyD0Zzhuwz+X9ByJxVwaW
+WO+70SmluggmDMePoNUw/E768HpxaJDn5nXBmakAq7ZoUEDD4wf99maZRbedt61V
+Dc8Wrs3c+2NuY44ClZgBiEtlClQ54PZR/1qGh0WcM3B8HI3QC4Ggvv2Yjxx7RBJC
+EDN0GREpBPRIXJ77yTGal7eoxNmHbVuc+PDYpnoUErhIJJrdnc4glSriGbwlmBMF
+Usf4jFsRrQfuMMd/I+J27aMtAgMBAAGjggMXMIIDEzAvBgkrBgEEAYI3FAIEIh4g
+AEQAbwBtAGEAaQBuAEMAbwBuAHQAcgBvAGwAbABlAHIwHQYDVR0lBBYwFAYIKwYB
+BQUHAwIGCCsGAQUFBwMBMA4GA1UdDwEB/wQEAwIFoDB4BgkqhkiG9w0BCQ8EazBp
+MA4GCCqGSIb3DQMCAgIAgDAOBggqhkiG9w0DBAICAIAwCwYJYIZIAWUDBAEqMAsG
+CWCGSAFlAwQBLTALBglghkgBZQMEAQIwCwYJYIZIAWUDBAEFMAcGBSsOAwIHMAoG
+CCqGSIb3DQMHMB0GA1UdDgQWBBScuey0PbIKBstTUbb3p+xx4l5vPDAfBgNVHSME
+GDAWgBSmtCSkNjNgCWIgONkch0fKGVw0SDCB2wYDVR0fBIHTMIHQMIHNoIHKoIHH
+hoHEbGRhcDovLy9DTj1TRVZFTktJTkdET01TLUNBLENOPWtpbmdzbGFuZGluZyxD
+Tj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049
+Q29uZmlndXJhdGlvbixEQz1zZXZlbmtpbmdkb21zLERDPWxvY2FsP2NlcnRpZmlj
+YXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRp
+b25Qb2ludDCBygYIKwYBBQUHAQEEgb0wgbowgbcGCCsGAQUFBzAChoGqbGRhcDov
+Ly9DTj1TRVZFTktJTkdET01TLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBT
+ZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNldmVua2lu
+Z2RvbXMsREM9bG9jYWw/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNl
+cnRpZmljYXRpb25BdXRob3JpdHkwTAYDVR0RBEUwQ6AfBgkrBgEEAYI3GQGgEgQQ
+uFLlEpsheUigkPBSPD1KXoIga2luZ3NsYW5kaW5nLnNldmVua2luZ2RvbXMubG9j
+YWwwDQYJKoZIhvcNAQELBQADggEBAAZHPH0rBP8/oc/tRBQdbh6AScNgtW11WEsE
+toRSJ4Cm8To3SO7S/1v/KjdiVTzHv05c1ZVGKRp2J+HKEbJMX3x8I+X3fQcOX4DM
+oXQ+GEpRfvmOW25IiGdl4pdGudYa+AUSDq9Azm04+7xx7XkDGOe6BVbCiCjAbpWG
+Zj2UZ1SA+uTEmW3ect81yQmdgnjmDMdKXfo6oGnfGzeTMVayUfGOHpaGCbmk3dhW
+UpHLbEMpkau1LUtClYgAIbICjSToJ88KUy9TDTg1tr7vKwj4GBOFvptoVjFGh+3/
+bsbPoC92BEh+TvX32ZFg0wvhQFb5Isrmojk/F2Z/87tKZOtuZMM=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>3269</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: sevenkingdoms.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=kingslanding.sevenkingdoms.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:kingslanding.sevenkingdoms.local
+Issuer: commonName=SEVENKINGDOMS-CA/domainComponent=sevenkingdoms
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:39
+Not valid after:  2025-02-04T12:28:39
+MD5:   26c2:4554:9d7b:b860:4c1e:31f3:b7c6:6edd
+SHA-1: 1740:8bf5:f6d7:6fb7:7a16:3ff1:e9a0:7ff9:6f4b:f229
+-----BEGIN CERTIFICATE-----
+MIIGIjCCBQqgAwIBAgITWQAAAAJfc3KxOMIfAgAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBRMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxHTAbBgoJkiaJk/IsZAEZFg1zZXZl
+bmtpbmdkb21zMRkwFwYDVQQDExBTRVZFTktJTkdET01TLUNBMB4XDTI0MDIwNTEy
+MjgzOVoXDTI1MDIwNDEyMjgzOVowKzEpMCcGA1UEAxMga2luZ3NsYW5kaW5nLnNl
+dmVua2luZ2RvbXMubG9jYWwwggEiMA0GCSqGSIb3DQEBAQUAA4IBDwAwggEKAoIB
+AQDHi2KJTMU2FDyg4dFd3tVyyzvkomhMZkNcPAt7LnRILpbXCTI15ufE4TtFI2gr
+wyXm94SkrOh/yRL0mlY12Ry9AUcnAyHC3bNgCqFYiyqZyD0Zzhuwz+X9ByJxVwaW
+WO+70SmluggmDMePoNUw/E768HpxaJDn5nXBmakAq7ZoUEDD4wf99maZRbedt61V
+Dc8Wrs3c+2NuY44ClZgBiEtlClQ54PZR/1qGh0WcM3B8HI3QC4Ggvv2Yjxx7RBJC
+EDN0GREpBPRIXJ77yTGal7eoxNmHbVuc+PDYpnoUErhIJJrdnc4glSriGbwlmBMF
+Usf4jFsRrQfuMMd/I+J27aMtAgMBAAGjggMXMIIDEzAvBgkrBgEEAYI3FAIEIh4g
+AEQAbwBtAGEAaQBuAEMAbwBuAHQAcgBvAGwAbABlAHIwHQYDVR0lBBYwFAYIKwYB
+BQUHAwIGCCsGAQUFBwMBMA4GA1UdDwEB/wQEAwIFoDB4BgkqhkiG9w0BCQ8EazBp
+MA4GCCqGSIb3DQMCAgIAgDAOBggqhkiG9w0DBAICAIAwCwYJYIZIAWUDBAEqMAsG
+CWCGSAFlAwQBLTALBglghkgBZQMEAQIwCwYJYIZIAWUDBAEFMAcGBSsOAwIHMAoG
+CCqGSIb3DQMHMB0GA1UdDgQWBBScuey0PbIKBstTUbb3p+xx4l5vPDAfBgNVHSME
+GDAWgBSmtCSkNjNgCWIgONkch0fKGVw0SDCB2wYDVR0fBIHTMIHQMIHNoIHKoIHH
+hoHEbGRhcDovLy9DTj1TRVZFTktJTkdET01TLUNBLENOPWtpbmdzbGFuZGluZyxD
+Tj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2VydmljZXMsQ049
+Q29uZmlndXJhdGlvbixEQz1zZXZlbmtpbmdkb21zLERDPWxvY2FsP2NlcnRpZmlj
+YXRlUmV2b2NhdGlvbkxpc3Q/YmFzZT9vYmplY3RDbGFzcz1jUkxEaXN0cmlidXRp
+b25Qb2ludDCBygYIKwYBBQUHAQEEgb0wgbowgbcGCCsGAQUFBzAChoGqbGRhcDov
+Ly9DTj1TRVZFTktJTkdET01TLUNBLENOPUFJQSxDTj1QdWJsaWMlMjBLZXklMjBT
+ZXJ2aWNlcyxDTj1TZXJ2aWNlcyxDTj1Db25maWd1cmF0aW9uLERDPXNldmVua2lu
+Z2RvbXMsREM9bG9jYWw/Y0FDZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNl
+cnRpZmljYXRpb25BdXRob3JpdHkwTAYDVR0RBEUwQ6AfBgkrBgEEAYI3GQGgEgQQ
+uFLlEpsheUigkPBSPD1KXoIga2luZ3NsYW5kaW5nLnNldmVua2luZ2RvbXMubG9j
+YWwwDQYJKoZIhvcNAQELBQADggEBAAZHPH0rBP8/oc/tRBQdbh6AScNgtW11WEsE
+toRSJ4Cm8To3SO7S/1v/KjdiVTzHv05c1ZVGKRp2J+HKEbJMX3x8I+X3fQcOX4DM
+oXQ+GEpRfvmOW25IiGdl4pdGudYa+AUSDq9Azm04+7xx7XkDGOe6BVbCiCjAbpWG
+Zj2UZ1SA+uTEmW3ect81yQmdgnjmDMdKXfo6oGnfGzeTMVayUfGOHpaGCbmk3dhW
+UpHLbEMpkau1LUtClYgAIbICjSToJ88KUy9TDTg1tr7vKwj4GBOFvptoVjFGh+3/
+bsbPoC92BEh+TvX32ZFg0wvhQFb5Isrmojk/F2Z/87tKZOtuZMM=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td>Microsoft Terminal Services </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:49+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=kingslanding.sevenkingdoms.local
+Issuer: commonName=kingslanding.sevenkingdoms.local
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T12:03:55
+Not valid after:  2024-08-05T12:03:55
+MD5:   9f0f:c082:906c:0c54:04ae:d666:5f51:71eb
+SHA-1: c158:da13:effa:cac6:ee7c:7bee:aaac:820c:1cc7:6c71
+-----BEGIN CERTIFICATE-----
+MIIDBDCCAeygAwIBAgIQeX87MIm9bKJFWW1zA7yisjANBgkqhkiG9w0BAQsFADAr
+MSkwJwYDVQQDEyBraW5nc2xhbmRpbmcuc2V2ZW5raW5nZG9tcy5sb2NhbDAeFw0y
+NDAyMDQxMjAzNTVaFw0yNDA4MDUxMjAzNTVaMCsxKTAnBgNVBAMTIGtpbmdzbGFu
+ZGluZy5zZXZlbmtpbmdkb21zLmxvY2FsMIIBIjANBgkqhkiG9w0BAQEFAAOCAQ8A
+MIIBCgKCAQEA09F1juZ/TQ2/AGVPTK7nTCeOPKe2x+x3PzJb0K25bzCSAsLqP8rT
+AiYHbDlutcOnQ7ztFyhy7kBqfjUqUEufQU9mFz4SmLKWUXaP+C/fn0mbb049NRfX
+2klRmTmw9+ztdTlHOLogDdTa5N/slsLesn3zoSeRtXNVwQum5Z6RYouBt6NBD9a3
+1i974pPtP0ieShy2Ytd4RUcpccnphMWbKMtk5Int6DH3aZO5aMG7tQmfCCb0wKKj
+BtqES2lNr+NcQnFfj4CyS0GhvN2WwiXh7hsR4xK9IU3+JlJ6bQ3P07Wt2KrvUvqO
+RKYU7OtrHmmirLs6TFzgmAnMNmQzArJJHQIDAQABoyQwIjATBgNVHSUEDDAKBggr
+BgEFBQcDATALBgNVHQ8EBAMCBDAwDQYJKoZIhvcNAQELBQADggEBADQygUGLUYxJ
+FEALPBqrNWqf7Z4aHMZt6KutymuUVv140dfsyABHHtUsbXuYB5yFnLHzmcfW7n4b
+e3MMT2ZbTrbxY9GSXkALS3rTx8nkA90y0TqN4IuzamC+5hURR4ZVLB+hnban5ND2
+yfH9uyncV7EBVL6cxSs7P/54eyDL4joiBc7bwX6jAazQiM6jXk6IUtNfhnmaaKix
+IE/RANBjhRTYovxClYKAddGq4D8jBRN5hiPFJp0ucDeDCBDYa/aTkZAJ4WupcXc5
+Mh1lNbrhZQrIS6OaN7fy6mks9hBOyDSnOu83XWSPtU0+QhXa5mLGiqkSDdT0IZhz
+jTXih9XVwa4=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="open">
+<td>5985</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="open">
+<td>5986</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=VAGRANT
+Subject Alternative Name: DNS:VAGRANT, DNS:vagrant
+Issuer: commonName=VAGRANT
+Public Key type: rsa
+Public Key bits: 4096
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T03:41:09
+Not valid after:  2027-02-03T03:41:09
+MD5:   c0bf:c67f:824b:3402:2db8:1984:aaf2:3091
+SHA-1: c762:183d:dc1d:4a88:7c0c:85e2:1f40:f8c2:14a7:e27f
+-----BEGIN CERTIFICATE-----
+MIIFETCCAvmgAwIBAgIQeqODbozpQpNJDNSWOSevJTANBgkqhkiG9w0BAQsFADAS
+MRAwDgYDVQQDDAdWQUdSQU5UMB4XDTI0MDIwNDAzNDEwOVoXDTI3MDIwMzAzNDEw
+OVowEjEQMA4GA1UEAwwHVkFHUkFOVDCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
+AgoCggIBANOcyXRs+acSiAfa1K3vgrlB4dkG35FoZvmL7cjr2Pemi8IEPN9ukv1b
+ohBvB1IX/hqMu5ydt22jL1UCOMvstuWMQyLSWndEVU7F5DWaMWlietUGX1yl9qdC
+86JOjGVfENlj8EhVS7bW0jx5TSjXe1//z6m7tzQVVWCt+2a4wo3ouEssyKYlBwsz
+3nVFlJdMLwWcipnTllh3n4rsgxHhyjQnP4fKXnkLa0AwElRc9+rORr8fQpw8ISFS
+ZfMrUaQFflmR3Cu5Ins+GbeByoF+yhBW9HRbRT7/syZlMHTO9Kfw/O3MRCdW0wVM
+EUsiLEVTWICEhVz6gnFNdgwQmRcyCHVbmjYYvMWa5wQukP1ZP/U8McAhPEAMpaOn
+8vEOLutDxBejNgX1Aa4n8enlELpjGdLRf7Ug1+VzDsr7fJOPKS7wh3X2RBEWVD7t
+wMtiMuzuQcorhHLdD9lKYDjqo/GjVTRZMGqe9F4hQ5XW+jFRAVeGktYRbsYc240n
+/mztp8Ds6P1bDTplt6DbhLnYvAlbqIS25PB/lArw2Be2r2Q1IO+liWKbR/YmhSi3
+3mn07PMA6mvFMbcBR1R+amBqNKjlEqPgChetZcO3sCloLaRm/rY2Qc6rLTuYXKKw
+1Mp9oNuXH1XYrJtX13VVXqf1cNzlBcc+aki89EXGqEeKlokG0Sx5AgMBAAGjYzBh
+MA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAbBgNVHREEFDAS
+ggdWQUdSQU5Uggd2YWdyYW50MB0GA1UdDgQWBBQxuI6O2GR5kI0u7AwgdsFrcVeu
+gzANBgkqhkiG9w0BAQsFAAOCAgEAS1M8ctap1Sn0aG4GGbRze1TbmGap2QDxZiQg
+tYYcIaikt2xN3y71h9e5IUBu4dM6HsJ9pgekKr0JJYCnUjs/M1y7thCUNtGjUZ0i
+hZOxN9SIRvJiaTDwmom5k3PMU+dRwsbg2+sGletSY71uC0o80C8IeZcTxyUgTTTB
+5eAPlNmlP2DP93/e8+mcMGyCghFbWO5UaiP64tiMA8l3c6OZ/EONqib7H5aqvP7h
+1Y1L0pUj35Wa2MFRxBzs6qrgq2LX5gkZvVmYoLNnoVZ6BrwWDSU3602ZvSN08U6N
+AjEaZoUtV2waA686u/D0TydhCWE+C6AvEBlAjEETxW6OO1WnjASs3eTZCfMB6zYJ
+7O3FRgvm2x4EIpx/VEP0/0ztat6a/jiUfk2aeestfzTNjgTdgekAPKhQtRU2EraO
+oPJV3K8IlZNg5u7uVPnsLWIJ543EmI+7igRQmoyCjI9vai2pzsDSmbwkOwDfb9UL
+lSvPejECEONSVAdrnSYEmJ9RiepD5NShuJsudtYhvaLVTFDDBHLAOdSszbcFwcoY
+Ue+QSGcp4teTLqwnnlTGSPLpqt0fQyGb0Gt+b2FCuB3urIpniSQi84lopon/GGPH
+D0z/8Een7pQ1LV0gFCb94ix5ufzrDA6f0b2YanHv4jRQADeF+YwpcKglPSIcHl8K
+nNeu1hk=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>tls-alpn </td>
+<td colspan="6"><pre>
+  http/1.1 </pre></td>
+</tr>
+<tr class="open">
+<td>9389</td>
+<td>tcp</td>
+<td>open</td>
+<td>mc-nmf </td>
+<td>syn-ack</td>
+<td>.NET Message Framing </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>47001</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="open">
+<td>49664</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49665</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49667</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49669</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49670</td>
+<td>tcp</td>
+<td>open</td>
+<td>ncacn_http </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC over HTTP </td>
+<td>1.0 </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49671</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49673</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49676</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49686</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49699</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>65077</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>53/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>2/tcp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>IBM z/OS 2.1</b> (<b>86%</b>)</li>
+<li>OS match: <b>Radware LinkProof load balancer</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/2 Warp 2.0</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.11</b> (<b>85%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3348 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.10</b> (<b>85%</b>)</li>
+<li>OS match: <b>Scientific Atlanta WebSTAR EPC2203 cable modem</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/390 V2</b> (<b>85%</b>)</li>
+<li>OS match: <b>Siemens C2-010-I ADSL modem</b> (<b>85%</b>)</li>
+</ul>
+<ul><li class="noprint">OS identified but the fingerprint was requested at scan time. 
+          
+        <a href="javascript:toggle('osblock_192.168.56.10');"><span class="noprint"><small> (click to expand)</small></span></a>
+</li></ul>
+<div id="osblock_192.168.56.10" class="hidden"><table class="noprint" cellspacing="1">
+<tr class="head"><td>Operating System fingerprint</td></tr>
+<tr><td><pre>SCAN(V=7.94SVN%E=4%D=6/10%OT=53%CT=2%CU=%PV=Y%G=N%TM=6666CD0E%P=x86_64-pc-linux-gnu)
+SEQ(SP=104%GCD=1%ISR=101%TI=I%CI=I%II=RI%TS=A)
+SEQ(SP=105%GCD=1%ISR=100%TI=I%CI=I%TS=A)
+OPS(O1=M5B4NNT11NW7%O2=M5B4NNT11NW7%O3=M5B4NNT11NW7%O4=M5B4NNT11NW7%O5=M5B4NNT11NW7%O6=M5B4NNT11)
+WIN(W1=7200%W2=7200%W3=7200%W4=7200%W5=7200%W6=7200)
+ECN(R=Y%DF=N%TG=40%W=7200%O=M5B4NW7%CC=N%Q=)
+T1(R=Y%DF=N%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=Y%DF=N%TG=40%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)
+T3(R=Y%DF=N%TG=40%W=7200%S=O%A=S+%F=AS%O=M5B4NNT11NW7%RD=0%Q=)
+T4(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=N)
+IE(R=Y%DFI=S%TG=40%CD=S)
+</pre></td></tr>
+</table></div>
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>smb2-time </td>
+<td><pre>
+  date: 2024-06-10T09:52:40
+  start_date: N/A </pre></td>
+</tr>
+<tr class="script">
+<td>p2p-conficker </td>
+<td><pre>
+  Checking for Conficker.C or higher...
+  Check 1 (port 62115/tcp): CLEAN (Couldn't connect)
+  Check 2 (port 43625/tcp): CLEAN (Couldn't connect)
+  Check 3 (port 39390/udp): CLEAN (Timeout)
+  Check 4 (port 10969/udp): CLEAN (Timeout)
+  0/4 checks are positive: Host is CLEAN or ports are blocked
+ </pre></td>
+</tr>
+<tr class="script">
+<td>nbstat </td>
+<td><pre>NetBIOS name: KINGSLANDING, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 08:00:27:b2:e6:9d (Oracle VirtualBox virtual NIC)
+Names:
+  KINGSLANDING&lt;00&gt;     Flags: &lt;unique&gt;&lt;active&gt;
+  KINGSLANDING&lt;20&gt;     Flags: &lt;unique&gt;&lt;active&gt;
+  SEVENKINGDOMS&lt;00&gt;    Flags: &lt;group&gt;&lt;active&gt;
+  SEVENKINGDOMS&lt;1c&gt;    Flags: &lt;group&gt;&lt;active&gt;
+  SEVENKINGDOMS&lt;1b&gt;    Flags: &lt;unique&gt;&lt;active&gt;
+Statistics:
+  08:00:27:b2:e6:9d:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00 </pre></td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>mean: 0s, deviation: 0s, median: 0s </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-security-mode </td>
+<td><pre>
+  3:1:1: 
+    Message signing enabled and required </pre></td>
+</tr>
+</table>
+
+<br><a href="javascript:toggle('metrics_192.168.56.10');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.56.10" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>user-set</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>1007055 seconds  (last reboot: Wed May 29 20:09:03 2024)
+        </td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=261 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incrementing by 2</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_56_11"></a><h2 class="up">192.168.56.11<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.56.11" class="unhidden">
+<h3>Address</h3>
+<ul><li>192.168.56.11
+            (ipv4)
+          </li></ul>
+
+
+<h3>Ports</h3>
+<p>The 65502 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>65502 ports replied with: <b>reset</b></p></li></ul>
+<p>The 6 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>6 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.56.11" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.56.11','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.56.11','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+
+
+
+<tr class="open">
+<td>53</td>
+<td>tcp</td>
+<td>open</td>
+<td>domain </td>
+<td>syn-ack</td>
+<td>Simple DNS Plus </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>88</td>
+<td>tcp</td>
+<td>open</td>
+<td>kerberos-sec </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Kerberos </td>
+<td> </td>
+<td>server time: 2024-06-10 09:49:06Z </td>
+</tr>
+<tr class="open">
+<td>135</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>139</td>
+<td>tcp</td>
+<td>open</td>
+<td>netbios-ssn </td>
+<td>syn-ack</td>
+<td>Microsoft Windows netbios-ssn </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: sevenkingdoms.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="open">
+<td>445</td>
+<td>tcp</td>
+<td>open</td>
+<td>microsoft-ds </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>464</td>
+<td>tcp</td>
+<td>open</td>
+<td>kpasswd5 </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>593</td>
+<td>tcp</td>
+<td>open</td>
+<td>ncacn_http </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC over HTTP </td>
+<td>1.0 </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>636</td>
+<td>tcp</td>
+<td>open</td>
+<td>tcpwrapped </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>3268</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: sevenkingdoms.local0., Site: Default-First-Site-Name </td>
+</tr>
+<tr class="open">
+<td>3269</td>
+<td>tcp</td>
+<td>open</td>
+<td>tcpwrapped </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td>Microsoft Terminal Services </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>rdp-ntlm-info </td>
+<td colspan="6"><pre>
+  Target_Name: NORTH
+  NetBIOS_Domain_Name: NORTH
+  NetBIOS_Computer_Name: WINTERFELL
+  DNS_Domain_Name: north.sevenkingdoms.local
+  DNS_Computer_Name: winterfell.north.sevenkingdoms.local
+  DNS_Tree_Name: sevenkingdoms.local
+  Product_Version: 10.0.17763
+  System_Time: 2024-06-10T09:52:36+00:00 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=winterfell.north.sevenkingdoms.local
+Issuer: commonName=winterfell.north.sevenkingdoms.local
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T12:13:34
+Not valid after:  2024-08-05T12:13:34
+MD5:   7587:c79d:5fa0:e9a5:2adb:c156:4f98:8d71
+SHA-1: 5d02:0417:d843:625e:2abc:398e:7f34:1987:3273:a2e3
+-----BEGIN CERTIFICATE-----
+MIIDDDCCAfSgAwIBAgIQEgVWDawLM41APgZrpIPLvjANBgkqhkiG9w0BAQsFADAv
+MS0wKwYDVQQDEyR3aW50ZXJmZWxsLm5vcnRoLnNldmVua2luZ2RvbXMubG9jYWww
+HhcNMjQwMjA0MTIxMzM0WhcNMjQwODA1MTIxMzM0WjAvMS0wKwYDVQQDEyR3aW50
+ZXJmZWxsLm5vcnRoLnNldmVua2luZ2RvbXMubG9jYWwwggEiMA0GCSqGSIb3DQEB
+AQUAA4IBDwAwggEKAoIBAQDXU6qexPzXla8UtkJZacdjmYRWcF7tMXAtNWykHvzX
+TDhFITcVFYWTO5/tDHR45zaD+fDK2Hzk04sDLCJTmaOCjADYLKx8id25vNC3LsEF
+9A25YhAZ1SdCGSSeXzWitc0nrpFvHDgASG2x5sCLa0BcVGQs7k9ZTNP5dNudkkQk
+9F4o/z5n7KWR3pZR0cHf8S1ub2tWo/BbdTv8OiFy65ikx3sJOGes8COs/ckLaiBk
+4/dhWegRziqDGpYKKZH1K24VbBeFnO1GcKeOhgIePuFUH1W0rU6xFZfvxX9qhQ+a
+o750Bc3BWWhFwrCWw2FfkKwJlxwwrB+rxvsiJ0Ng/ge1AgMBAAGjJDAiMBMGA1Ud
+JQQMMAoGCCsGAQUFBwMBMAsGA1UdDwQEAwIEMDANBgkqhkiG9w0BAQsFAAOCAQEA
+b5/Pzf9ssKIatP3oFUSiZIWN6b8U72DCmIP0temzBxAcK3UiHiD8IRB0QGR0X4nx
+X6YZrqN//UO7xPo2edyCzhli4qBm0hSrpdzan45OKc5nhBmBaKw2I6Qf7rcOKUCY
+/C4Uf7n6PvODcgeRhP54reGNfwZgOKXO8pArKgf3STt86X0vpks0Xyk5keEF21nE
+6ZTIq+4bkPJrDd+A96iLbnPEauV7XkrEvAbba2Rxc4Dzq4O84dNSFmpNZc43R66f
+yevwMcTbXOGSONPPqHF3wU16sABKn0/Djzf9s8SY+IugjQqqCqxaAIn8/C/ufkfC
+fHmp5udwEpWg94mgtaYqOA==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:49+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>5985</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="open">
+<td>5986</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>tls-alpn </td>
+<td colspan="6"><pre>
+  http/1.1 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=VAGRANT
+Subject Alternative Name: DNS:VAGRANT, DNS:vagrant
+Issuer: commonName=VAGRANT
+Public Key type: rsa
+Public Key bits: 4096
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T03:44:44
+Not valid after:  2027-02-03T03:44:44
+MD5:   8666:afc3:a599:d84d:6035:610c:cdf9:2bb9
+SHA-1: 7ffe:31d7:565f:27d3:38c7:c5a0:feb7:db64:560e:d944
+-----BEGIN CERTIFICATE-----
+MIIFETCCAvmgAwIBAgIQSR75/6gSV5xGmZZFBLbRfjANBgkqhkiG9w0BAQsFADAS
+MRAwDgYDVQQDDAdWQUdSQU5UMB4XDTI0MDIwNDAzNDQ0NFoXDTI3MDIwMzAzNDQ0
+NFowEjEQMA4GA1UEAwwHVkFHUkFOVDCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
+AgoCggIBAMnOurNsXot3txpSkTKxWgS1fjENN+OrmpBJqpbvg52Q+zq1uVLFX00r
+cvS22QnkC5OZhTGrgFiKlg3qAbyaF5aPQP3KQH5ADF5jU1Lb1SAqKxFrPh5mHfoA
+hlr+oCIS+c/H7/coQSW6OfFX5nqjaqwdlJWKC/eECT8/ET4s7zVX/K6G7fXUxIx2
+uoX92I96m405Rix5iNuroBpStzCep0Lfo+TUJz7Hv4D9SY5g2EGIpO5fAFrVZhWv
+DKNnMVhKI6c/gzuS/8ItEOfAk/0lox4j11gQddNAwAzWLChEdG+K2lDJ0c0Le8F5
+LTUkCu4Khuu6x4OS+BAGRdwLWzAOZal/78MAm8xfOz0rO1LfCGbcQs6LOQnTRjmF
+U6RSJa2StTvEPJNStGEPBBDCAsrfnTwrrkIOj/dg6JJYULBfcotP3WznvcmIGiV3
+ANCNdCaLsrmR1jg1+PdUrGqMAgv+2ryAMh68JrtzJmBXAPK12ka6fyrTMx5A6d1m
+kaWgdI9hTH7zRbG89GmxEKlRSwgsemat7NxV186lAT9v2jQ/XiWqhelFLzMbJXx+
+qIXhi9HilCy9Pt6kNGSUU7bO/1KakJafaLH2wwlfMtK8a90jqSLXUtUNMwMLRgQk
+z0mbZW1HlzPSj6ylszf04sedk0nJMi0vVNAdRXoo2m0xRP4Ydms9AgMBAAGjYzBh
+MA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAbBgNVHREEFDAS
+ggdWQUdSQU5Uggd2YWdyYW50MB0GA1UdDgQWBBRfD/kSqMzKxvHvateIrXFqi+x1
+sjANBgkqhkiG9w0BAQsFAAOCAgEAmy7QhmNII13SoUeNUdajdEajHrpjEaElYyB+
+B6LfLYbf858esfM6YW4DZQI+jB1Up06Kq91dq7gthgoDvkt4f7dhfD5BobRSl2Cv
+lMcoqVknwalJALokKNee2sXu1jEXv7MoU8eyIEhqRwkkPqoXmm+GFJMG66mJgB9d
+Lpz2h+X6I5ApQm9TZ7MwPpHfxpxNm5IBB6mBrnSRNuh1IwWnIZOMaHaCe9WU4APG
+5kgB9zjTG8+eF3ltQ3fqEFHhyz/v7IlHCAnSJ3Rw0ZenxjyAk8FH/3xv7oApDlE6
+SnxIgtya3Q1mqs8WypkA6sI3zg2afeT0VSdFIWF42r6bIMaokesqbenklgHJx4Gc
+pqy7pzT1h7hQDrbOhdaQWSdzxzJMvLCqoXse0mcyTDBHpXl+2T7KEA3LfrL5IEEs
+eqd/Fb95vR3zWTjCqq49qgx1hlKmW0w5JhlSsKPoqQxdKPUEKL91vmJNIYB/y9R5
+sz4kFiyJ2CCWXVhauJGvxzi2G0INpn6CAwpHYdPrqJiz3mNkIkSaqDi7iBIdhLTH
+H2nrS5aGLkGMVmC4xoJ0XJ0/zM+i01Bt72bYxOHS4PcOdgJ/+YNHVfKZd94BOf5l
+8foSG5hW9GxZFdYsH2tiwTN0xKYWQqugJaDo/dDJWb5/0usS4VZMzoa2wyi2SJYE
+G5DiwcY=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>9389</td>
+<td>tcp</td>
+<td>open</td>
+<td>mc-nmf </td>
+<td>syn-ack</td>
+<td>.NET Message Framing </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>47001</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="open">
+<td>49664</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49665</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49666</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49667</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49671</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49678</td>
+<td>tcp</td>
+<td>open</td>
+<td>ncacn_http </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC over HTTP </td>
+<td>1.0 </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49679</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49683</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49686</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49724</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>62901</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>53/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>1/tcp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>IBM z/OS 1.11</b> (<b>86%</b>)</li>
+<li>OS match: <b>Scientific Atlanta WebSTAR EPC2203 cable modem</b> (<b>86%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3324 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>Radware LinkProof load balancer</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/2 Warp 2.0</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 2.1</b> (<b>85%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3348 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.10</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.12</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/390 V2</b> (<b>85%</b>)</li>
+</ul>
+<ul><li class="noprint">OS identified but the fingerprint was requested at scan time. 
+          
+        <a href="javascript:toggle('osblock_192.168.56.11');"><span class="noprint"><small> (click to expand)</small></span></a>
+</li></ul>
+<div id="osblock_192.168.56.11" class="hidden"><table class="noprint" cellspacing="1">
+<tr class="head"><td>Operating System fingerprint</td></tr>
+<tr><td><pre>SCAN(V=7.94SVN%E=4%D=6/10%OT=53%CT=1%CU=%PV=Y%G=N%TM=6666CD0E%P=x86_64-pc-linux-gnu)
+SEQ(SP=100%GCD=1%ISR=106%TI=I%CI=I%TS=A)
+SEQ(SP=FF%GCD=1%ISR=101%TI=I%CI=I%TS=A)
+OPS(O1=M5B4NNT11NW7%O2=M5B4NNT11NW7%O3=M5B4NNT11NW7%O4=M5B4NNT11NW7%O5=M5B4NNT11NW7%O6=M5B4NNT11)
+WIN(W1=7200%W2=7200%W3=7200%W4=7200%W5=7200%W6=7200)
+ECN(R=Y%DF=N%TG=40%W=7200%O=M5B4NW7%CC=N%Q=)
+T1(R=Y%DF=N%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=Y%DF=N%TG=40%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)
+T3(R=Y%DF=N%TG=40%W=7200%S=O%A=S+%F=AS%O=M5B4NNT11NW7%RD=0%Q=)
+T4(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=N)
+IE(R=Y%DFI=S%TG=40%CD=S)
+</pre></td></tr>
+</table></div>
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>p2p-conficker </td>
+<td><pre>
+  Checking for Conficker.C or higher...
+  Check 1 (port 50298/tcp): CLEAN (Couldn't connect)
+  Check 2 (port 49653/tcp): CLEAN (Couldn't connect)
+  Check 3 (port 38986/udp): CLEAN (Timeout)
+  Check 4 (port 49311/udp): CLEAN (Timeout)
+  0/4 checks are positive: Host is CLEAN or ports are blocked
+ </pre></td>
+</tr>
+<tr class="script">
+<td>nbstat </td>
+<td><pre>NetBIOS name: WINTERFELL, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 08:00:27:a5:77:6a (Oracle VirtualBox virtual NIC)
+Names:
+  WINTERFELL&lt;00&gt;       Flags: &lt;unique&gt;&lt;active&gt;
+  WINTERFELL&lt;20&gt;       Flags: &lt;unique&gt;&lt;active&gt;
+  NORTH&lt;00&gt;            Flags: &lt;group&gt;&lt;active&gt;
+  NORTH&lt;1c&gt;            Flags: &lt;group&gt;&lt;active&gt;
+  NORTH&lt;1b&gt;            Flags: &lt;unique&gt;&lt;active&gt;
+Statistics:
+  08:00:27:a5:77:6a:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00 </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-time </td>
+<td><pre>
+  date: 2024-06-10T09:52:32
+  start_date: N/A </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-security-mode </td>
+<td><pre>
+  3:1:1: 
+    Message signing enabled and required </pre></td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>mean: 0s, deviation: 0s, median: 0s </pre></td>
+</tr>
+</table>
+
+<br><a href="javascript:toggle('metrics_192.168.56.11');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.56.11" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>user-set</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>3545309 seconds  (last reboot: Tue Apr 30 11:04:49 2024)
+        </td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=255 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incrementing by 2</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_56_12"></a><h2 class="up">192.168.56.12<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.56.12" class="unhidden">
+<h3>Address</h3>
+<ul><li>192.168.56.12
+            (ipv4)
+          </li></ul>
+
+
+<h3>Ports</h3>
+<p>The 62131 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>62131 ports replied with: <b>reset</b></p></li></ul>
+<p>The 3377 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>3377 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.56.12" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.56.12','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.56.12','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+
+
+
+<tr class="open">
+<td>53</td>
+<td>tcp</td>
+<td>open</td>
+<td>domain </td>
+<td>syn-ack</td>
+<td>Simple DNS Plus </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>88</td>
+<td>tcp</td>
+<td>open</td>
+<td>kerberos-sec </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Kerberos </td>
+<td> </td>
+<td>server time: 2024-06-10 09:50:01Z </td>
+</tr>
+<tr class="open">
+<td>135</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>139</td>
+<td>tcp</td>
+<td>open</td>
+<td>netbios-ssn </td>
+<td>syn-ack</td>
+<td>Microsoft Windows netbios-ssn </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: essos.local, Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=meereen.essos.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:meereen.essos.local
+Issuer: commonName=ESSOS-CA/domainComponent=essos
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:53
+Not valid after:  2025-02-04T12:28:53
+MD5:   6cda:9e8e:bf3e:ab13:4d4b:be61:cc2b:983e
+SHA-1: b20e:126e:8074:088f:adab:69b1:e0c6:4e67:801e:6712
+-----BEGIN CERTIFICATE-----
+MIIF0zCCBLugAwIBAgITHAAAAAItXaxaicob0gAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBBMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFTATBgoJkiaJk/IsZAEZFgVlc3Nv
+czERMA8GA1UEAxMIRVNTT1MtQ0EwHhcNMjQwMjA1MTIyODUzWhcNMjUwMjA0MTIy
+ODUzWjAeMRwwGgYDVQQDExNtZWVyZWVuLmVzc29zLmxvY2FsMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwSgnfuqdYT8ZLPCgFUcZV+FoyDLfYKqAM4AX
+T6N74u3nd5BGsvlY4baIMGmPqVPGl9KsJ4QnNZuImKpAW0Q/XVn+qC/AjhtkmFSZ
+oLXisBM+tnuCR0YTGKevFFLMdsF/NQx42YZKK8MUphaRelcj5C8yD5111R+R519T
+3Rr0/NpWY2O+OMt5ssy6lDhmwaCaQJDQmvi7TqGUZDlFqQD4eKYPXNKLSP//p4h9
+ApCy7cGQ7Tja2jSZWeGuNsuNUN4WwJo1WFkbUlgyaXzBhnn0sSWwcTIDVQqIM5QF
+bV5GkTPnmR6FlzTG7tQv90wgrPmLHMllh7+H3k7xD/0/lXKhCQIDAQABo4IC5TCC
+AuEwLwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwA
+ZQByMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMC
+BaAweAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQC
+AgCAMAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCG
+SAFlAwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUr0zQ8SUeJ1ch
+wS45eK6jrUD8Ib4wHwYDVR0jBBgwFoAUEYP3b+YO1F/ArMqhEM49z4M1a8AwgcYG
+A1UdHwSBvjCBuzCBuKCBtaCBsoaBr2xkYXA6Ly8vQ049RVNTT1MtQ0EsQ049YnJh
+YXZvcyxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2Vydmlj
+ZXMsQ049Q29uZmlndXJhdGlvbixEQz1lc3NvcyxEQz1sb2NhbD9jZXJ0aWZpY2F0
+ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+UG9pbnQwgboGCCsGAQUFBwEBBIGtMIGqMIGnBggrBgEFBQcwAoaBmmxkYXA6Ly8v
+Q049RVNTT1MtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENO
+PVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9ZXNzb3MsREM9bG9jYWw/Y0FD
+ZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3Jp
+dHkwPwYDVR0RBDgwNqAfBgkrBgEEAYI3GQGgEgQQtePYcvWHAU+s8NXBv279+IIT
+bWVlcmVlbi5lc3Nvcy5sb2NhbDANBgkqhkiG9w0BAQsFAAOCAQEAbPxwGiDT3j/M
+vW7kO+tUY5Ie9+ICKOwZwi9O7wdvihpd8wW3qMbdHUrWO2xG6G1NcseYlaeYekyC
+O9F7wbNoAYycsVQiw0NFOVzI/4/iC1lJK58SE/xepkvbeWoaqOHzvepOrkzlr+Bm
+CcfS9vZNSULBaYdNNG8x6dQX37GiTRF0MqWdoMYxL17TR8izKtfi8eEsei7+UnO8
+w6DvbL0OOmSXe2CBCj5vwc2GOvTN1uOeKXGLZcRsrEr04PExG/IoAE+z+d6SULjt
+z3LWgRiJQY+0ZQYHDfP69gOq/Huzy8nYZlGoVwUs9MTGB95ru2zQ3W9kgBHcDpwo
+EzUDuHNdzA==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:49+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>445</td>
+<td>tcp</td>
+<td>open</td>
+<td>microsoft-ds </td>
+<td>syn-ack</td>
+<td>Windows Server 2016 Standard Evaluation 14393 microsoft-ds </td>
+<td> </td>
+<td>workgroup: ESSOS </td>
+</tr>
+<tr class="open">
+<td>464</td>
+<td>tcp</td>
+<td>open</td>
+<td>kpasswd5 </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>593</td>
+<td>tcp</td>
+<td>open</td>
+<td>ncacn_http </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC over HTTP </td>
+<td>1.0 </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>636</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: essos.local, Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=meereen.essos.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:meereen.essos.local
+Issuer: commonName=ESSOS-CA/domainComponent=essos
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:53
+Not valid after:  2025-02-04T12:28:53
+MD5:   6cda:9e8e:bf3e:ab13:4d4b:be61:cc2b:983e
+SHA-1: b20e:126e:8074:088f:adab:69b1:e0c6:4e67:801e:6712
+-----BEGIN CERTIFICATE-----
+MIIF0zCCBLugAwIBAgITHAAAAAItXaxaicob0gAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBBMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFTATBgoJkiaJk/IsZAEZFgVlc3Nv
+czERMA8GA1UEAxMIRVNTT1MtQ0EwHhcNMjQwMjA1MTIyODUzWhcNMjUwMjA0MTIy
+ODUzWjAeMRwwGgYDVQQDExNtZWVyZWVuLmVzc29zLmxvY2FsMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwSgnfuqdYT8ZLPCgFUcZV+FoyDLfYKqAM4AX
+T6N74u3nd5BGsvlY4baIMGmPqVPGl9KsJ4QnNZuImKpAW0Q/XVn+qC/AjhtkmFSZ
+oLXisBM+tnuCR0YTGKevFFLMdsF/NQx42YZKK8MUphaRelcj5C8yD5111R+R519T
+3Rr0/NpWY2O+OMt5ssy6lDhmwaCaQJDQmvi7TqGUZDlFqQD4eKYPXNKLSP//p4h9
+ApCy7cGQ7Tja2jSZWeGuNsuNUN4WwJo1WFkbUlgyaXzBhnn0sSWwcTIDVQqIM5QF
+bV5GkTPnmR6FlzTG7tQv90wgrPmLHMllh7+H3k7xD/0/lXKhCQIDAQABo4IC5TCC
+AuEwLwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwA
+ZQByMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMC
+BaAweAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQC
+AgCAMAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCG
+SAFlAwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUr0zQ8SUeJ1ch
+wS45eK6jrUD8Ib4wHwYDVR0jBBgwFoAUEYP3b+YO1F/ArMqhEM49z4M1a8AwgcYG
+A1UdHwSBvjCBuzCBuKCBtaCBsoaBr2xkYXA6Ly8vQ049RVNTT1MtQ0EsQ049YnJh
+YXZvcyxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2Vydmlj
+ZXMsQ049Q29uZmlndXJhdGlvbixEQz1lc3NvcyxEQz1sb2NhbD9jZXJ0aWZpY2F0
+ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+UG9pbnQwgboGCCsGAQUFBwEBBIGtMIGqMIGnBggrBgEFBQcwAoaBmmxkYXA6Ly8v
+Q049RVNTT1MtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENO
+PVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9ZXNzb3MsREM9bG9jYWw/Y0FD
+ZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3Jp
+dHkwPwYDVR0RBDgwNqAfBgkrBgEEAYI3GQGgEgQQtePYcvWHAU+s8NXBv279+IIT
+bWVlcmVlbi5lc3Nvcy5sb2NhbDANBgkqhkiG9w0BAQsFAAOCAQEAbPxwGiDT3j/M
+vW7kO+tUY5Ie9+ICKOwZwi9O7wdvihpd8wW3qMbdHUrWO2xG6G1NcseYlaeYekyC
+O9F7wbNoAYycsVQiw0NFOVzI/4/iC1lJK58SE/xepkvbeWoaqOHzvepOrkzlr+Bm
+CcfS9vZNSULBaYdNNG8x6dQX37GiTRF0MqWdoMYxL17TR8izKtfi8eEsei7+UnO8
+w6DvbL0OOmSXe2CBCj5vwc2GOvTN1uOeKXGLZcRsrEr04PExG/IoAE+z+d6SULjt
+z3LWgRiJQY+0ZQYHDfP69gOq/Huzy8nYZlGoVwUs9MTGB95ru2zQ3W9kgBHcDpwo
+EzUDuHNdzA==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="open">
+<td>3268</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: essos.local, Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=meereen.essos.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:meereen.essos.local
+Issuer: commonName=ESSOS-CA/domainComponent=essos
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:53
+Not valid after:  2025-02-04T12:28:53
+MD5:   6cda:9e8e:bf3e:ab13:4d4b:be61:cc2b:983e
+SHA-1: b20e:126e:8074:088f:adab:69b1:e0c6:4e67:801e:6712
+-----BEGIN CERTIFICATE-----
+MIIF0zCCBLugAwIBAgITHAAAAAItXaxaicob0gAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBBMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFTATBgoJkiaJk/IsZAEZFgVlc3Nv
+czERMA8GA1UEAxMIRVNTT1MtQ0EwHhcNMjQwMjA1MTIyODUzWhcNMjUwMjA0MTIy
+ODUzWjAeMRwwGgYDVQQDExNtZWVyZWVuLmVzc29zLmxvY2FsMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwSgnfuqdYT8ZLPCgFUcZV+FoyDLfYKqAM4AX
+T6N74u3nd5BGsvlY4baIMGmPqVPGl9KsJ4QnNZuImKpAW0Q/XVn+qC/AjhtkmFSZ
+oLXisBM+tnuCR0YTGKevFFLMdsF/NQx42YZKK8MUphaRelcj5C8yD5111R+R519T
+3Rr0/NpWY2O+OMt5ssy6lDhmwaCaQJDQmvi7TqGUZDlFqQD4eKYPXNKLSP//p4h9
+ApCy7cGQ7Tja2jSZWeGuNsuNUN4WwJo1WFkbUlgyaXzBhnn0sSWwcTIDVQqIM5QF
+bV5GkTPnmR6FlzTG7tQv90wgrPmLHMllh7+H3k7xD/0/lXKhCQIDAQABo4IC5TCC
+AuEwLwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwA
+ZQByMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMC
+BaAweAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQC
+AgCAMAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCG
+SAFlAwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUr0zQ8SUeJ1ch
+wS45eK6jrUD8Ib4wHwYDVR0jBBgwFoAUEYP3b+YO1F/ArMqhEM49z4M1a8AwgcYG
+A1UdHwSBvjCBuzCBuKCBtaCBsoaBr2xkYXA6Ly8vQ049RVNTT1MtQ0EsQ049YnJh
+YXZvcyxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2Vydmlj
+ZXMsQ049Q29uZmlndXJhdGlvbixEQz1lc3NvcyxEQz1sb2NhbD9jZXJ0aWZpY2F0
+ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+UG9pbnQwgboGCCsGAQUFBwEBBIGtMIGqMIGnBggrBgEFBQcwAoaBmmxkYXA6Ly8v
+Q049RVNTT1MtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENO
+PVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9ZXNzb3MsREM9bG9jYWw/Y0FD
+ZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3Jp
+dHkwPwYDVR0RBDgwNqAfBgkrBgEEAYI3GQGgEgQQtePYcvWHAU+s8NXBv279+IIT
+bWVlcmVlbi5lc3Nvcy5sb2NhbDANBgkqhkiG9w0BAQsFAAOCAQEAbPxwGiDT3j/M
+vW7kO+tUY5Ie9+ICKOwZwi9O7wdvihpd8wW3qMbdHUrWO2xG6G1NcseYlaeYekyC
+O9F7wbNoAYycsVQiw0NFOVzI/4/iC1lJK58SE/xepkvbeWoaqOHzvepOrkzlr+Bm
+CcfS9vZNSULBaYdNNG8x6dQX37GiTRF0MqWdoMYxL17TR8izKtfi8eEsei7+UnO8
+w6DvbL0OOmSXe2CBCj5vwc2GOvTN1uOeKXGLZcRsrEr04PExG/IoAE+z+d6SULjt
+z3LWgRiJQY+0ZQYHDfP69gOq/Huzy8nYZlGoVwUs9MTGB95ru2zQ3W9kgBHcDpwo
+EzUDuHNdzA==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>3269</td>
+<td>tcp</td>
+<td>open</td>
+<td>ldap </td>
+<td>syn-ack</td>
+<td>Microsoft Windows Active Directory LDAP </td>
+<td> </td>
+<td>Domain: essos.local, Site: Default-First-Site-Name </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=meereen.essos.local
+Subject Alternative Name: othername: 1.3.6.1.4.1.311.25.1::&lt;unsupported&gt;, DNS:meereen.essos.local
+Issuer: commonName=ESSOS-CA/domainComponent=essos
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T12:28:53
+Not valid after:  2025-02-04T12:28:53
+MD5:   6cda:9e8e:bf3e:ab13:4d4b:be61:cc2b:983e
+SHA-1: b20e:126e:8074:088f:adab:69b1:e0c6:4e67:801e:6712
+-----BEGIN CERTIFICATE-----
+MIIF0zCCBLugAwIBAgITHAAAAAItXaxaicob0gAAAAAAAjANBgkqhkiG9w0BAQsF
+ADBBMRUwEwYKCZImiZPyLGQBGRYFbG9jYWwxFTATBgoJkiaJk/IsZAEZFgVlc3Nv
+czERMA8GA1UEAxMIRVNTT1MtQ0EwHhcNMjQwMjA1MTIyODUzWhcNMjUwMjA0MTIy
+ODUzWjAeMRwwGgYDVQQDExNtZWVyZWVuLmVzc29zLmxvY2FsMIIBIjANBgkqhkiG
+9w0BAQEFAAOCAQ8AMIIBCgKCAQEAwSgnfuqdYT8ZLPCgFUcZV+FoyDLfYKqAM4AX
+T6N74u3nd5BGsvlY4baIMGmPqVPGl9KsJ4QnNZuImKpAW0Q/XVn+qC/AjhtkmFSZ
+oLXisBM+tnuCR0YTGKevFFLMdsF/NQx42YZKK8MUphaRelcj5C8yD5111R+R519T
+3Rr0/NpWY2O+OMt5ssy6lDhmwaCaQJDQmvi7TqGUZDlFqQD4eKYPXNKLSP//p4h9
+ApCy7cGQ7Tja2jSZWeGuNsuNUN4WwJo1WFkbUlgyaXzBhnn0sSWwcTIDVQqIM5QF
+bV5GkTPnmR6FlzTG7tQv90wgrPmLHMllh7+H3k7xD/0/lXKhCQIDAQABo4IC5TCC
+AuEwLwYJKwYBBAGCNxQCBCIeIABEAG8AbQBhAGkAbgBDAG8AbgB0AHIAbwBsAGwA
+ZQByMB0GA1UdJQQWMBQGCCsGAQUFBwMCBggrBgEFBQcDATAOBgNVHQ8BAf8EBAMC
+BaAweAYJKoZIhvcNAQkPBGswaTAOBggqhkiG9w0DAgICAIAwDgYIKoZIhvcNAwQC
+AgCAMAsGCWCGSAFlAwQBKjALBglghkgBZQMEAS0wCwYJYIZIAWUDBAECMAsGCWCG
+SAFlAwQBBTAHBgUrDgMCBzAKBggqhkiG9w0DBzAdBgNVHQ4EFgQUr0zQ8SUeJ1ch
+wS45eK6jrUD8Ib4wHwYDVR0jBBgwFoAUEYP3b+YO1F/ArMqhEM49z4M1a8AwgcYG
+A1UdHwSBvjCBuzCBuKCBtaCBsoaBr2xkYXA6Ly8vQ049RVNTT1MtQ0EsQ049YnJh
+YXZvcyxDTj1DRFAsQ049UHVibGljJTIwS2V5JTIwU2VydmljZXMsQ049U2Vydmlj
+ZXMsQ049Q29uZmlndXJhdGlvbixEQz1lc3NvcyxEQz1sb2NhbD9jZXJ0aWZpY2F0
+ZVJldm9jYXRpb25MaXN0P2Jhc2U/b2JqZWN0Q2xhc3M9Y1JMRGlzdHJpYnV0aW9u
+UG9pbnQwgboGCCsGAQUFBwEBBIGtMIGqMIGnBggrBgEFBQcwAoaBmmxkYXA6Ly8v
+Q049RVNTT1MtQ0EsQ049QUlBLENOPVB1YmxpYyUyMEtleSUyMFNlcnZpY2VzLENO
+PVNlcnZpY2VzLENOPUNvbmZpZ3VyYXRpb24sREM9ZXNzb3MsREM9bG9jYWw/Y0FD
+ZXJ0aWZpY2F0ZT9iYXNlP29iamVjdENsYXNzPWNlcnRpZmljYXRpb25BdXRob3Jp
+dHkwPwYDVR0RBDgwNqAfBgkrBgEEAYI3GQGgEgQQtePYcvWHAU+s8NXBv279+IIT
+bWVlcmVlbi5lc3Nvcy5sb2NhbDANBgkqhkiG9w0BAQsFAAOCAQEAbPxwGiDT3j/M
+vW7kO+tUY5Ie9+ICKOwZwi9O7wdvihpd8wW3qMbdHUrWO2xG6G1NcseYlaeYekyC
+O9F7wbNoAYycsVQiw0NFOVzI/4/iC1lJK58SE/xepkvbeWoaqOHzvepOrkzlr+Bm
+CcfS9vZNSULBaYdNNG8x6dQX37GiTRF0MqWdoMYxL17TR8izKtfi8eEsei7+UnO8
+w6DvbL0OOmSXe2CBCj5vwc2GOvTN1uOeKXGLZcRsrEr04PExG/IoAE+z+d6SULjt
+z3LWgRiJQY+0ZQYHDfP69gOq/Huzy8nYZlGoVwUs9MTGB95ru2zQ3W9kgBHcDpwo
+EzUDuHNdzA==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td>Microsoft Terminal Services </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>rdp-ntlm-info </td>
+<td colspan="6"><pre>
+  Target_Name: ESSOS
+  NetBIOS_Domain_Name: ESSOS
+  NetBIOS_Computer_Name: MEEREEN
+  DNS_Domain_Name: essos.local
+  DNS_Computer_Name: meereen.essos.local
+  Product_Version: 10.0.14393
+  System_Time: 2024-06-10T09:52:39+00:00 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=meereen.essos.local
+Issuer: commonName=meereen.essos.local
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T12:03:55
+Not valid after:  2024-08-05T12:03:55
+MD5:   0a63:e999:9e72:88d6:8f0d:f88f:65bc:a426
+SHA-1: 5333:f50f:389d:6d1f:165d:038d:5cea:0d19:ecf9:0096
+-----BEGIN CERTIFICATE-----
+MIIC6jCCAdKgAwIBAgIQZBEzCTgiQ45B2Ho6DdV1ZDANBgkqhkiG9w0BAQsFADAe
+MRwwGgYDVQQDExNtZWVyZWVuLmVzc29zLmxvY2FsMB4XDTI0MDIwNDEyMDM1NVoX
+DTI0MDgwNTEyMDM1NVowHjEcMBoGA1UEAxMTbWVlcmVlbi5lc3Nvcy5sb2NhbDCC
+ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAMHSJPrKtjpoab2jJe/13M21
+tBitdJzvzcFx6VNdX2sxdeDDQGQKl3GSvfb+kb4560npBTlnXUqrsgaccCvbjfd5
+1gklzfOolueu/gHVAzTtgDrZN114wneCXpQjcD+d+5sU3BIm4CjjVdfkvyXLDhjq
+PA7Him1ntIu46iO9YdUb18n2MDPHprASwvdDXK+juybokA4bIbfBb+bdW1vON2Rr
+I9KtUg7COeDLOk2L2+FiGNvUt90y3Kg0o86tpvqXSNN6FSyf500pFRv8a44hKMrM
+SmsFH5vAKCnjdDqMIgGrbeSHCBiJuiKJi6KeR6DFoeGYbzuuXzeozPe8U8h8oTkC
+AwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQwMA0GCSqG
+SIb3DQEBCwUAA4IBAQCLUQNiB9zZxbNotATXSO0GB+9aPif/74pUVlvSQqh5jHcm
+IEoc8f2W4n1FEXNxSncF6onucSBFR/5JjFbD7EDcfoadedO6oRQFUdpfaTA1WKdP
+AW3BwTT7rj7mCoBi5qHoLaJ7tVEBERV4Rgw+Yu/dR457+fxgZi1Qbyy6Xrt9PVOO
+97p00PSZ5zhgPwTk+benFVyH82XwZoRwF/138GbsNgrdGi85knvGl+Vl4ln/0BCE
+JLlBHAZbY/d0yLpMhm7X1BDviOo0RoN3C+1ZZZJX7A+/9huu1c+WBI6ojoxFRB0V
+DCtwOogj4t0Vs/m+TjX85CIg/XgBHnDnIP4yRcmZ
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:49+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>5985</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="open">
+<td>5986</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=VAGRANT
+Subject Alternative Name: DNS:VAGRANT, DNS:vagrant
+Issuer: commonName=VAGRANT
+Public Key type: rsa
+Public Key bits: 4096
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T03:47:27
+Not valid after:  2027-02-03T03:47:27
+MD5:   c1c1:6b80:0aa0:8f81:09c4:65ae:20ba:7eb5
+SHA-1: 1fbf:5437:396d:07aa:238c:dfdb:b823:0090:6dd1:81fe
+-----BEGIN CERTIFICATE-----
+MIIFETCCAvmgAwIBAgIQdFQpAEUozI1F+DTvSwyGJTANBgkqhkiG9w0BAQsFADAS
+MRAwDgYDVQQDDAdWQUdSQU5UMB4XDTI0MDIwNDAzNDcyN1oXDTI3MDIwMzAzNDcy
+N1owEjEQMA4GA1UEAwwHVkFHUkFOVDCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
+AgoCggIBAKKza/Na7gb0JDik3EtTmo6yWPKvMZlJgP6pIihjH0ObtEJDGLSBoks9
+RkntaII2MdZILdThdxSU4f4SBJfzyRLZckR33WexdeTrGhTyylJsdQ5kaKo0kjMm
+xUqJb8EHpjCgPkzUnZWk2DegBnHm/CUXKmH3H832hXnzwF17i2FRVgKuKkvOM52r
+AZk3IVoaGv4gXHJXf0JWRznlX2gPCDLWTwSb5WAgV5t4eVd68Vq5ziRHNyik9dLA
+7Djp0+AILl+h7OGr3D7zBCDrVCnOjwNilLfqiwCwUdjwxYNo0TLOcHeVxqPv1O8S
+gEOPV2n2dWokYI8geCg18uPms0TI6KH3sDqPElW0dbCdiYUddiP8AlXHyf5YSwfy
+HZgZ81G9BF3UQO2x20d32cCX15KwHo16rbE1saV1dTpjfXF25G5WX5Bx5+C0rgCX
+syLi9Vb+6T7mkris6e5RCK5mzKEJZG0R/SpbtktUEerXbGEyQuz477utQ7s1h9/n
+oYihor9h4519eOGlh/nWRBVajtqjoElk7CwOBN2IUgqubMw5yeCsps8SCH8GATN0
+T3SfvWBslZ6AlwqwCmkhLbQ5lGBQ8p6CXTNloqKMKGIVLTuI7Jr4tD7XnP8See6m
+ipnNAQYzRW8mqrqGP3jBkJk3v/eqk/yOJqlTsIAmDM8VEHzoSknfAgMBAAGjYzBh
+MA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAbBgNVHREEFDAS
+ggdWQUdSQU5Uggd2YWdyYW50MB0GA1UdDgQWBBQILovYqQdCHleZrnlVUkcu/7Q0
+MzANBgkqhkiG9w0BAQsFAAOCAgEASldYPIxOI/0J/FaZPpkpg6KdUuWFGNfQ/Qku
+iMNylL3vVgFYD2nezJGwvGHDycd+ak1C4BwpFivE9UbILVOQ92FGMm/QIyk+vDsb
+bp/PO+H6b2cgTkq28vuFi1IY8X49smcW4nfidlTbxcMHTT0zjER/OMlJTMl4RfBX
+cP8OqJk8pQMOrE+f0ZwECjscvbi/n0Z2sKk8XnmZma12ln327ysFb3XXqnWDZjij
+2v+m8xkGdtWIjLV/Xjz8IKo6IpeQzVWIV4KUM/66EaPm67RrzAJgGIleqnXV7zO0
+yeQeVCcFR0iYignEj/lzp5Q2BTx1Jz71CChs2XS9axxfmvMYyTJEFGDF3jj4K2ok
+BlNDSUnu239hCXpq21dCQybGKNVpF5tDfwTgkkyYWH58nryTJDL0/uEmugM6uVzS
+vXsbT4wnjOUgpb8OaPt8OtajNbagF6514qfZB6j+advQROa8l546iKyyIakvUtmc
+Am47/NZZKi7/fgIULzT+hVg17otm3CD773ukTfvGrWuZu1s7RNcddTlstCEd7sBi
+8/dNh0+AoLAr/t187Bo+3qeLcQivLUYq0Gc11lQzGfXmqYR1Hu+N9pPU0mlYL8EM
+EBc944+grE/0SDbdpUxvT0uI0dHVNdSNsBt9tcPA86bnH0le5u1qIOOKWFXE6eU6
+N2zahf8=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="open">
+<td>9389</td>
+<td>tcp</td>
+<td>open</td>
+<td>mc-nmf </td>
+<td>syn-ack</td>
+<td>.NET Message Framing </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>47001</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="open">
+<td>49664</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49665</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49666</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49667</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49669</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49670</td>
+<td>tcp</td>
+<td>open</td>
+<td>ncacn_http </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC over HTTP </td>
+<td>1.0 </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49671</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49673</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49676</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49686</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>50959</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>53/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>1/tcp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>IBM OS/2 Warp 2.0</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.11</b> (<b>85%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3348 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.10</b> (<b>85%</b>)</li>
+<li>OS match: <b>Scientific Atlanta WebSTAR EPC2203 cable modem</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/390 V2</b> (<b>85%</b>)</li>
+<li>OS match: <b>HP OpenVMS 7.3 - 8.3</b> (<b>85%</b>)</li>
+</ul>
+<ul><li class="noprint">OS identified but the fingerprint was requested at scan time. 
+          
+        <a href="javascript:toggle('osblock_192.168.56.12');"><span class="noprint"><small> (click to expand)</small></span></a>
+</li></ul>
+<div id="osblock_192.168.56.12" class="hidden"><table class="noprint" cellspacing="1">
+<tr class="head"><td>Operating System fingerprint</td></tr>
+<tr><td><pre>SCAN(V=7.94SVN%E=4%D=6/10%OT=53%CT=1%CU=%PV=Y%G=N%TM=6666CD0E%P=x86_64-pc-linux-gnu)
+SEQ(SP=104%GCD=1%ISR=10B%TI=I%CI=RD%II=RI%TS=A)
+SEQ(SP=FD%GCD=1%ISR=10E%TI=I%CI=I%TS=A)
+OPS(O1=M5B4NNT11NW7%O2=M5B4NNT11NW7%O3=M5B4NNT11NW7%O4=M5B4NNT11NW7%O5=M5B4NNT11NW7%O6=M5B4NNT11)
+WIN(W1=7200%W2=7200%W3=7200%W4=7200%W5=7200%W6=7200)
+ECN(R=Y%DF=N%TG=40%W=7200%O=M5B4NW7%CC=N%Q=)
+T1(R=Y%DF=N%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=Y%DF=N%TG=40%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)
+T3(R=Y%DF=N%TG=40%W=7200%S=O%A=S+%F=AS%O=M5B4NNT11NW7%RD=0%Q=)
+T4(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=N)
+IE(R=Y%DFI=S%TG=40%CD=S)
+</pre></td></tr>
+</table></div>
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>p2p-conficker </td>
+<td><pre>
+  Checking for Conficker.C or higher...
+  Check 1 (port 56698/tcp): CLEAN (Couldn't connect)
+  Check 2 (port 62064/tcp): CLEAN (Couldn't connect)
+  Check 3 (port 32496/udp): CLEAN (Timeout)
+  Check 4 (port 40530/udp): CLEAN (Timeout)
+  0/4 checks are positive: Host is CLEAN or ports are blocked
+ </pre></td>
+</tr>
+<tr class="script">
+<td>smb-os-discovery </td>
+<td><pre>
+  OS: Windows Server 2016 Standard Evaluation 14393 (Windows Server 2016 Standard Evaluation 6.3)
+  Computer name: meereen
+  NetBIOS computer name: MEEREEN\x00
+  Domain name: essos.local
+  Forest name: essos.local
+  FQDN: meereen.essos.local
+  System time: 2024-06-10T02:52:40-07:00
+ </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-security-mode </td>
+<td><pre>
+  3:1:1: 
+    Message signing enabled and required </pre></td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>mean: 46m41s, deviation: 2h20m02s, median: 0s </pre></td>
+</tr>
+<tr class="script">
+<td>nbstat </td>
+<td><pre>NetBIOS name: MEEREEN, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 08:00:27:6f:ec:5a (Oracle VirtualBox virtual NIC)
+Names:
+  MEEREEN&lt;00&gt;          Flags: &lt;unique&gt;&lt;active&gt;
+  ESSOS&lt;1c&gt;            Flags: &lt;group&gt;&lt;active&gt;
+  ESSOS&lt;00&gt;            Flags: &lt;group&gt;&lt;active&gt;
+  MEEREEN&lt;20&gt;          Flags: &lt;unique&gt;&lt;active&gt;
+  ESSOS&lt;1b&gt;            Flags: &lt;unique&gt;&lt;active&gt;
+Statistics:
+  08:00:27:6f:ec:5a:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00 </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-time </td>
+<td><pre>
+  date: 2024-06-10T09:52:40
+  start_date: 2024-02-05T13:04:49 </pre></td>
+</tr>
+<tr class="script">
+<td>smb-security-mode </td>
+<td><pre>
+  account_used: guest
+  authentication_level: user
+  challenge_response: supported
+  message_signing: required </pre></td>
+</tr>
+</table>
+
+<br><a href="javascript:toggle('metrics_192.168.56.12');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.56.12" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>user-set</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>2846267 seconds  (last reboot: Wed May  8 13:15:31 2024)
+        </td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=260 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incrementing by 2</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_56_22"></a><h2 class="up">192.168.56.22<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.56.22" class="unhidden">
+<h3>Address</h3>
+<ul><li>192.168.56.22
+            (ipv4)
+          </li></ul>
+
+
+<h3>Ports</h3>
+<p>The 54482 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>54482 ports replied with: <b>reset</b></p></li></ul>
+<p>The 11035 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>11035 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.56.22" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.56.22','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.56.22','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+
+
+
+<tr class="open">
+<td>80</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft IIS httpd </td>
+<td>10.0 </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-IIS/10.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Site doesn't have a title (text/html). </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-methods </td>
+<td colspan="6"><pre>
+  Supported Methods: OPTIONS TRACE GET HEAD POST
+  Potentially risky methods: TRACE </pre></td>
+</tr>
+<tr class="open">
+<td>135</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>139</td>
+<td>tcp</td>
+<td>open</td>
+<td>netbios-ssn </td>
+<td>syn-ack</td>
+<td>Microsoft Windows netbios-ssn </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>445</td>
+<td>tcp</td>
+<td>open</td>
+<td>microsoft-ds </td>
+<td>syn-ack</td>
+<td> </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>1433</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-sql-s </td>
+<td>syn-ack</td>
+<td>Microsoft SQL Server 2019 </td>
+<td>15.00.2000.00; RTM </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-info </td>
+<td colspan="6"><pre>
+  192.168.56.22:1433: 
+    Version: 
+      name: Microsoft SQL Server 2019 RTM
+      number: 15.00.2000.00
+      Product: Microsoft SQL Server 2019
+      Service pack level: RTM
+      Post-SP patches applied: false
+    TCP port: 1433 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=SSL_Self_Signed_Fallback
+Issuer: commonName=SSL_Self_Signed_Fallback
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T13:04:47
+Not valid after:  2054-02-05T13:04:47
+MD5:   8d10:7a6a:ddf9:a990:712b:13ce:44e2:97ad
+SHA-1: bd72:00d9:9f7c:8257:5113:1d26:fc9e:0219:e45c:16d7
+-----BEGIN CERTIFICATE-----
+MIIDADCCAeigAwIBAgIQEalLXCQ3CK1PsXjKgg+N4jANBgkqhkiG9w0BAQsFADA7
+MTkwNwYDVQQDHjAAUwBTAEwAXwBTAGUAbABmAF8AUwBpAGcAbgBlAGQAXwBGAGEA
+bABsAGIAYQBjAGswIBcNMjQwMjA1MTMwNDQ3WhgPMjA1NDAyMDUxMzA0NDdaMDsx
+OTA3BgNVBAMeMABTAFMATABfAFMAZQBsAGYAXwBTAGkAZwBuAGUAZABfAEYAYQBs
+AGwAYgBhAGMAazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOJEa4in
+37HzP61o8NPhACFj1MrEhOFcWJM7ZAhEroBCB5xqkYnikyREUUN0ne/MYvU6gxFc
+eGjgfeU4R+XhKunVwUPS3bieJ1cRqT3wqztzDxJGl/Ii13J2vbwd9Jq9kaXQd9Sv
+/dSsIahvn0bHW9FnGv6DAWGsM6lz80dp3AlSEb1/Lz01HESEzWwRbzzchagn8qdu
+AzJiYQMFnzWZgKzalgUcAUUmdncd+2xDmaOHnoRbduSGCDLXWDD67fUfOLeM3nSW
+UfGbuD5z8SXLvzSU0+omez0YenvrPwIeeTp34WeGkAYfQ1SLUGMylrTyYOskK9kd
+HnQlTNZU+1scSXECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAeUAHZX7d4f2t2IsH
+IwLyZonEST1yD0679cyakVn3JeqszU6KD5JxY1W/no99yql90f+Hamn0QZnk+KQH
+vucmuAbcZ2TArPp/lC3SbPSnxVKGZEkggQYxU8TTzpoXpyhcUtW8ovjyPNdrER8j
+KQ70oUPY1YiPnB4G+6qF5Ee04HcWxGOz8Sxv7MlGnVTY/ay0gFvF8CyHvsddykwk
+QfrHI3aS8XWPy9CyI9Oae1U39PK4pcF9Mj34BDtPL/KEhHs01yXaKBaJe9tchf7l
+qrfVOP9aGzGnlxWG/5I5KTDRoar3qERiR9od57JIPiVDCinixqJ6lz78bbpdt2AB
+SiPRAw==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-ntlm-info </td>
+<td colspan="6"><pre>
+  192.168.56.22:1433: 
+    Target_Name: NORTH
+    NetBIOS_Domain_Name: NORTH
+    NetBIOS_Computer_Name: CASTELBLACK
+    DNS_Domain_Name: north.sevenkingdoms.local
+    DNS_Computer_Name: castelblack.north.sevenkingdoms.local
+    DNS_Tree_Name: sevenkingdoms.local
+    Product_Version: 10.0.17763 </pre></td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td>Microsoft Terminal Services </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=castelblack.north.sevenkingdoms.local
+Issuer: commonName=castelblack.north.sevenkingdoms.local
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T12:25:59
+Not valid after:  2024-08-05T12:25:59
+MD5:   c825:95d5:4a9d:575a:4b17:09c9:17cf:76db
+SHA-1: 9f84:8f57:fbae:2558:a293:39a6:cf00:c785:6621:7e3b
+-----BEGIN CERTIFICATE-----
+MIIDDjCCAfagAwIBAgIQG6qxETDWwpxAE39T2YRVRTANBgkqhkiG9w0BAQsFADAw
+MS4wLAYDVQQDEyVjYXN0ZWxibGFjay5ub3J0aC5zZXZlbmtpbmdkb21zLmxvY2Fs
+MB4XDTI0MDIwNDEyMjU1OVoXDTI0MDgwNTEyMjU1OVowMDEuMCwGA1UEAxMlY2Fz
+dGVsYmxhY2subm9ydGguc2V2ZW5raW5nZG9tcy5sb2NhbDCCASIwDQYJKoZIhvcN
+AQEBBQADggEPADCCAQoCggEBAKwn34aUi57W+Y018d5ySvwNyMmza24q1AGb0wn5
+RXYuyJu1MRsmLC4XjTGeeGbGxxh2QaTCrrTwj9Va9xZEu2PeSo6QNs1HVnSyurf9
+Imyj3bPh16q3A/piUe+tC2akdUqRWdOkTRC5k7ZggDkfXIdQHJ4er5Al8uIPsvWu
+Wm3474usv0sH+CXS7wqSG55IRdDUIEXFv4XRBTw4HzLp47FpdSVkpA3NDZc+QDMM
+Mgjr5hJEtcbYFmwdBsFjDEjNe1eWp+a1hdQpJaFuHUzY9mxKug+BShTOMbM9iNm0
+o/be+DHmgckx6bLudcSPy5vu/hcHxc/JHBQQAiIg1yYauhkCAwEAAaMkMCIwEwYD
+VR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQwMA0GCSqGSIb3DQEBCwUAA4IB
+AQCZUs4cE9PHL/+dQrYaDfvbwmYZjG+K64S/VzaTWioJiiDWWFWcPVif/5G6rFAa
+2ZlTJDKP+J0pfzSmw/KpemSM3zaZOCgB9adgZHxZqdzYTzQDWXTAnQ2lh+vr1hAT
+83cJZyAX6y/GGY1QRQ1q0nSZimhXouD2FCLd2NB9borAeCLaVQpyW6Z5VXXNgExe
+/xFiFXVqybbgE76c064z8G5aX10RCSoeki9lyiTmSKdJPanBrkqgd4ucNXraHgPK
+llRvfOFFCGq2oKEnTEdm3hEezrtfX9jwBmsP9URS8+cwcbC48XL0jEcvmVexAQtk
+HGq1dKChzcOuxODdzQdrdPtF
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="open">
+<td>5985</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="open">
+<td>5986</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>tls-alpn </td>
+<td colspan="6"><pre>
+  http/1.1 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:49+00:00; +1s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=VAGRANT
+Subject Alternative Name: DNS:VAGRANT, DNS:vagrant
+Issuer: commonName=VAGRANT
+Public Key type: rsa
+Public Key bits: 4096
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T03:50:44
+Not valid after:  2027-02-03T03:50:44
+MD5:   219d:9fa1:1f3a:ab72:dbf9:5d95:af97:f74e
+SHA-1: 4126:52c7:4581:c59d:d001:d793:e4ab:38b2:1cc6:2a6d
+-----BEGIN CERTIFICATE-----
+MIIFETCCAvmgAwIBAgIQYl5fHsNkyYZKQ9Nbfls0sDANBgkqhkiG9w0BAQsFADAS
+MRAwDgYDVQQDDAdWQUdSQU5UMB4XDTI0MDIwNDAzNTA0NFoXDTI3MDIwMzAzNTA0
+NFowEjEQMA4GA1UEAwwHVkFHUkFOVDCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
+AgoCggIBAN7iOh4Wiri41oojlZo9oJKVBPLTRsTZZcuICClvBsgvsRS+zPrpkRxi
+Z+zRfRhGm07ZV7E+HmGzpziHKGNmLOLptJBs+0t7uWLqUckODcxsCJxYEGmoHtDl
+8mv4DRdRPvD+jb2F36uiRP8khd7SP3gZbzfxwNccI+oC/fAOZCfbSf9ACcSJ/et9
+YWxaGpAMGo3B8yMQ4s31D1KFwmaOthfwVwtAQNDSzCSs5b+wQYo7+ingacldMfRt
+i7NaP8GIFsWiR+m8GEWo7PPXvZwhPoGxpvT9jEa/xUKluroMJR6ekRRUCh+GhA6D
+bazPuNeCD7Ft0jADXLtyR2b3DuCGLVyhVE3gY0mTm2NsmxtEYRGw50doKp4UNwR4
+oCqRkqc6NCR8jgxFMWd3SbPXLwuCU9h3IpVVlB/B1vEnPzWwl9SH4XJjTPVFGSM9
+T4xP7FpJb+C0r278XXPkM92vWumuXHeM2KgnfFnEqwDzKBMLdJtuMUrSR78Hps/l
+tJGrZyfg/YCRW19tFrvuiVh8DKDf1bCL1aXOdGdQkMynedDv0THn5R2nMPThfYlN
+Tw6gmT9IJBbzUbjJ7TAAakIJhduYXtJxU0PcR/yj7A1hVVOzKxUiMbUdcfFdSAqy
+1oH5HKoAft9H9DTw+yjebw5NHR9v06hKH27AC/PaGwODXjF0AKbRAgMBAAGjYzBh
+MA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAbBgNVHREEFDAS
+ggdWQUdSQU5Uggd2YWdyYW50MB0GA1UdDgQWBBR4mVCih13lZyhKU2Pmt0Ww7zoR
+cDANBgkqhkiG9w0BAQsFAAOCAgEAZVYcY1LB+PrkGhtaiHib+5ur1cpY607RFZBh
+dlo53ZLdmNbUAZok4hg5zDahJP9eU0jmzy1TI5OP27WuWb2ad0KmxNItQFlC1Bj0
+bPxCTfnHQ5PTDSzfznQ0egFw6az0QflA92gHqyNvI676xrNSiADYzEqpfnXAn/ia
+Gmt5chDvkuQ0tCSqghEnNu5tS+9h68SGDH4c4ZY7OkM7OYE9Tfn1K43gV+jUlo9W
+N/oJCsesoe8tk3NwWAWL8oVHrloqPHRmFohLL0z4x/7HLYWWc3r6iS/FGfHNZvxZ
+GvU6CwFbhcnAIX0P+VH3WXdfB6flI2M81gJq++ctx7exj0S7/DTRVQ+tJzkGI/+U
+2jLyLCLEbsB2voP7NDpuEcO9O2A8uSu0xtgfhwOU1ZwTuul6mKnEhZpYss7ZAeaN
+5Lecx18OOVMtPeht6w8ZN/iGT95h0RCPHW5VMVZ7JC3u5oGMHgj6/urnIMUzWoVb
+p4/6ve+koM5AT56ZXaqt65wfAdUTGcOYZY2eg5910LP/05JjisxOekjCaOLxm5ek
+UrIXcIlCXt8CuT1NFjTZeLlNlNiUL5CQqxR3Lx3DRplWIwJoFn/iW21iY9XE4REm
+QHdgDHQ784E8PcaQaHaitfKDBtOaThlVbt8dIwYNhAsjgZIkV2Ogc+6gyqu/9U7G
+aqqVgbk=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="open">
+<td>47001</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="open">
+<td>49664</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49665</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49666</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49667</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49668</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49669</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49671</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49674</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>53135</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-sql-s </td>
+<td>syn-ack</td>
+<td>Microsoft SQL Server 2019 </td>
+<td>15.00.2000.00; RTM </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-ntlm-info </td>
+<td colspan="6"><pre>
+  192.168.56.22:53135: 
+    Target_Name: NORTH
+    NetBIOS_Domain_Name: NORTH
+    NetBIOS_Computer_Name: CASTELBLACK
+    DNS_Domain_Name: north.sevenkingdoms.local
+    DNS_Computer_Name: castelblack.north.sevenkingdoms.local
+    DNS_Tree_Name: sevenkingdoms.local
+    Product_Version: 10.0.17763 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-info </td>
+<td colspan="6"><pre>
+  192.168.56.22:53135: 
+    Version: 
+      name: Microsoft SQL Server 2019 RTM
+      number: 15.00.2000.00
+      Product: Microsoft SQL Server 2019
+      Service pack level: RTM
+      Post-SP patches applied: false
+    TCP port: 53135 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=SSL_Self_Signed_Fallback
+Issuer: commonName=SSL_Self_Signed_Fallback
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T13:04:47
+Not valid after:  2054-02-05T13:04:47
+MD5:   8d10:7a6a:ddf9:a990:712b:13ce:44e2:97ad
+SHA-1: bd72:00d9:9f7c:8257:5113:1d26:fc9e:0219:e45c:16d7
+-----BEGIN CERTIFICATE-----
+MIIDADCCAeigAwIBAgIQEalLXCQ3CK1PsXjKgg+N4jANBgkqhkiG9w0BAQsFADA7
+MTkwNwYDVQQDHjAAUwBTAEwAXwBTAGUAbABmAF8AUwBpAGcAbgBlAGQAXwBGAGEA
+bABsAGIAYQBjAGswIBcNMjQwMjA1MTMwNDQ3WhgPMjA1NDAyMDUxMzA0NDdaMDsx
+OTA3BgNVBAMeMABTAFMATABfAFMAZQBsAGYAXwBTAGkAZwBuAGUAZABfAEYAYQBs
+AGwAYgBhAGMAazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAOJEa4in
+37HzP61o8NPhACFj1MrEhOFcWJM7ZAhEroBCB5xqkYnikyREUUN0ne/MYvU6gxFc
+eGjgfeU4R+XhKunVwUPS3bieJ1cRqT3wqztzDxJGl/Ii13J2vbwd9Jq9kaXQd9Sv
+/dSsIahvn0bHW9FnGv6DAWGsM6lz80dp3AlSEb1/Lz01HESEzWwRbzzchagn8qdu
+AzJiYQMFnzWZgKzalgUcAUUmdncd+2xDmaOHnoRbduSGCDLXWDD67fUfOLeM3nSW
+UfGbuD5z8SXLvzSU0+omez0YenvrPwIeeTp34WeGkAYfQ1SLUGMylrTyYOskK9kd
+HnQlTNZU+1scSXECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAeUAHZX7d4f2t2IsH
+IwLyZonEST1yD0679cyakVn3JeqszU6KD5JxY1W/no99yql90f+Hamn0QZnk+KQH
+vucmuAbcZ2TArPp/lC3SbPSnxVKGZEkggQYxU8TTzpoXpyhcUtW8ovjyPNdrER8j
+KQ70oUPY1YiPnB4G+6qF5Ee04HcWxGOz8Sxv7MlGnVTY/ay0gFvF8CyHvsddykwk
+QfrHI3aS8XWPy9CyI9Oae1U39PK4pcF9Mj34BDtPL/KEhHs01yXaKBaJe9tchf7l
+qrfVOP9aGzGnlxWG/5I5KTDRoar3qERiR9od57JIPiVDCinixqJ6lz78bbpdt2AB
+SiPRAw==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:52:48+00:00; 0s from scanner time. </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>80/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>3/tcp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>IBM z/OS 1.11</b> (<b>86%</b>)</li>
+<li>OS match: <b>Scientific Atlanta WebSTAR EPC2203 cable modem</b> (<b>86%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3324 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>Radware LinkProof load balancer</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/2 Warp 2.0</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 2.1</b> (<b>85%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3348 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.10</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.12</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/390 V2</b> (<b>85%</b>)</li>
+</ul>
+<ul><li class="noprint">OS identified but the fingerprint was requested at scan time. 
+          
+        <a href="javascript:toggle('osblock_192.168.56.22');"><span class="noprint"><small> (click to expand)</small></span></a>
+</li></ul>
+<div id="osblock_192.168.56.22" class="hidden"><table class="noprint" cellspacing="1">
+<tr class="head"><td>Operating System fingerprint</td></tr>
+<tr><td><pre>SCAN(V=7.94SVN%E=4%D=6/10%OT=80%CT=3%CU=%PV=Y%G=N%TM=6666CD0E%P=x86_64-pc-linux-gnu)
+SEQ(SP=107%GCD=1%ISR=10C%TI=I%CI=I%TS=A)
+SEQ(SP=109%GCD=1%ISR=10B%TI=I%CI=RD%II=RI%TS=A)
+OPS(O1=M5B4NNT11NW7%O2=M5B4NNT11NW7%O3=M5B4NNT11NW7%O4=M5B4NNT11NW7%O5=M5B4NNT11NW7%O6=M5B4NNT11)
+WIN(W1=7200%W2=7200%W3=7200%W4=7200%W5=7200%W6=7200)
+ECN(R=Y%DF=N%TG=40%W=7200%O=M5B4NW7%CC=N%Q=)
+T1(R=Y%DF=N%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=Y%DF=N%TG=40%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)
+T3(R=Y%DF=N%TG=40%W=7200%S=O%A=S+%F=AS%O=M5B4NNT11NW7%RD=0%Q=)
+T4(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=N)
+IE(R=Y%DFI=S%TG=40%CD=S)
+</pre></td></tr>
+</table></div>
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>smb2-time </td>
+<td><pre>
+  date: 2024-06-10T09:52:33
+  start_date: N/A </pre></td>
+</tr>
+<tr class="script">
+<td>nbstat </td>
+<td><pre>NetBIOS name: CASTELBLACK, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 08:00:27:44:46:5a (Oracle VirtualBox virtual NIC)
+Names:
+  CASTELBLACK&lt;20&gt;      Flags: &lt;unique&gt;&lt;active&gt;
+  CASTELBLACK&lt;00&gt;      Flags: &lt;unique&gt;&lt;active&gt;
+  NORTH&lt;00&gt;            Flags: &lt;group&gt;&lt;active&gt;
+Statistics:
+  08:00:27:44:46:5a:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00 </pre></td>
+</tr>
+<tr class="script">
+<td>p2p-conficker </td>
+<td><pre>
+  Checking for Conficker.C or higher...
+  Check 1 (port 63105/tcp): CLEAN (Couldn't connect)
+  Check 2 (port 19450/tcp): CLEAN (Couldn't connect)
+  Check 3 (port 27598/udp): CLEAN (Timeout)
+  Check 4 (port 39295/udp): CLEAN (Timeout)
+  0/4 checks are positive: Host is CLEAN or ports are blocked
+ </pre></td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>mean: 0s, deviation: 0s, median: 0s </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-security-mode </td>
+<td><pre>
+  3:1:1: 
+    Message signing enabled but not required </pre></td>
+</tr>
+</table>
+
+<br><a href="javascript:toggle('metrics_192.168.56.22');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.56.22" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>user-set</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>2639257 seconds  (last reboot: Fri May 10 22:45:41 2024)
+        </td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=265 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incrementing by 2</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="host_192_168_56_23"></a><h2 class="up">192.168.56.23<span class="print_only">(online)</span>
+</h2>
+<div id="hostblock_192.168.56.23" class="unhidden">
+<h3>Address</h3>
+<ul><li>192.168.56.23
+            (ipv4)
+          </li></ul>
+
+
+<h3>Ports</h3>
+<p>The 64836 ports scanned but not shown below are in state: <b>closed</b></p>
+<ul><li><p>64836 ports replied with: <b>reset</b></p></li></ul>
+<p>The 680 ports scanned but not shown below are in state: <b>filtered</b></p>
+<ul><li><p>680 ports replied with: <b>no-response</b></p></li></ul>
+<table id="porttable_192.168.56.23" cellspacing="1">
+<tr class="head">
+<td colspan="2">Port</td>
+<td>State 
+          <a href="javascript:togglePorts('porttable_192.168.56.23','closed');"><span class="noprint"><small> (toggle closed [0] </small></span></a><a href="javascript:togglePorts('porttable_192.168.56.23','filtered');"><span class="noprint"><small> | filtered [0])</small></span></a>
+</td>
+<td>Service</td>
+<td>Reason</td>
+<td>Product</td>
+<td>Version</td>
+<td>Extra info</td>
+</tr>
+
+
+
+
+
+<tr class="open">
+<td>80</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft IIS httpd </td>
+<td>10.0 </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-methods </td>
+<td colspan="6"><pre>
+  Supported Methods: OPTIONS TRACE GET HEAD POST
+  Potentially risky methods: TRACE </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-IIS/10.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>IIS Windows Server </pre></td>
+</tr>
+<tr class="open">
+<td>135</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>139</td>
+<td>tcp</td>
+<td>open</td>
+<td>netbios-ssn </td>
+<td>syn-ack</td>
+<td>Microsoft Windows netbios-ssn </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>445</td>
+<td>tcp</td>
+<td>open</td>
+<td>microsoft-ds </td>
+<td>syn-ack</td>
+<td>Windows Server 2016 Standard Evaluation 14393 microsoft-ds </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>1433</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-sql-s </td>
+<td>syn-ack</td>
+<td>Microsoft SQL Server 2019 </td>
+<td>15.00.2000.00; RTM </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-ntlm-info </td>
+<td colspan="6"><pre>
+  192.168.56.23:1433: 
+    Target_Name: ESSOS
+    NetBIOS_Domain_Name: ESSOS
+    NetBIOS_Computer_Name: BRAAVOS
+    DNS_Domain_Name: essos.local
+    DNS_Computer_Name: braavos.essos.local
+    DNS_Tree_Name: essos.local
+    Product_Version: 10.0.14393 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=SSL_Self_Signed_Fallback
+Issuer: commonName=SSL_Self_Signed_Fallback
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T13:04:49
+Not valid after:  2054-02-05T13:04:49
+MD5:   162d:2765:4523:e480:638e:c288:1dfd:10e7
+SHA-1: ab12:7a0d:f984:02b8:3ac7:5900:dd5b:1226:4857:a0d1
+-----BEGIN CERTIFICATE-----
+MIIDADCCAeigAwIBAgIQRan/BzpRPq9JLmNPpYm4BTANBgkqhkiG9w0BAQsFADA7
+MTkwNwYDVQQDHjAAUwBTAEwAXwBTAGUAbABmAF8AUwBpAGcAbgBlAGQAXwBGAGEA
+bABsAGIAYQBjAGswIBcNMjQwMjA1MTMwNDQ5WhgPMjA1NDAyMDUxMzA0NDlaMDsx
+OTA3BgNVBAMeMABTAFMATABfAFMAZQBsAGYAXwBTAGkAZwBuAGUAZABfAEYAYQBs
+AGwAYgBhAGMAazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKI/BOQc
+B8MNj4rnr1H2CuKLGnxgPpqrTw94rD0Kuh0H10vjvcynnqgHny4nYMK/zKDvowRr
+xZfNOLvW9cuqlV74Wr5GlAVRojxMkTJTE89+pCiEHQ5nkUj3GR3q1YnZIw8hu0CS
+4LR5h9qJHsxBippn6A5CZm1iRlZO2nU37ZvB9dcy+nmowlkcvuwpvbjKJs4+WpON
+xoMQKQJ1ZgACKp92igQCQb5OFywFCT/OUJ50yRiKNZOKp0nd+lGmIC5+a1KPGJ5i
+QV2fnFqHBnxLXacb+Zd2OzDcD7kjXdB5mVjmnfcprIjqzSwadqa3mErPVLzPm9la
+PBTFJU0hD+cDydECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAGWAO8vJxY7iO4did
+SU7oZafDWO6TL6QtPTiTE4exR7rm+DEFj6QnraqB/BJttQ8+TpnoRR90DUZGFhqQ
+kVu0np0rdnRHMXcmRCnQXGtoeumH28Mw7Cgl6vyAdN/n2VsG0KhJx6Zc573a5RPz
+Fq0Lfdd0ceiV1JIP5C3w4VlcbMGhLy6rontlDOPTbYNMg+kKjk+/1fo5MGmil+WS
+aIfxlLKjy1CsFSsmI1FsypbcQsQJE3IHPczO1shPeK6YCeZ6AIWNmZXPptMULHTt
+Ok5EwUey4PJkUqgpmXMfaDbWE2Yx6Vf5W4fOrzp2jDwtk52boJoXsXPUkxff+bTB
+SIB1Tg==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-info </td>
+<td colspan="6"><pre>
+  192.168.56.23:1433: 
+    Version: 
+      name: Microsoft SQL Server 2019 RTM
+      number: 15.00.2000.00
+      Product: Microsoft SQL Server 2019
+      Service pack level: RTM
+      Post-SP patches applied: false
+    TCP port: 1433 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:55:13+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>3389</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-wbt-server </td>
+<td>syn-ack</td>
+<td>Microsoft Terminal Services </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>rdp-ntlm-info </td>
+<td colspan="6"><pre>
+  Target_Name: ESSOS
+  NetBIOS_Domain_Name: ESSOS
+  NetBIOS_Computer_Name: BRAAVOS
+  DNS_Domain_Name: essos.local
+  DNS_Computer_Name: braavos.essos.local
+  DNS_Tree_Name: essos.local
+  Product_Version: 10.0.14393
+  System_Time: 2024-06-10T09:55:03+00:00 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=braavos.essos.local
+Issuer: commonName=braavos.essos.local
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T12:25:59
+Not valid after:  2024-08-05T12:25:59
+MD5:   0964:5135:32cd:d924:9a00:6de3:7cb8:53a2
+SHA-1: 2ba3:af95:49c8:3075:0926:95e7:3052:4b16:6426:5e3a
+-----BEGIN CERTIFICATE-----
+MIIC6jCCAdKgAwIBAgIQMh+YEUO9nrBESnQ1cYct1jANBgkqhkiG9w0BAQsFADAe
+MRwwGgYDVQQDExNicmFhdm9zLmVzc29zLmxvY2FsMB4XDTI0MDIwNDEyMjU1OVoX
+DTI0MDgwNTEyMjU1OVowHjEcMBoGA1UEAxMTYnJhYXZvcy5lc3Nvcy5sb2NhbDCC
+ASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBALBnMQFuTct3KGUuD7eOzAka
+W4wJ9PBjj7b/uPXsKFwNzc3wUaaODNIARA4AsPQIabWHYgixfs3Svky4Sdf3+dR5
+lTrFkA7BiKCVCbW2rxkFh8oy6I24Fn3/pFaLydXmHgKecfGMywauvpTkCPRUUjef
++C37xMuKqKM9wTY2XBKS7qkUdC8h3QRtSAG8r6Z2ObMD5t6m9IZqzl7hIBHnjBxb
+WLelDqH5ByuaM+vPpMGwsJQp3x/d4bUGGYy77EJswABezKDKoexdfAMH7h4yWIrH
+A+Sht4xW/gPqFgzmxrZNAPVsvWPBiE3nXn2MyAKn8WlBC0z/mRpz8OUcLh6seJ0C
+AwEAAaMkMCIwEwYDVR0lBAwwCgYIKwYBBQUHAwEwCwYDVR0PBAQDAgQwMA0GCSqG
+SIb3DQEBCwUAA4IBAQANUZTHYwKzeenK3spHYbydCpIvXdvDb6g+RV4cNQHl6XmJ
+pPeVlar+nx43pzDDGjM6avudiVTxIHVGb//JeSha4dj7bxHtiZVZ1QPdFSSmzRk8
+FErfbkGe8EnPSoEVQhEN+thC/8rSTOJp873OQkFz2N+YNz5SgFJrkLuYG9Bd28Oy
+IHbnVDAn2qJJ6hZTvseFizd0WN4C36Ll0pXFL7lNMG0YFkjr5a5gzTPyFBYDdQBd
+CaceJLvqzOof2F5UAYFIIlMquu3NT7YjWuCuLVX27s4i9isbmWT431nGwHYAXN7I
+NxUsjDTey4EEJPZA/1VaFopilQMUVucfAPF7l1/o
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:55:13+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="open">
+<td>5985</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="open">
+<td>5986</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:55:13+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=VAGRANT
+Subject Alternative Name: DNS:VAGRANT, DNS:vagrant
+Issuer: commonName=VAGRANT
+Public Key type: rsa
+Public Key bits: 4096
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-04T03:54:15
+Not valid after:  2027-02-03T03:54:15
+MD5:   2f67:00d8:148e:c301:afee:5b82:29ce:5580
+SHA-1: 7c87:3162:002b:8056:edf6:60bb:35fd:48ce:35eb:67d1
+-----BEGIN CERTIFICATE-----
+MIIFETCCAvmgAwIBAgIQPfXZJQmNKI5KrX++8kUqPDANBgkqhkiG9w0BAQsFADAS
+MRAwDgYDVQQDDAdWQUdSQU5UMB4XDTI0MDIwNDAzNTQxNVoXDTI3MDIwMzAzNTQx
+NVowEjEQMA4GA1UEAwwHVkFHUkFOVDCCAiIwDQYJKoZIhvcNAQEBBQADggIPADCC
+AgoCggIBAOg6M51PCiWovrdmfpEfsu73aolP67tF2w9pJypIZ+QGgz8FziRrckdk
+nXaP3owJWA2yDvRY+dVyVX4VLQxcS2OHIPTQrcK6S7S6JYu2OH4hK6kyxaT9xU/E
+UNNGPkrQfvyxcKCVwBOLXo3xQo88X7rzc2LWUbV3x3voZKhYVYRepKc3OW/lJIWq
+WRVa4X2hz+DzH1emGFwxVmb5pnKYYKxxVPvMfOrr2G3S+pB99LYi8wHHZCzqjd8h
+25fkYUvtqOZRqKNbY+yoT/SQAlL2UB520YcG+wwJXb/qi0K91pShkoraFQS+SUxv
+Mc1/fpPsmluOhhjXfSTxdxqKu6xlZ4bxbK9BL7JX6XLia3yFoqhB1Zw4C2T6D304
+kITeKPoT+//ZzBoGWX36/ZpRXj8IP2ZBT8vJDyEwDOg1jyZsuhQo63Bxvuq/8/pV
+8dY19i5043lq1FBmimNjsCqZBDCCMo7ZkaLFuFORBzWkvEuzNgEYvC3uJhtOnLEF
+hF6A3UJ8URnaLnLzWcsxnlqrz+w9WWTTE5SawR1nlCQcMHxD+QbRPjfM76w44gc/
+ZFbjxupJjeml7GIwSVPcu6yIAP5uART9no9M2CDHTvbd8PNJVxKfqBB1uGNMvhBj
+5GlUVnCRX0pFSsy6Zqse8VRkN52HlkPn4iBdSQk/A+2IzzRX3H9bAgMBAAGjYzBh
+MA4GA1UdDwEB/wQEAwIFoDATBgNVHSUEDDAKBggrBgEFBQcDATAbBgNVHREEFDAS
+ggdWQUdSQU5Uggd2YWdyYW50MB0GA1UdDgQWBBSsTlyhqLYbx+nDdmOgvM1JA67n
+9DANBgkqhkiG9w0BAQsFAAOCAgEASoWx5Qh9/w7DAfG45QfMZerHHpEU2BNv2IiE
+YPbZ45oKjHfWa+/qYTFgswlCHTehJcIeiuiH3m3EPPYh23ZcGFNffRx8Cx/1WE9u
+rY5GbB93HKr9oU/NtaayrSBBbO9W5XHaCbcHwHKkBM8cAnDfKSW31IhINWqcwtXa
+FHCc4HxrdpXjYzno0ux5eKM+c7EpgBFT29NOY/ik0ppZnMm5nc8ukR/X4rL1bNSw
+zQjH/SkfKLo+vt5Bxb71QhKfotC7XsuXNz48ah5Lo9fylm5Ma1Yg0imNoYH038Ot
+o8IN09r6v0DCuUhAix7y9zFwuHIePDfzaT8TTOBTjGWpxZMXLtuUz2K3hG+LVzUe
+dMHcHd5pAu3fJbxpCLnrFe4FgtkxkTQXwpikcRy/T+m9eiJX1diW7tNcPGrCcaHs
+8J46J+0NBGOa3RdsfO8c5rdX4Qz4iCWiuVRsqFiBlY7WQWRCisyYzRxLOH6UXLWA
+CHI+hHLXUTqiJk+77IRPeTYEY2+ZVTMK+rUG4ynO/eB00H2T+xRSL2j10NnU6JaH
+1SeenZVi6Wsjtr4B001kfs2Q99UfK265xfIFRoX/Sl+pQf0c8JKM1btKVVU9Zmkd
+COlQhplQF3batXLMsqHkoCk7JVtGB/L8aVRSE5srD640iBfPuNIDlpcBI97LlXrG
+G+HF6zM=
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>tls-alpn </td>
+<td colspan="6"><pre>
+  h2
+  http/1.1 </pre></td>
+</tr>
+<tr class="open">
+<td>47001</td>
+<td>tcp</td>
+<td>open</td>
+<td>http </td>
+<td>syn-ack</td>
+<td>Microsoft HTTPAPI httpd </td>
+<td>2.0 </td>
+<td>SSDP/UPnP </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-server-header </td>
+<td colspan="6"><pre>Microsoft-HTTPAPI/2.0 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>http-title </td>
+<td colspan="6"><pre>Not Found </pre></td>
+</tr>
+<tr class="open">
+<td>49664</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49665</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49666</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49667</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49668</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49669</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49672</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49675</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>49676</td>
+<td>tcp</td>
+<td>open</td>
+<td>msrpc </td>
+<td>syn-ack</td>
+<td>Microsoft Windows RPC </td>
+<td> </td>
+<td> </td>
+</tr>
+<tr class="open">
+<td>56089</td>
+<td>tcp</td>
+<td>open</td>
+<td>ms-sql-s </td>
+<td>syn-ack</td>
+<td>Microsoft SQL Server 2019 </td>
+<td>15.00.2000.00; RTM </td>
+<td> </td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-info </td>
+<td colspan="6"><pre>
+  192.168.56.23:56089: 
+    Version: 
+      name: Microsoft SQL Server 2019 RTM
+      number: 15.00.2000.00
+      Product: Microsoft SQL Server 2019
+      Service pack level: RTM
+      Post-SP patches applied: false
+    TCP port: 56089 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-date </td>
+<td colspan="6"><pre>2024-06-10T09:55:13+00:00; 0s from scanner time. </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ms-sql-ntlm-info </td>
+<td colspan="6"><pre>
+  192.168.56.23:56089: 
+    Target_Name: ESSOS
+    NetBIOS_Domain_Name: ESSOS
+    NetBIOS_Computer_Name: BRAAVOS
+    DNS_Domain_Name: essos.local
+    DNS_Computer_Name: braavos.essos.local
+    DNS_Tree_Name: essos.local
+    Product_Version: 10.0.14393 </pre></td>
+</tr>
+<tr class="script">
+<td></td>
+<td>ssl-cert </td>
+<td colspan="6"><pre>Subject: commonName=SSL_Self_Signed_Fallback
+Issuer: commonName=SSL_Self_Signed_Fallback
+Public Key type: rsa
+Public Key bits: 2048
+Signature Algorithm: sha256WithRSAEncryption
+Not valid before: 2024-02-05T13:04:49
+Not valid after:  2054-02-05T13:04:49
+MD5:   162d:2765:4523:e480:638e:c288:1dfd:10e7
+SHA-1: ab12:7a0d:f984:02b8:3ac7:5900:dd5b:1226:4857:a0d1
+-----BEGIN CERTIFICATE-----
+MIIDADCCAeigAwIBAgIQRan/BzpRPq9JLmNPpYm4BTANBgkqhkiG9w0BAQsFADA7
+MTkwNwYDVQQDHjAAUwBTAEwAXwBTAGUAbABmAF8AUwBpAGcAbgBlAGQAXwBGAGEA
+bABsAGIAYQBjAGswIBcNMjQwMjA1MTMwNDQ5WhgPMjA1NDAyMDUxMzA0NDlaMDsx
+OTA3BgNVBAMeMABTAFMATABfAFMAZQBsAGYAXwBTAGkAZwBuAGUAZABfAEYAYQBs
+AGwAYgBhAGMAazCCASIwDQYJKoZIhvcNAQEBBQADggEPADCCAQoCggEBAKI/BOQc
+B8MNj4rnr1H2CuKLGnxgPpqrTw94rD0Kuh0H10vjvcynnqgHny4nYMK/zKDvowRr
+xZfNOLvW9cuqlV74Wr5GlAVRojxMkTJTE89+pCiEHQ5nkUj3GR3q1YnZIw8hu0CS
+4LR5h9qJHsxBippn6A5CZm1iRlZO2nU37ZvB9dcy+nmowlkcvuwpvbjKJs4+WpON
+xoMQKQJ1ZgACKp92igQCQb5OFywFCT/OUJ50yRiKNZOKp0nd+lGmIC5+a1KPGJ5i
+QV2fnFqHBnxLXacb+Zd2OzDcD7kjXdB5mVjmnfcprIjqzSwadqa3mErPVLzPm9la
+PBTFJU0hD+cDydECAwEAATANBgkqhkiG9w0BAQsFAAOCAQEAGWAO8vJxY7iO4did
+SU7oZafDWO6TL6QtPTiTE4exR7rm+DEFj6QnraqB/BJttQ8+TpnoRR90DUZGFhqQ
+kVu0np0rdnRHMXcmRCnQXGtoeumH28Mw7Cgl6vyAdN/n2VsG0KhJx6Zc573a5RPz
+Fq0Lfdd0ceiV1JIP5C3w4VlcbMGhLy6rontlDOPTbYNMg+kKjk+/1fo5MGmil+WS
+aIfxlLKjy1CsFSsmI1FsypbcQsQJE3IHPczO1shPeK6YCeZ6AIWNmZXPptMULHTt
+Ok5EwUey4PJkUqgpmXMfaDbWE2Yx6Vf5W4fOrzp2jDwtk52boJoXsXPUkxff+bTB
+SIB1Tg==
+-----END CERTIFICATE-----
+ </pre></td>
+</tr>
+</table>
+<h3>Remote Operating System Detection</h3>
+<ul>
+<li>Used port: <b>80/tcp</b> (<b>open</b>)  </li>
+<li>Used port: <b>1/tcp</b> (<b>closed</b>)  </li>
+<li>OS match: <b>Scientific Atlanta WebSTAR EPC2203 cable modem</b> (<b>86%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3324 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 5324 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>Radware LinkProof load balancer</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM OS/2 Warp 2.0</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.11</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 2.1</b> (<b>85%</b>)</li>
+<li>OS match: <b>Dell PowerConnect 3348 switch</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.10</b> (<b>85%</b>)</li>
+<li>OS match: <b>IBM z/OS 1.12</b> (<b>85%</b>)</li>
+</ul>
+<ul><li class="noprint">OS identified but the fingerprint was requested at scan time. 
+          
+        <a href="javascript:toggle('osblock_192.168.56.23');"><span class="noprint"><small> (click to expand)</small></span></a>
+</li></ul>
+<div id="osblock_192.168.56.23" class="hidden"><table class="noprint" cellspacing="1">
+<tr class="head"><td>Operating System fingerprint</td></tr>
+<tr><td><pre>SCAN(V=7.94SVN%E=4%D=6/10%OT=80%CT=1%CU=%PV=Y%G=N%TM=6666CD81%P=x86_64-pc-linux-gnu)
+SEQ(SP=FE%GCD=1%ISR=107%TI=I%CI=I%II=RI%TS=A)
+SEQ(SP=FF%GCD=1%ISR=106%TI=I%CI=I%TS=A)
+OPS(O1=M5B4NNT11NW7%O2=M5B4NNT11NW7%O3=M5B4NNT11NW7%O4=M5B4NNT11NW7%O5=M5B4NNT11NW7%O6=M5B4NNT11)
+WIN(W1=7200%W2=7200%W3=7200%W4=7200%W5=7200%W6=7200)
+ECN(R=Y%DF=N%TG=40%W=7200%O=M5B4NW7%CC=N%Q=)
+T1(R=Y%DF=N%TG=40%S=O%A=S+%F=AS%RD=0%Q=)
+T2(R=Y%DF=N%TG=40%W=0%S=Z%A=S%F=AR%O=%RD=0%Q=)
+T3(R=Y%DF=N%TG=40%W=7200%S=O%A=S+%F=AS%O=M5B4NNT11NW7%RD=0%Q=)
+T4(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T5(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+T6(R=Y%DF=N%TG=40%W=0%S=A%A=Z%F=R%O=%RD=0%Q=)
+T7(R=Y%DF=N%TG=40%W=0%S=Z%A=S+%F=AR%O=%RD=0%Q=)
+U1(R=N)
+IE(R=Y%DFI=S%TG=40%CD=S)
+</pre></td></tr>
+</table></div>
+
+
+
+
+<h3>Host Script Output</h3>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>smb2-security-mode </td>
+<td><pre>
+  3:1:1: 
+    Message signing enabled but not required </pre></td>
+</tr>
+<tr class="script">
+<td>p2p-conficker </td>
+<td><pre>
+  Checking for Conficker.C or higher...
+  Check 1 (port 29164/tcp): CLEAN (Couldn't connect)
+  Check 2 (port 10095/tcp): CLEAN (Couldn't connect)
+  Check 3 (port 63738/udp): CLEAN (Timeout)
+  Check 4 (port 20330/udp): CLEAN (Timeout)
+  0/4 checks are positive: Host is CLEAN or ports are blocked
+ </pre></td>
+</tr>
+<tr class="script">
+<td>nbstat </td>
+<td><pre>NetBIOS name: BRAAVOS, NetBIOS user: &lt;unknown&gt;, NetBIOS MAC: 08:00:27:6b:77:fa (Oracle VirtualBox virtual NIC)
+Names:
+  ESSOS&lt;00&gt;            Flags: &lt;group&gt;&lt;active&gt;
+  BRAAVOS&lt;20&gt;          Flags: &lt;unique&gt;&lt;active&gt;
+  BRAAVOS&lt;00&gt;          Flags: &lt;unique&gt;&lt;active&gt;
+Statistics:
+  08:00:27:6b:77:fa:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00:00
+  00:00:00:00:00:00:00:00:00:00:00:00:00:00 </pre></td>
+</tr>
+<tr class="script">
+<td>smb2-time </td>
+<td><pre>
+  date: 2024-06-10T09:55:03
+  start_date: 2024-02-05T13:04:44 </pre></td>
+</tr>
+<tr class="script">
+<td>smb-security-mode </td>
+<td><pre>
+  account_used: guest
+  authentication_level: user
+  challenge_response: supported
+  message_signing: disabled (dangerous, but default) </pre></td>
+</tr>
+<tr class="script">
+<td>smb-os-discovery </td>
+<td><pre>
+  OS: Windows Server 2016 Standard Evaluation 14393 (Windows Server 2016 Standard Evaluation 6.3)
+  Computer name: braavos
+  NetBIOS computer name: BRAAVOS\x00
+  Domain name: essos.local
+  Forest name: essos.local
+  FQDN: braavos.essos.local
+  System time: 2024-06-10T02:55:03-07:00
+ </pre></td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>mean: 42m00s, deviation: 2h12m49s, median: 0s </pre></td>
+</tr>
+</table>
+
+<br><a href="javascript:toggle('metrics_192.168.56.23');">
+    Misc Metrics <span class="noprint"><small> (click to expand)</small></span></a><div id="metrics_192.168.56.23" class="hidden"><table cellspacing="1">
+<tr class="head">
+<td>Metric</td>
+<td>Value</td>
+</tr>
+<tr>
+<td>Ping Results</td>
+<td>user-set</td>
+</tr>
+<tr>
+<td>System Uptime</td>
+<td>1560323 seconds  (last reboot: Thu May 23 10:29:50 2024)
+        </td>
+</tr>
+<tr>
+<td>TCP Sequence Prediction</td>
+<td>Difficulty=255 (Good luck!)</td>
+</tr>
+<tr>
+<td>IP ID Sequence Generation</td>
+<td>Incrementing by 2</td>
+</tr>
+</table></div>
+</div>
+<hr class="print_only">
+<a name="postscript"></a><h2>Post-Scan Script Output</h2>
+<table>
+<tr class="head">
+<td>Script Name</td>
+<td>Output</td>
+</tr>
+<tr class="script">
+<td>clock-skew </td>
+<td><pre>
+  0s: 
+    192.168.56.22
+    192.168.56.10
+    192.168.56.12
+    192.168.56.11
+    192.168.56.23</pre></td>
+</tr>
+</table>
+</div>
+<div id="menubox" class="noprint">
+<a href="#top"><small>Go to top</small></a><br><a href="javascript:toggleAll('closed');"><small>Toggle Closed Ports</small></a><br><a href="javascript:toggleAll('filtered');"><small>Toggle Filtered Ports</small></a>
+</div>
+</body>
+</html>

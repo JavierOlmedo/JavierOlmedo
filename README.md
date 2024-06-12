@@ -14,8 +14,8 @@
 <img align="center" src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo"></a>
 <br>
 <br>
-<a title="OSWE Certification" href="https://www.credly.com/badges/818636d7-b447-42be-8f4f-cde81c44e26f" target="_blank">
-<img align="center" src="https://images.credly.com/size/340x340/images/0a375324-4f9e-412d-b276-b6e96c428709/image.png" alt="OSWE Certification" height="100"></a>
+<a title="OSCP Certification" href="https://www.credential.net/4e346191-179b-4063-89ed-2b5a197ff07f" target="_blank">
+<img align="center" src="https://templates.images.credential.net/1677682410975725023965573912354.png" alt="OSCP Certification" height="100"></a>
 
 <a title="OSWE Certification" href="https://www.credly.com/badges/818636d7-b447-42be-8f4f-cde81c44e26f" target="_blank">
 <img align="center" src="https://images.credly.com/size/340x340/images/0a375324-4f9e-412d-b276-b6e96c428709/image.png" alt="OSWE Certification" height="100"></a>

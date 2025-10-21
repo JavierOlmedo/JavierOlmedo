@@ -1,0 +1,36 @@
+<Project ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="Template">
+        <Template />
+    </Target>
+    <UsingTask TaskName="Template" TaskFactory="CodeTaskFactory" AssemblyFile="C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll">
+        <Task>
+            <Reference Include="System.Management.Automation" />
+            <Code Type="Class" Language="cs">
+                <![CDATA[
+                using Microsoft.Build.Utilities;
+                using Microsoft.Build.Framework;
+                using System.Management.Automation;
+                using System.Management.Automation.Runspaces;
+
+                public class Template : Task, ITask {
+                  public override bool Execute() {
+                    Runspace rs = RunspaceFactory.CreateRunspace();
+                    rs.Open();
+                    PowerShell ps = PowerShell.Create();
+                    ps.Runspace = rs;
+                    ps.AddScript("$ExecutionContext.SessionState.LanguageMode");
+                    var result = ps.Invoke();
+                    rs.Close();
+
+                    foreach (var item in result) {
+                      Log.LogMessage("Language Mode: " + item.ToString());
+                    }
+                    return true;
+                  }
+                }
+                ]]>
+            </Code>
+        </Task>
+    </UsingTask>
+</Project>

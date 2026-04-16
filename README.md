@@ -1,6 +1,6 @@
 <div align="center">
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FF41&center=true&vCenter=true&width=650&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher+%7C+Bug+Hunter;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FF41&center=true&vCenter=true&width=650&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher;Author+of+Hackpuntes.com;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
 
 ![Profile Views](https://komarev.com/ghpvc/?username=JavierOlmedo&color=00ff41&style=flat-square)
 
@@ -12,7 +12,7 @@
 <a href="https://javierolmedo.github.io" target="_blank">
 <img src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo"></a>
 
----
+<br>
 
 ## 🎓 Certifications
 
@@ -42,7 +42,7 @@
 <a title="Offshore Pro Lab" href="https://app.hackthebox.com/profile/37005" target="_blank">
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/offshore.gif" height="100" alt="Offshore Pro Lab"></a>
 
----
+<br>
 
 ## 🛠️ Skills
 
@@ -79,7 +79,7 @@
 </tbody>
 </table>
 
----
+<br>
 
 ## 🔐 My CVEs
 
@@ -104,7 +104,14 @@
 | [CVE-2020-9038](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9038) | [Joplin through 1.0.184 - Arbitrary File Read via XSS](https://github.com/laurent22/joplin/commit/3db47b575b9cb0a765da3d283baa2c065df0d0bc) | 5.4 MEDIUM 🟠 | 3.5 LOW 🟢 | [❌](https://www.exploit-db.com/?author=9580) |
 | [CVE-2021-43091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43091) | [SQL Injection in yeswiki/yeswiki](https://huntr.dev/bounties/07f245a7-ee9f-4b55-a0cc-13d5cb1be6e0/) | 7.5 HIGH 🔴 | 5.0 MEDIUM 🟠 | [❌](https://www.exploit-db.com/?author=9580) |
 
----
+<br>
+
+## 📝 Latest from Hackpuntes
+
+<!-- BLOG-POST-LIST:START -->
+<!-- BLOG-POST-LIST:END -->
+
+<br>
 
 ## 📊 GitHub Stats
 
@@ -124,7 +131,7 @@
 <br>
 
 <a href="https://github.com/JavierOlmedo">
-  <img src="https://github-readme-streak-stats.herokuapp.com/?user=JavierOlmedo&theme=dark" height="150"/>
+  <img src="https://streak-stats.demolab.com/?user=JavierOlmedo&theme=dark" height="150" alt="GitHub Streak Stats"/>
 </a>
 
 <br>
@@ -133,7 +140,7 @@
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=JavierOlmedo&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&hide_border=true" />
 </a>
 
----
+<br>
 
 ## 📬 Contact Me
 

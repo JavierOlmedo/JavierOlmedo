@@ -4,7 +4,9 @@
 
 [![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FF41&center=true&vCenter=true&width=650&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher;Author+of+Hackpuntes.com;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
 
+<!-- PROFILE VIEWS (oculto)
 ![Profile Views](https://komarev.com/ghpvc/?username=JavierOlmedo&color=00ff41&style=flat-square)
+-->
 
 <h4>Author of <a href="https://hackpuntes.com">Hackpuntes</a> Blog &nbsp;|&nbsp; Cybersecurity Enthusiast &nbsp;|&nbsp; CTF Player &nbsp;|&nbsp; 🌏 Toledo, Spain</h4>
 
@@ -33,6 +35,7 @@
 <a title="ICSI | CNSS" href="https://www.credential.net/ccca6121-5126-4eb4-b85e-618d3e9d668b#gs.0z7no9" target="_blank">
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" height="100" alt="CNSS"></a>
 
+<!-- BADGES (oculto)
 ## 🏅 Badges
 
 <a title="MITRE ATT&CK - Resource Development" href="https://credentials.offsec.com/a98f1857-f7ed-422f-9966-5d5c6de24355" target="_blank">
@@ -43,6 +46,7 @@
 
 <a title="Offshore Pro Lab" href="https://app.hackthebox.com/profile/37005" target="_blank">
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/offshore.gif" height="100" alt="Offshore Pro Lab"></a>
+-->
 
 <br>
 
@@ -132,9 +136,11 @@
 
 <br>
 
+<!-- CONTRIBUTION GRAPH (oculto)
 <a href="https://github.com/JavierOlmedo">
   <img src="https://github-readme-activity-graph.vercel.app/graph?username=JavierOlmedo&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&hide_border=true" />
 </a>
+-->
 
 <br>
 

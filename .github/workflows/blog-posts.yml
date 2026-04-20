@@ -9,6 +9,8 @@ jobs:
   update-readme:
     name: Update README with latest blog posts
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
       - uses: actions/checkout@v4
       - uses: gautamkrishnar/blog-post-workflow@v1

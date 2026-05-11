@@ -115,11 +115,11 @@
 ## 📝 Latest from Hackpuntes
 
 <!-- BLOG-POST-LIST:START -->
+- [Overwatch WriteUp](https://hackpuntes.com/posts/hackthebox/machines/overwatch-writeup/)
 - [Fridagate - Android Tool to Manage Frida and Intercept Traffic with Burp Suite](https://hackpuntes.com/posts/fridagate-android-pentesting-tool/)
 - [DarkZero WriteUp](https://hackpuntes.com/posts/hackthebox/machines/darkzero-writeup/)
 - [PortSwigger Labs - Exploiting LLM APIs with Excessive Agency](https://hackpuntes.com/posts/portswigger/web-security/llm-attacks/lab-exploiting-llm-apis-with-excessive-agency/)
 - [Fixing the Kerberos KRB_AP_ERR_SKEW Error](https://hackpuntes.com/posts/fixing-krb-ap-err-skew-kerberos-clock-skew/)
-- [IPA Signing with Sideloadly](https://hackpuntes.com/posts/ios-ipa-signing-sideloadly/)
 <!-- BLOG-POST-LIST:END -->
 
 <br>

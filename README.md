@@ -8,14 +8,6 @@
 
 <br/>
 
-<a href="https://app.hackthebox.com/profile/37005" target="_blank">
-<img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile" /></a>
-&nbsp;&nbsp;
-<a href="https://javierolmedo.github.io" target="_blank">
-<img src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo" /></a>
-
-<br/>
-
 <!-- Ocean Wave -->
 <img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" width="100%" />
 
@@ -55,6 +47,11 @@
 ## 🎓 Certifications
 
 <div align="center">
+
+<a href="https://app.hackthebox.com/profile/37005" target="_blank">
+<img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile" /></a>
+
+<br/><br/>
 
 <a title="OSCP" href="https://www.credential.net/4e346191-179b-4063-89ed-2b5a197ff07f" target="_blank">
 <img src="https://templates.images.credential.net/1677682410975725023965573912354.png" height="100" alt="OSCP"></a>

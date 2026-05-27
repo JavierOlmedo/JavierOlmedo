@@ -1,24 +1,52 @@
 <div align="center">
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=00FF41&height=120&section=header" />
+<!-- Header -->
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0,0D1117,003300,00FF41&height=200&section=header&text=Javier%20Olmedo&fontSize=45&fontColor=00FF41&animation=fadeIn&fontAlignY=35&desc=Penetration%20Tester%20%7C%20Security%20Researcher%20%7C%20CTF%20Player&descAlignY=55&descSize=18&descColor=ffffff" width="100%" />
 
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&size=22&pause=1000&color=00FF41&center=true&vCenter=true&width=650&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher;Author+of+Hackpuntes.com;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
+<!-- Typing SVG -->
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=45&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher;Author+of+Hackpuntes.com;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
 
-<!-- PROFILE VIEWS (oculto)
-![Profile Views](https://komarev.com/ghpvc/?username=JavierOlmedo&color=00ff41&style=flat-square)
--->
+<br/>
 
-<h4>Author of <a href="https://hackpuntes.com">Hackpuntes</a> Blog &nbsp;|&nbsp; Cybersecurity Enthusiast &nbsp;|&nbsp; CTF Player &nbsp;|&nbsp; 🌏 Toledo, Spain</h4>
+<!-- Ocean Wave -->
+<img src="https://raw.githubusercontent.com/Trilokia/Trilokia/379277808c61ef204768a61bbc5d25bc7798ccf1/bottom_header.svg" width="100%" />
 
-<a href="https://app.hackthebox.com/profile/37005" target="_blank">
-<img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile"></a>
-&nbsp;&nbsp;
-<a href="https://javierolmedo.github.io" target="_blank">
-<img src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo"></a>
+</div>
 
-<br>
+## <img src="https://media.giphy.com/media/WUlplcMpOCEmTGBtBW/giphy.gif" width="30"> About Me
+
+<table>
+<tr>
+<td width="50%" valign="top">
+<h3>🧑‍💻 Who am I?</h3>
+<p><b>🏷️ Name:</b> Javier Olmedo</p>
+<p><b>📍 Location:</b> Toledo, Spain 🇪🇸 <code>UTC+01:00</code></p>
+<p><b>💼 Role:</b> Penetration Tester</p>
+<p><b>🎓 Certs:</b> OSCP · OSWE · OSEP · CRTO</p>
+<p><b>⚡ Fun Fact:</b> 18 CVEs published and still hunting...</p>
+</td>
+<td width="50%" valign="top">
+<h3>💡 What I do?</h3>
+<p>🔐 Web Application Penetration Testing</p>
+<p>🏴 CTF Player at Hack The Box</p>
+<p>🐛 Security Research & CVE Discovery</p>
+<p>✍️ Blogging at <a href="https://hackpuntes.com">Hackpuntes.com</a></p>
+<p>🛡️ Red Team & Active Directory Attacks</p>
+</td>
+</tr>
+<tr>
+<td colspan="2" valign="top">
+<h3>🚀 Currently</h3>
+<p>🔭 Writing <b>CTF WriteUps</b> on Hackpuntes.com &nbsp;•&nbsp; 🌱 Researching <b>Active Directory</b> & <b>Red Team</b> techniques &nbsp;•&nbsp; 💬 Ask me about <b>Web Pentesting, Python, Exploit Development</b> &nbsp;•&nbsp; 🎯 Goal: Make cybersecurity knowledge accessible to everyone</p>
+</td>
+</tr>
+</table>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🎓 Certifications
+
+<div align="center">
 
 <a title="OSCP" href="https://www.credential.net/4e346191-179b-4063-89ed-2b5a197ff07f" target="_blank">
 <img src="https://templates.images.credential.net/1677682410975725023965573912354.png" height="100" alt="OSCP"></a>
@@ -35,6 +63,8 @@
 <a title="ICSI | CNSS" href="https://www.credential.net/ccca6121-5126-4eb4-b85e-618d3e9d668b#gs.0z7no9" target="_blank">
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/cnss.png" height="100" alt="CNSS"></a>
 
+</div>
+
 <!-- BADGES (oculto)
 ## 🏅 Badges
 
@@ -48,9 +78,19 @@
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/offshore.gif" height="100" alt="Offshore Pro Lab"></a>
 -->
 
-<br>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## <img src="https://media.giphy.com/media/iY8CRBdQXODJSCERIr/giphy.gif" width="30"> GitHub Trophies
+
+<div align="center">
+<img src="https://github-profile-trophy.vercel.app/?username=JavierOlmedo&theme=darkhub&no-frame=true&no-bg=true&column=7&margin-w=15&margin-h=15" alt="Trophies" />
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🛠️ Skills
+
+<div align="center">
 
 <p>
   <img src="https://skillicons.dev/icons?i=python,go,cs,bash,java,php,js,html,css,vue,linux,androidstudio,vscode&theme=dark" />
@@ -85,9 +125,13 @@
 </tbody>
 </table>
 
-<br>
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 🔐 My CVEs
+
+<div align="center">
 
 | CVE | Name | CVSS3 | CVSS2 | ExploitDB |
 |:---:|:---:|:---:|:---:|:---:|
@@ -110,7 +154,9 @@
 | [CVE-2020-9038](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2020-9038) | [Joplin through 1.0.184 - Arbitrary File Read via XSS](https://github.com/laurent22/joplin/commit/3db47b575b9cb0a765da3d283baa2c065df0d0bc) | 5.4 MEDIUM 🟠 | 3.5 LOW 🟢 | [❌](https://www.exploit-db.com/?author=9580) |
 | [CVE-2021-43091](https://cve.mitre.org/cgi-bin/cvename.cgi?name=CVE-2021-43091) | [SQL Injection in yeswiki/yeswiki](https://huntr.dev/bounties/07f245a7-ee9f-4b55-a0cc-13d5cb1be6e0/) | 7.5 HIGH 🔴 | 5.0 MEDIUM 🟠 | [❌](https://www.exploit-db.com/?author=9580) |
 
-<br>
+</div>
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 📝 Latest from Hackpuntes
 
@@ -122,38 +168,36 @@
 - [Fixing the Kerberos KRB_AP_ERR_SKEW Error](https://hackpuntes.com/posts/fixing-krb-ap-err-skew-kerberos-clock-skew/)
 <!-- BLOG-POST-LIST:END -->
 
-<br>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 📊 GitHub Stats
 
-<a href="https://hackpuntes.com">
-  <img src="https://github-readme-stats.vercel.app/api?username=JavierOlmedo&show_icons=true&include_all_commits=true&theme=dark" height="150"/>
-</a>
-<a href="https://github.com/JavierOlmedo">
-  <img src="https://github-readme-stats.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark" height="150"/>
-</a>
+<div align="center">
 
-<br>
+<img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=JavierOlmedo&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=00FF41&icon_color=00FF41&text_color=FFFFFF&count_private=true&include_all_commits=true" alt="GitHub Stats" />
+<img width="49%" src="https://streak-stats.demolab.com/?user=JavierOlmedo&theme=dark&hide_border=true&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=FFFFFF" alt="Streak Stats" />
 
-<a href="https://github.com/JavierOlmedo">
-  <img src="https://streak-stats.demolab.com/?user=JavierOlmedo&theme=dark" height="150" alt="GitHub Streak Stats"/>
-</a>
+<br/>
 
-<br>
+<img width="40%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF&langs_count=10" alt="Top Languages" />
+
+</div>
 
 <!-- CONTRIBUTION GRAPH (oculto)
-<a href="https://github.com/JavierOlmedo">
-  <img src="https://github-readme-activity-graph.vercel.app/graph?username=JavierOlmedo&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&hide_border=true" />
-</a>
+<div align="center">
+<img src="https://github-readme-activity-graph.vercel.app/graph?username=JavierOlmedo&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&hide_border=true" width="95%" />
+</div>
 -->
 
-<br>
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
 ## 📬 Contact Me
 
+<div align="center">
+
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/handshake.gif" width="75px">
 
-<br>
+<br/>
 
 <a href="https://hackpuntes.com" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/wordpress.svg"></a>&nbsp;&nbsp;
 <a href="https://www.facebook.com/hackpuntes" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/facebook.svg"></a>&nbsp;&nbsp;
@@ -166,14 +210,14 @@
 <a href="https://www.exploit-db.com/?author=9580" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/spider.svg"></a>&nbsp;&nbsp;
 <a href="https://0day.today/author/33736" target="_blank"><img height="25" src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/main/img/worm.svg"></a>
 
-<br><br>
+<br/><br/>
 
 <img src="https://raw.githubusercontent.com/JavierOlmedo/JavierOlmedo/output/github-contribution-grid-snake-dark.svg" alt="snake animation"/>
 
-<br>
+<br/>
 
 Made with ❤️ in Spain
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=00FF41&height=80&section=footer" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=0,00FF41,003300,0D1117&height=100&section=footer" width="100%" />
 
 </div>

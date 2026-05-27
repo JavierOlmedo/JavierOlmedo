@@ -1,10 +1,18 @@
 <div align="center">
 
 <!-- Header -->
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0,0D1117,003300,00FF41&height=200&section=header&text=Javier%20Olmedo&fontSize=45&fontColor=00FF41&animation=fadeIn&fontAlignY=35&desc=Penetration%20Tester%20%7C%20Security%20Researcher%20%7C%20CTF%20Player&descAlignY=55&descSize=18&descColor=ffffff" width="100%" />
+<img src="https://capsule-render.vercel.app/api?type=waving&color=gradient&customColorList=6,11,20&height=200&section=header&text=Javier%20Olmedo&fontSize=45&fontColor=ffffff&animation=fadeIn&fontAlignY=35&desc=Penetration%20Tester%20%7C%20Security%20Researcher%20%7C%20CTF%20Player&descAlignY=55&descSize=18" width="100%" />
 
 <!-- Typing SVG -->
-[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3000&pause=1000&color=00FF41&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=45&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher;Author+of+Hackpuntes.com;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
+[![Typing SVG](https://readme-typing-svg.demolab.com?font=Fira+Code&weight=500&size=22&duration=3000&pause=1000&color=6C63FF&center=true&vCenter=true&multiline=false&repeat=true&width=600&height=45&lines=Hey%2C+I'm+Javier+Olmedo!+👋;Penetration+Tester+%7C+CTF+Player;Security+Researcher;Author+of+Hackpuntes.com;OSCP+%7C+OSWE+%7C+OSEP+%7C+CRTO)](https://git.io/typing-svg)
+
+<br/>
+
+<a href="https://app.hackthebox.com/profile/37005" target="_blank">
+<img src="http://www.hackthebox.eu/badge/image/37005" alt="Hack The Box Profile" /></a>
+&nbsp;&nbsp;
+<a href="https://javierolmedo.github.io" target="_blank">
+<img src="https://badgen.net/badge/icon/github?icon=github&label=javierolmedo.github.io" alt="Github Pages - Javier Olmedo" /></a>
 
 <br/>
 
@@ -174,12 +182,12 @@
 
 <div align="center">
 
-<img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=JavierOlmedo&show_icons=true&theme=dark&hide_border=true&bg_color=0D1117&title_color=00FF41&icon_color=00FF41&text_color=FFFFFF&count_private=true&include_all_commits=true" alt="GitHub Stats" />
-<img width="49%" src="https://streak-stats.demolab.com/?user=JavierOlmedo&theme=dark&hide_border=true&background=0D1117&ring=00FF41&fire=00FF41&currStreakLabel=00FF41&sideLabels=FFFFFF" alt="Streak Stats" />
+<img width="49%" src="https://github-readme-stats-sigma-five.vercel.app/api?username=JavierOlmedo&show_icons=true&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6C63FF&icon_color=6C63FF&text_color=FFFFFF&count_private=true&include_all_commits=true" alt="GitHub Stats" />
+<img width="49%" src="https://streak-stats.demolab.com/?user=JavierOlmedo&theme=tokyonight&hide_border=true&background=0D1117&ring=6C63FF&fire=FF6B6B&currStreakLabel=6C63FF&sideLabels=FFFFFF" alt="Streak Stats" />
 
 <br/>
 
-<img width="40%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=dark&hide_border=true&bg_color=0D1117&title_color=00FF41&text_color=FFFFFF&langs_count=10" alt="Top Languages" />
+<img width="40%" src="https://github-readme-stats-sigma-five.vercel.app/api/top-langs/?username=JavierOlmedo&layout=compact&theme=tokyonight&hide_border=true&bg_color=0D1117&title_color=6C63FF&text_color=FFFFFF&langs_count=10" alt="Top Languages" />
 
 </div>
 
@@ -188,6 +196,18 @@
 <img src="https://github-readme-activity-graph.vercel.app/graph?username=JavierOlmedo&bg_color=0D1117&color=00FF41&line=00FF41&point=FFFFFF&hide_border=true" width="95%" />
 </div>
 -->
+
+<img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
+
+## <img src="https://media.giphy.com/media/UVG0BN8TOMKkPOJS6e/giphy.gif" width="30"> Profile Summary
+
+<div align="center">
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/profile-details?username=JavierOlmedo&theme=tokyonight" width="95%" alt="Profile Details" />
+<br/>
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/repos-per-language?username=JavierOlmedo&theme=tokyonight" width="32%" alt="Repos per Language" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/most-commit-language?username=JavierOlmedo&theme=tokyonight" width="32%" alt="Most Commit Language" />
+<img src="https://github-profile-summary-cards.vercel.app/api/cards/productive-time?username=JavierOlmedo&theme=tokyonight&utcOffset=1" width="32%" alt="Productive Time" />
+</div>
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">
 
@@ -216,8 +236,10 @@
 
 <br/>
 
-Made with ❤️ in Spain
+[![Profile Views](https://komarev.com/ghpvc/?username=JavierOlmedo&style=for-the-badge&label=PROFILE+VIEWS&color=6c63ff&labelColor=0D1117)](https://github.com/JavierOlmedo)
 
-<img src="https://capsule-render.vercel.app/api?type=waving&color=0,00FF41,003300,0D1117&height=100&section=footer" width="100%" />
+<br/>
+
+Made with ❤️ in Spain
 
 </div>

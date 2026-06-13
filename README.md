@@ -166,11 +166,11 @@
 ## 📝 Latest from Hackpuntes
 
 <!-- BLOG-POST-LIST:START -->
+- [Facts WriteUp](https://hackpuntes.com/posts/hackthebox/machines/facts-writeup/)
+- [Pterodactyl WriteUp](https://hackpuntes.com/posts/hackthebox/machines/pterodactyl-writeup/)
 - [Overwatch WriteUp](https://hackpuntes.com/posts/hackthebox/machines/overwatch-writeup/)
 - [Fridagate - Android Tool to Manage Frida and Intercept Traffic with Burp Suite](https://hackpuntes.com/posts/fridagate-android-pentesting-tool/)
 - [DarkZero WriteUp](https://hackpuntes.com/posts/hackthebox/machines/darkzero-writeup/)
-- [PortSwigger Labs - Exploiting LLM APIs with Excessive Agency](https://hackpuntes.com/posts/portswigger/web-security/llm-attacks/lab-exploiting-llm-apis-with-excessive-agency/)
-- [Fixing the Kerberos KRB_AP_ERR_SKEW Error](https://hackpuntes.com/posts/fixing-krb-ap-err-skew-kerberos-clock-skew/)
 <!-- BLOG-POST-LIST:END -->
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">

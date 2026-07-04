@@ -169,8 +169,8 @@
 - [WingData WriteUp](https://hackpuntes.com/posts/hackthebox/machines/wingdata-writeup/)
 - [NanoCorp WriteUp](https://hackpuntes.com/posts/hackthebox/machines/nanocorp-writeup/)
 - [Facts WriteUp](https://hackpuntes.com/posts/hackthebox/machines/facts-writeup/)
+- [Interpreter WriteUp](https://hackpuntes.com/posts/hackthebox/machines/interpreter-writeup/)
 - [Pterodactyl WriteUp](https://hackpuntes.com/posts/hackthebox/machines/pterodactyl-writeup/)
-- [Overwatch WriteUp](https://hackpuntes.com/posts/hackthebox/machines/overwatch-writeup/)
 <!-- BLOG-POST-LIST:END -->
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">

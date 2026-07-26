@@ -166,11 +166,11 @@
 ## 📝 Latest from Hackpuntes
 
 <!-- BLOG-POST-LIST:START -->
+- [Logging WriteUp](https://hackpuntes.com/posts/hackthebox/machines/logging-writeup/)
 - [CCTV WriteUp](https://hackpuntes.com/posts/hackthebox/machines/cctv-writeup/)
 - [DevArea WriteUp](https://hackpuntes.com/posts/hackthebox/machines/devarea-writeup/)
 - [WingData WriteUp](https://hackpuntes.com/posts/hackthebox/machines/wingdata-writeup/)
 - [NanoCorp WriteUp](https://hackpuntes.com/posts/hackthebox/machines/nanocorp-writeup/)
-- [VariaType WriteUp](https://hackpuntes.com/posts/hackthebox/machines/variatype-writeup/)
 <!-- BLOG-POST-LIST:END -->
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">

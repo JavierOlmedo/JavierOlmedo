@@ -166,11 +166,11 @@
 ## 📝 Latest from Hackpuntes
 
 <!-- BLOG-POST-LIST:START -->
+- [Eloquia WriteUp](https://hackpuntes.com/posts/hackthebox/machines/eloquia-writeup/)
+- [DevHub WriteUp](https://hackpuntes.com/posts/hackthebox/machines/devhub-writeup/)
+- [Reactor WriteUp](https://hackpuntes.com/posts/hackthebox/machines/reactor-writeup/)
 - [SmartHire WriteUp](https://hackpuntes.com/posts/hackthebox/machines/smarthire-writeup/)
 - [Hercules WriteUp](https://hackpuntes.com/posts/hackthebox/machines/hercules-writeup/)
-- [Silentium WriteUp](https://hackpuntes.com/posts/hackthebox/machines/silentium-writeup/)
-- [Dracarys WriteUp](https://hackpuntes.com/posts/dracarys-writeup/)
-- [Pirate WriteUp](https://hackpuntes.com/posts/hackthebox/machines/pirate-writeup/)
 <!-- BLOG-POST-LIST:END -->
 
 <img src="https://user-images.githubusercontent.com/73097560/115834477-dbab4500-a447-11eb-908a-139a6edaec5c.gif" width="100%">

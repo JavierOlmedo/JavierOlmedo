@@ -1,0 +1,24 @@
+name: Profile assets
+
+# Fails when assets/dist/ or the generated README blocks are out of date
+# with assets/profile.toml. Fix locally with:
+#   pip install -r assets/requirements.txt && python assets/build.py
+on:
+  push:
+    paths: ["assets/**", "README.md", ".github/workflows/assets.yml"]
+  pull_request:
+    paths: ["assets/**", "README.md", ".github/workflows/assets.yml"]
+  workflow_dispatch:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - run: pip install -r assets/requirements.txt
+      - run: python assets/build.py --check

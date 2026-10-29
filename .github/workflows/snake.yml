@@ -3,22 +3,41 @@ name: Snake animation
 on:
   schedule:
     - cron: "0 12 * * *"
+  push:
+    branches: [main]
+    paths: [".github/workflows/snake.yml"]
   workflow_dispatch:
 
 jobs:
   generate:
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     steps:
+      - uses: actions/checkout@v4
+
       - uses: Platane/snk@v3
         with:
           github_user_name: JavierOlmedo
+          # Hackpuntes palette: empty cells #161b22, teal shades up to #00e5be.
           outputs: |
-            dist/github-contribution-grid-snake.svg
-            dist/github-contribution-grid-snake-dark.svg?palette=github-dark
+            dist/hackpuntes-snake.svg?palette=github-dark&color_snake=#00e5be&color_dots=#161b22,#0b4b40,#00806b,#00b894,#00e5be
 
-      - uses: peaceiris/actions-gh-pages@v4
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_branch: output
-          publish_dir: ./dist
-          force_orphan: true
+      # Kept on main (no separate output branch); commits only when it changes.
+      - name: Commit snake
+        run: |
+          mkdir -p assets/snake
+          mv dist/hackpuntes-snake.svg assets/snake/hackpuntes-snake.svg
+          git add assets/snake/hackpuntes-snake.svg
+          if git diff --cached --quiet; then
+            echo "Snake unchanged"
+            exit 0
+          fi
+          git -c user.name="github-actions[bot]" \
+              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
+              commit -m "🐍 Update contribution snake"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1

@@ -11,18 +11,33 @@ on:
 jobs:
   update-readme:
     name: Update README with latest blog posts
+    if: github.ref == 'refs/heads/main'
     runs-on: ubuntu-latest
     permissions:
       contents: write
     steps:
       - uses: actions/checkout@v4
-      - uses: gautamkrishnar/blog-post-workflow@v1
+      - uses: actions/setup-python@v5
         with:
-          # Section feed: only posts, not /projects/ or /tools/ pages.
-          feed_list: "https://hackpuntes.com/posts/index.xml"
-          max_post_count: 6
-          readme_path: README.md
-          comment_tag_name: BLOG-POST-LIST
-          template: '<tr><td><a href="$url">$title</a></td><td align="right"><code>$date</code></td></tr>$newline'
-          date_format: "UTC:d mmm yyyy"
-          gh_token: ${{ secrets.GITHUB_TOKEN }}
+          python-version: "3.12"
+      - run: pip install -r assets/requirements.txt
+
+      # Reads https://hackpuntes.com/posts/index.xml (see [posts] in
+      # assets/profile.toml) and rebuilds the Recent Posts rows.
+      - run: python assets/build.py --fetch-posts
+
+      - name: Commit posts
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md assets
+          if git diff --cached --quiet; then
+            echo "No new posts"
+            exit 0
+          fi
+          git commit -m "📝 Update latest blog posts"
+          for attempt in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            sleep 10
+          done
+          exit 1

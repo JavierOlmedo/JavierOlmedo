@@ -1,0 +1,32 @@
+[
+  {
+    "title": "Dark Embargo WriteUp",
+    "url": "https://hackpuntes.com/posts/hackthebox/challenges/dark-embargo/",
+    "date": "2026-10-26"
+  },
+  {
+    "title": "Checkpoint WriteUp",
+    "url": "https://hackpuntes.com/posts/hackthebox/machines/checkpoint-writeup/",
+    "date": "2026-10-24"
+  },
+  {
+    "title": "PHP2Shell, the critical PHP RCE (CVE-2026-109618 and CVE-2026-109619)",
+    "url": "https://hackpuntes.com/posts/php2shell-php-rce-cve-2026-109618-109619/",
+    "date": "2026-10-21"
+  },
+  {
+    "title": "Eloquia WriteUp",
+    "url": "https://hackpuntes.com/posts/hackthebox/machines/eloquia-writeup/",
+    "date": "2026-10-17"
+  },
+  {
+    "title": "DevHub WriteUp",
+    "url": "https://hackpuntes.com/posts/hackthebox/machines/devhub-writeup/",
+    "date": "2026-10-10"
+  },
+  {
+    "title": "Reactor WriteUp",
+    "url": "https://hackpuntes.com/posts/hackthebox/machines/reactor-writeup/",
+    "date": "2026-10-03"
+  }
+]

@@ -1,23 +1,30 @@
 #!/usr/bin/env python3
 """Build the Hackpuntes Dark profile assets.
 
-Reads assets/profile.toml and writes:
-  * assets/dist/*.svg  - header, cards, section titles, nav pills, footer
-  * README.md          - the blocks between NAV, PROJECTS, CVE-TABLE and FOOTER
-                         markers; the README must always end with FOOTER
+Reads assets/profile.toml (and assets/posts.json) and writes:
+  * assets/dist/*.svg  - header, cards, section titles, nav pills, posts, footer
+  * README.md          - the NAV, CERTS, PROJECTS, CVE-CARD, CVE-TABLE, POSTS and
+                         FOOTER blocks; the README must always end with FOOTER
 
 Every SVG embeds a JetBrains Mono subset with only the glyphs it uses, so
 GitHub renders it with no external requests.
 
-Usage: python assets/build.py [--check]
-Needs: fonttools, brotli  (pip install fonttools brotli)
+Usage: python assets/build.py [--check | --fetch-posts]
+  --check        exit 1 if anything is out of date (used by CI)
+  --fetch-posts  refresh assets/posts.json from the blog feed, then build
+Needs: fonttools, brotli  (pip install -r assets/requirements.txt)
 """
 import base64
+import email.utils
 import io
+import json
 import re
 import sys
 import textwrap
 import tomllib
+import urllib.request
+import xml.etree.ElementTree as ET
+from datetime import date
 from pathlib import Path
 from xml.sax.saxutils import escape
 
@@ -27,6 +34,8 @@ from fontTools.ttLib import TTFont
 ROOT = Path(__file__).resolve().parent
 REPO = ROOT.parent
 DIST = ROOT / "dist"
+ICONS = ROOT / "icons"
+POSTS = ROOT / "posts.json"
 README = REPO / "README.md"
 FONTS = {
     400: ROOT / "fonts" / "JetBrainsMono-Regular.subset.woff2",
@@ -49,11 +58,14 @@ SEVERITY = [  # (label, min score, colour, emoji)
     ("Medium", 4.0, "#fabd2f", "🟨"),
     ("Low", 0.1, "#00e5be", "🟩"),
 ]
+MONTHS = "Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec".split()
 W = 880
 CARD_W = 430
 # The profile always ends with this line (enforced by main()).
 FOOTER = ("Made with ", "❤️", " in Spain")
 ADVANCE = 0.6  # JetBrains Mono advance width, in em
+# Header typing rhythm, in seconds.
+TYPE_STEP, ERASE_STEP, HOLD, GAP = 0.075, 0.03, 5.0, 0.6
 
 
 def cw(size):
@@ -71,6 +83,40 @@ def tw(text, size):
 
 def severity(score):
     return next(s for s in SEVERITY if score >= s[1])
+
+
+def is_emoji(ch):
+    o = ord(ch)
+    return o >= 0x1F000 or 0x2600 <= o <= 0x27BF or o in (0xFE0F, 0x200D)
+
+
+def runs_of(text):
+    """Split text into (chunk, is_emoji, cells); an emoji takes two cells."""
+    out = []
+    for ch in text:
+        e = is_emoji(ch)
+        if out and out[-1][1] == e:
+            out[-1][0] += ch
+        else:
+            out.append([ch, e])
+    result = []
+    for chunk, e in out:
+        if e:
+            bases = sum(1 for i, ch in enumerate(chunk)
+                        if ch not in "️‍" and (i == 0 or chunk[i - 1] != "‍"))
+            result.append((chunk, True, 2 * bases))
+        else:
+            result.append((chunk, False, len(chunk)))
+    return result
+
+
+def cells(text):
+    return sum(n for _, _, n in runs_of(text))
+
+
+def nice_date(iso):
+    d = date.fromisoformat(iso)
+    return f"{d.day} {MONTHS[d.month - 1]} {d.year}"
 
 
 def font_faces(glyphs):
@@ -120,6 +166,16 @@ class Svg:
             x += tw(s, size)
         return x
 
+    def mixed(self, x, y, s, size, fill, weight=400):
+        """Draw text that may contain emoji, keeping the monospace grid."""
+        for chunk, emoji, n in runs_of(s):
+            if emoji:
+                self.emoji(x, y, chunk, size)
+            else:
+                self.text(x, y, chunk, size, fill, weight)
+            x += n * cw(size)
+        return x
+
     def emoji(self, x, y, s, size):
         """Emoji use the viewer's colour emoji font, not the embedded subset."""
         self.body.append(f'<text class="e" x="{x:.1f}" y="{y:.1f}" font-size="{size}">{escape(s)}</text>')
@@ -154,9 +210,9 @@ GLOW = (
 REDUCED_MOTION = "@media (prefers-reduced-motion:reduce){.anim{animation:none!important}}"
 
 
-def panel(svg, c=DARK):
+def panel(svg, c=DARK, rx=12):
     svg.add(
-        f'<rect x=".5" y=".5" width="{svg.w - 1}" height="{svg.h - 1}" rx="12" '
+        f'<rect x=".5" y=".5" width="{svg.w - 1}" height="{svg.h - 1}" rx="{rx}" '
         f'fill="{c["bg"]}" stroke="{c["border"]}"/>'
     )
 
@@ -171,8 +227,29 @@ def logo_markup(x, y, height, fill):
     ), width
 
 
+def icon_markup(name, x, y, size, fill):
+    """An icon from assets/icons/, recoloured to `fill`."""
+    src = (ICONS / f"{name}.svg").read_text(encoding="utf-8")
+    view_box = re.search(r'viewBox="([^"]+)"', src).group(1)
+    inner = re.search(r"<svg[^>]*>(.*)</svg>", src, re.S).group(1)
+    inner = re.sub(r"<title>.*?</title>", "", inner, flags=re.S).replace("currentColor", fill)
+    return (
+        f'<svg x="{x:.1f}" y="{y:.1f}" width="{size}" height="{size}" viewBox="{view_box}" '
+        f'fill="{fill}">{inner}</svg>'
+    )
+
+
 def fill_placeholders(text, data):
     return text.replace("{cves}", str(len(data["cves"])))
+
+
+def keyframes(name, frames):
+    """frames: [(seconds, css)] over a cycle; later entries win on ties."""
+    total = frames[-1][0]
+    merged = {}
+    for t, css in frames:
+        merged[f"{100 * t / total:.3f}".rstrip("0").rstrip(".") + "%"] = css
+    return f"@keyframes {name}{{" + "".join(f"{k}{{{v}}}" for k, v in merged.items()) + "}"
 
 
 # --- components ------------------------------------------------------------
@@ -196,50 +273,77 @@ def header(data):
     svg.add(f'<g clip-path="url(#clip)"><rect width="{W}" height="320" fill="url(#dots)" mask="url(#m)" opacity=".9"/>')
     svg.add(f'<ellipse cx="{W / 2}" cy="92" rx="190" ry="110" fill="url(#halo)"/></g>')
 
-    logo, lw = logo_markup((W - 152 * 2042 / 1550) / 2, 22, 152, c["accent"])
+    logo, _ = logo_markup((W - 152 * 2042 / 1550) / 2, 22, 152, c["accent"])
     svg.add(f'<g filter="url(#glow)" class="anim pulse">{logo}</g>')
     svg.text(W / 2, 214, p["name"], 34, c["accent"], 700, "middle", ' filter="url(#glow)"')
     svg.text(W / 2, 246, p["tagline"], 15, c["text"], 400, "middle")
 
-    # Terminal line: type, hold, erase, pause and start again.
+    # Terminal line: each phrase is typed, held, erased, then the next one.
     size, y = 15, 290
-    prompt, typed = p["prompt"] + " ", fill_placeholders(p["typed"], data)
-    x0 = (W - tw(prompt + typed + " ", size)) / 2
-    x1 = svg.runs(x0, y, [(prompt, c["accent"], 700), (typed, c["head"], 400)], size)
-    reveal, steps = x1 - (x0 + tw(prompt, size)), len(typed)
-    start = x0 + tw(prompt, size)
-    shown, hidden = f"transform:translateX({reveal:.1f}px)", "transform:translateX(0)"
-    tick = f"animation-timing-function:steps({steps},end)"
+    prompt = p["prompt"] + " "
+    phrases = [fill_placeholders(t, data) for t in p["typed"]]
+    widest = max(cells(t) for t in phrases)
+    x0 = (W - tw(prompt, size) - (widest + 1) * cw(size)) / 2
+    start = svg.runs(x0, y, [(prompt, c["accent"], 700)], size)
+
+    timeline, t = [], 0.0
+    for text in phrases:
+        n = cells(text)
+        typed, erased = t + n * TYPE_STEP, t + n * TYPE_STEP + HOLD + n * ERASE_STEP
+        timeline.append((text, n, t, typed, typed + HOLD, erased))
+        t = erased + GAP
+    cycle = t
+
+    cursor_frames = [(0, "transform:translateX(0)")]
+    for i, (text, n, a, b, hold_end, d) in enumerate(timeline):
+        reveal = n * cw(size)
+        shown, hidden = f"transform:translateX({reveal:.1f}px)", "transform:translateX(0)"
+        tick = f"animation-timing-function:steps({n},end)"
+        frames = [(0, hidden), (a, f"{hidden};{tick}"), (b, shown), (hold_end, f"{shown};{tick}"),
+                  (d, hidden), (cycle, hidden)]
+        cursor_frames += frames[1:-1]
+        visible = [(0, "opacity:0"), (a, "opacity:1"), (d, "opacity:0"), (cycle, "opacity:0")]
+        svg.css.append(
+            f".p{i}{{opacity:{1 if i == 0 else 0};animation:v{i} {cycle:.2f}s step-end infinite both}}"
+            f".c{i}{{{shown};animation:t{i} {cycle:.2f}s infinite both}}"
+            + keyframes(f"v{i}", visible) + keyframes(f"t{i}", frames)
+        )
+        svg.defs.append(
+            f'<clipPath id="l{i}"><rect x="{start:.1f}" y="{y - 18}" width="{reveal + 2:.1f}" height="25"/></clipPath>'
+        )
+        svg.add(f'<g class="anim p{i}">')
+        svg.mixed(start, y, text, size, c["head"])
+        svg.add(
+            f'<g clip-path="url(#l{i})"><rect class="anim c{i}" x="{start:.1f}" y="{y - 18}" '
+            f'width="{reveal + 2:.1f}" height="25" fill="{c["bg"]}"/></g></g>'
+        )
+    cursor_frames.append((cycle, "transform:translateX(0)"))
+    first_reveal = timeline[0][1] * cw(size)
     svg.css.append(
-        f".cover,.cursor{{{shown};animation:type 11s .6s infinite both}}"
-        ".cursor{animation:type 11s .6s infinite both,blink 1.1s step-end infinite}"
-        f"@keyframes type{{0%{{{hidden};{tick}}}22%{{{shown}}}72%{{{shown};{tick}}}86%,100%{{{hidden}}}}}"
-        "@keyframes blink{50%{opacity:0}}"
+        f".cursor{{transform:translateX({first_reveal:.1f}px);"
+        f"animation:cur {cycle:.2f}s infinite both,blink 1.1s step-end infinite}}"
+        + keyframes("cur", cursor_frames)
+        + "@keyframes blink{50%{opacity:0}}"
         ".pulse{animation:pulse 4s ease-in-out infinite}"
         "@keyframes pulse{50%{opacity:.82}}"
         + REDUCED_MOTION
     )
-    svg.defs.append(
-        f'<clipPath id="line"><rect x="{start:.1f}" y="{y - 16}" width="{reveal + 2:.1f}" height="22"/></clipPath>'
-    )
     svg.add(
-        f'<g clip-path="url(#line)"><rect class="anim cover" x="{start:.1f}" y="{y - 16}" '
-        f'width="{reveal + 2:.1f}" height="22" fill="{c["bg"]}"/></g>'
         f'<rect class="anim cursor" x="{start + 1:.1f}" y="{y - 14}" width="{cw(size) - 1:.1f}" height="18" '
         f'fill="{c["accent"]}"/>'
     )
     return svg
 
 
-def pill(label):
-    size, pad = 13, 14
-    text = "› " + label
-    svg = Svg(round(tw(text, size) + pad * 2), 34, label)
+def pill(label, icon):
+    size, pad, isz, gap = 13, 12, 16, 8
+    svg = Svg(round(pad + isz + gap + tw(label, size) + pad + 2), 34, label)
     svg.add(
         f'<rect x=".5" y=".5" width="{svg.w - 1}" height="33" rx="7" '
         f'fill="{DARK["bg"]}" stroke="{DARK["border"]}"/>'
     )
-    svg.runs(pad, 21.5, [("› ", DARK["accent"], 700), (label, DARK["text"], 400)], size)
+    svg.add(icon_markup(icon, pad, 9, isz, DARK["accent"]))
+    svg.text(pad + isz + gap, 21.5, label, size, DARK["text"])
     return svg
 
 
@@ -261,12 +365,11 @@ def whoami(data):
     p, c = data["profile"], DARK
     rows = [(icon, k, fill_placeholders(v, data)) for icon, k, v in p["whoami"]]
     size, lh, top = 14, 28, 36
-    h = top + 30 + lh * (len(rows) + 1) + 18
+    h = top + 30 + lh * len(rows) + 22
     svg = Svg(W, h, "whoami: " + "; ".join(f"{k}: {v}" for _, k, v in rows))
     svg.defs.append(f'<clipPath id="clip"><rect x="1" y="1" width="{W - 2}" height="{h - 2}" rx="11"/></clipPath>')
     panel(svg)
-    svg.add(f'<g clip-path="url(#clip)"><rect width="{W}" height="{top}" fill="{c["panel"]}"/>')
-    svg.add("</g>")
+    svg.add(f'<g clip-path="url(#clip)"><rect width="{W}" height="{top}" fill="{c["panel"]}"/></g>')
     svg.add(f'<line x1="1" y1="{top + .5}" x2="{W - 1}" y2="{top + .5}" stroke="{c["border"]}"/>')
     for i, dot in enumerate(("#fb4934", "#fabd2f", c["accent"])):
         svg.add(f'<circle cx="{22 + i * 18}" cy="18" r="5.5" fill="{dot}"/>')
@@ -284,34 +387,42 @@ def whoami(data):
             if j:
                 vx = svg.runs(vx, y, [(" · ", c["muted"], 400)], size)
             vx = svg.runs(vx, y, [(part, c["text"], 400)], size)
-    y += lh
-    px = svg.runs(x, y, [(p["prompt"] + " ", c["accent"], 700)], size)
-    svg.css.append(".cursor{animation:blink 1.1s step-end infinite}@keyframes blink{50%{opacity:0}}" + REDUCED_MOTION)
-    svg.add(f'<rect class="anim cursor" x="{px:.1f}" y="{y - 13}" width="{cw(size) - 1:.1f}" height="17" fill="{c["accent"]}"/>')
     return svg
 
 
-def cve_card(data):
-    cves, c = data["cves"], DARK
-    total = len(cves)
-    years = sorted({int(v["id"][4:8]) for v in cves})
-    on_edb = sum(1 for v in cves if v["edb"])
-    top_score = max(v["cvss"] for v in cves)
+def cve_stats(data):
+    cves = data["cves"]
     sev = {s[0]: 0 for s in SEVERITY}
-    for v in cves:
-        sev[severity(v["cvss"])[0]] += 1
     classes = {}
     for v in cves:
+        sev[severity(v["cvss"])[0]] += 1
         classes[v["class"]] = classes.get(v["class"], 0) + 1
-    classes = sorted(classes.items(), key=lambda kv: (-kv[1], kv[0]))
+    years = sorted({int(v["id"][4:8]) for v in cves})
+    return {
+        "total": len(cves),
+        "years": (years[0], years[-1]),
+        "on_edb": sum(1 for v in cves if v["edb"]),
+        "top": max(v["cvss"] for v in cves),
+        "severity": sev,
+        "classes": sorted(classes.items(), key=lambda kv: (-kv[1], kv[0])),
+    }
 
-    h = max(232, 74 + 28 * len(classes))
-    label = (
-        f"{total} CVEs published {years[0]}-{years[-1]}; "
-        + ", ".join(f"{n} {k}" for k, n in sev.items() if n)
-        + "; " + ", ".join(f"{n} {k}" for k, n in classes)
+
+def cve_label(data):
+    s = cve_stats(data)
+    return (
+        f'{s["total"]} CVEs (CVE-{s["years"][0]} to CVE-{s["years"][1]}), {s["on_edb"]} with exploits on '
+        f'Exploit-DB, max CVSS {s["top"]}. Severity: '
+        + ", ".join(f"{n} {k}" for k, n in s["severity"].items() if n)
+        + ". By class: " + ", ".join(f"{n} {k}" for k, n in s["classes"]) + "."
     )
-    svg = Svg(W, h, label)
+
+
+def cve_card(data):
+    c, s = DARK, cve_stats(data)
+    total, classes = s["total"], s["classes"]
+    h = max(232, 74 + 28 * len(classes))
+    svg = Svg(W, h, cve_label(data))
     svg.defs.append(GLOW.format(r=5, a=0.5))
     panel(svg)
 
@@ -319,9 +430,9 @@ def cve_card(data):
     svg.text(32, 108, str(total), 76, c["accent"], 700, attrs=' filter="url(#glow)"')
     svg.text(32 + tw(str(total), 76) + 12, 82, "CVEs", 22, c["head"], 700)
     svg.text(32 + tw(str(total), 76) + 12, 106, "published", 14, c["muted"])
-    svg.text(32, 148, f"{years[0]} — {years[-1]}", 13, c["text"])
-    svg.runs(32, 174, [(str(on_edb), c["accent"], 700), (" exploits on Exploit-DB", c["text"], 400)], 13)
-    svg.runs(32, 200, [("max CVSS ", c["text"], 400), (f"{top_score}", severity(top_score)[2], 700)], 13)
+    svg.text(32, 148, f'CVE-{s["years"][0]} — {s["years"][1]}', 13, c["text"])
+    svg.runs(32, 174, [(str(s["on_edb"]), c["accent"], 700), (" exploits on Exploit-DB", c["text"], 400)], 13)
+    svg.runs(32, 200, [("max CVSS ", c["text"], 400), (f'{s["top"]}', severity(s["top"])[2], 700)], 13)
 
     def bars(x, heading, items, colour_of, label_w, bar_w):
         svg.text(x, 44, heading, 12, c["muted"])
@@ -338,8 +449,8 @@ def cve_card(data):
                 )
             svg.text(bx + bar_w + 30, y, str(n), 13, c["head"] if n else c["muted"], 700, "end")
 
-    colours = {s[0]: s[2] for s in SEVERITY}
-    bars(300, "severity · CVSS 3.x", list(sev.items()), colours.get, 84, 150)
+    colours = {sv[0]: sv[2] for sv in SEVERITY}
+    bars(300, "severity · CVSS 3.x", list(s["severity"].items()), colours.get, 84, 150)
     bars(598, "by class", classes, lambda _: c["accent"], 128, 110)
     svg.add(f'<line x1="276.5" y1="28" x2="276.5" y2="{h - 28}" stroke="{c["border"]}"/>')
     svg.add(f'<line x1="574.5" y1="28" x2="574.5" y2="{h - 28}" stroke="{c["border"]}"/>')
@@ -348,7 +459,10 @@ def cve_card(data):
 
 def project_card(item):
     c, size, pad = DARK, 13, 22
-    lines = textwrap.wrap(item["desc"], int((CARD_W - 2 * pad) / cw(size)))[:3]
+    width = int((CARD_W - 2 * pad) / cw(size))
+    lines = textwrap.wrap(item["desc"], width)
+    if len(lines) > 3:
+        lines = lines[:2] + [textwrap.shorten(" ".join(lines[2:]), width, placeholder="…")]
     svg = Svg(CARD_W, 150, f'{item["name"]} ({item["tags"]}): {item["desc"]}')
     panel(svg)
     svg.text(pad, 38, item["name"], 16, c["accent"], 700)
@@ -360,6 +474,36 @@ def project_card(item):
         x = svg.runs(x, 62, [(part, c["accent2"] if j == 0 else c["muted"], 400)], 12)
     for i, line in enumerate(lines):
         svg.text(pad, 94 + i * 20, line, size, c["text"])
+    return svg
+
+
+def studying_badge(item):
+    """Hexagon badge, the size of the earned ones, for a certification in progress."""
+    c = DARK
+    svg = Svg(112, 112, f'{item["name"]} · {item["title"]} ({item["issuer"]}) · in progress')
+    hexagon = "56,3 102,29.5 102,82.5 56,109 10,82.5 10,29.5"
+    svg.add(
+        f'<polygon points="{hexagon}" fill="{c["bg"]}" stroke="{c["accent"]}" stroke-width="2.5" '
+        'stroke-dasharray="7 4" stroke-linejoin="round"/>'
+    )
+    svg.text(56, 50, item["name"], 24, c["accent"], 700, "middle")
+    issuer = item["issuer"].upper()
+    svg.text(56, 66, issuer, min(7.5, 76 / len(issuer) / ADVANCE), c["muted"], 700, "middle")
+    svg.add(f'<rect x="21" y="75" width="70" height="15" rx="7.5" fill="{c["accent"]}"/>')
+    svg.text(56, 86, "IN PROGRESS", 7.5, c["bg"], 700, "middle")
+    return svg
+
+
+def post_row(post):
+    """One full-width row of the Recent Posts list, like the blog's home page."""
+    c, pad, size = DARK, 18, 14
+    when = nice_date(post["date"])
+    room = int((W - 2 * pad - tw("› ", size) - tw(when, 13) - 24) / cw(size))
+    text = post["title"] if len(post["title"]) <= room else post["title"][: room - 1].rstrip() + "…"
+    svg = Svg(W, 44, f'{post["title"]} · {when}')
+    panel(svg, rx=8)
+    svg.runs(pad, 27, [("› ", c["accent"], 700), (text, c["text"], 400)], size)
+    svg.text(W - pad, 27, when, 13, c["muted"], 400, "end")
     return svg
 
 
@@ -379,44 +523,77 @@ def footer(c):
 
 def nav_block(data):
     items = [
-        f'<a href="{url}"><img src="assets/dist/nav-{slug(label)}.svg" height="34" alt="{label}"></a>'
-        for label, url in data["profile"]["links"]
+        f'<a href="{attr(url)}"><img src="assets/dist/nav-{slug(label)}.svg" height="34" alt="{attr(label)}"></a>'
+        for label, url, _ in data["profile"]["links"]
     ]
     return "<p align=\"center\">\n" + "\n".join(items) + "\n</p>"
 
 
-def footer_block():
-    return (
-        "<picture>\n"
-        '  <source media="(prefers-color-scheme: light)" srcset="assets/dist/footer-light.svg">\n'
-        f'  <img src="assets/dist/footer-dark.svg" width="100%" alt="{"".join(FOOTER)}">\n'
-        "</picture>"
-    )
-
-
 def projects_block(data):
     cards = [
-        f'<a href="{p["url"]}"><img src="assets/dist/project-{slug(p["name"])}.svg" width="49%" '
+        f'<a href="{attr(p["url"])}"><img src="assets/dist/project-{slug(p["name"])}.svg" width="49%" '
         f'alt="{attr(p["name"] + ": " + p["desc"])}"></a>'
         for p in data.get("projects", [])
     ]
     return "<p align=\"center\">\n" + "\n".join(cards) + "\n</p>"
 
 
+def certs_block(data):
+    earned = [
+        f'<a title="{attr(c["name"])}" href="{attr(c["url"])}"><img src="{attr(c["img"])}" height="96" '
+        f'alt="{attr(c["name"])}"></a>'
+        for c in data.get("certs", [])
+    ]
+    studying = [
+        f'<a title="{attr(s["name"])} · in progress" href="{attr(s["url"])}">'
+        f'<img src="assets/dist/studying-{slug(s["name"])}.svg" height="96" '
+        f'alt="{attr(s["name"] + " · " + s["title"] + " (" + s["issuer"] + ") · in progress")}"></a>'
+        for s in data.get("studying", [])
+    ]
+    return "<p align=\"center\">\n" + "\n".join(earned + studying) + "\n</p>"
+
+
+def cve_card_block(data):
+    return f'<img src="assets/dist/cves.svg" width="100%" alt="{attr(cve_label(data))}">'
+
+
 def cve_table(data):
     lines = [
-        "| CVE | Target | Vulnerability | CVSS 3.x | Exploit-DB |",
-        "|:--|:--|:--|:--|:--:|",
+        "| CVE | Vulnerability | CVSS 3.x | Exploit-DB |",
+        "|:--|:--|:--|:--:|",
     ]
     for v in data["cves"]:
-        name, _, colour, emoji = severity(v["cvss"])
+        name, _, _, emoji = severity(v["cvss"])
         edb = f'[{v["edb"]}](https://www.exploit-db.com/exploits/{v["edb"]})' if v["edb"] else "—"
         target = v["name"].replace("<=", "≤").replace("|", "\\|")
         lines.append(
-            f'| [{v["id"]}](https://www.cve.org/CVERecord?id={v["id"]}) | {target} | '
-            f'[{v["vuln"]}]({v["link"]}) | {emoji} `{v["cvss"]}` {name} | {edb} |'
+            f'| [{v["id"]}](https://www.cve.org/CVERecord?id={v["id"]}) | '
+            f'{target} — [{v["vuln"]}]({v["link"]}) | {emoji} `{v["cvss"]}` {name} | {edb} |'
         )
     return "\n".join(lines)
+
+
+def posts_block(posts):
+    rows = [
+        f'<a href="{attr(p["url"])}"><img src="assets/dist/post-{i}.svg" width="100%" '
+        f'alt="{attr(p["title"] + " · " + nice_date(p["date"]))}"></a>'
+        for i, p in enumerate(posts, 1)
+    ]
+    return "<p align=\"center\">\n" + "\n".join(rows) + "\n</p>"
+
+
+def footer_block(data):
+    views = (
+        f'https://komarev.com/ghpvc/?username={data["profile"]["github"]}'
+        "&style=for-the-badge&label=PROFILE+VIEWS&color=00e5be"
+    )
+    return (
+        f'<p align="center">\n<img src="{views}" alt="Profile views">\n</p>\n\n'
+        "<picture>\n"
+        '  <source media="(prefers-color-scheme: light)" srcset="assets/dist/footer-light.svg">\n'
+        f'  <img src="assets/dist/footer-dark.svg" width="100%" alt="{"".join(FOOTER)}">\n'
+        "</picture>"
+    )
 
 
 def slug(text):
@@ -430,9 +607,33 @@ def replace_block(text, tag, content):
     return pattern.sub(lambda m: f"{m.group(1)}\n{content}\n{m.group(2)}", text)
 
 
+# --- posts feed ------------------------------------------------------------
+
+def fetch_posts(feed, count):
+    req = urllib.request.Request(feed, headers={"User-Agent": "hackpuntes-profile (+https://github.com/JavierOlmedo)"})
+    with urllib.request.urlopen(req, timeout=30) as resp:
+        body = resp.read()
+    try:
+        root = ET.fromstring(body)
+    except ET.ParseError:
+        sys.exit(f"{feed} did not return an RSS feed")
+    posts = []
+    for item in root.iter("item"):
+        when = email.utils.parsedate_to_datetime(item.findtext("pubDate"))
+        posts.append({
+            "title": " ".join(item.findtext("title").split()),
+            "url": item.findtext("link").strip(),
+            "date": when.date().isoformat(),
+        })
+    if not posts:
+        sys.exit(f"{feed} has no items")
+    posts.sort(key=lambda p: p["date"], reverse=True)
+    return posts[:count]
+
+
 # --- main ------------------------------------------------------------------
 
-def outputs(data):
+def outputs(data, posts):
     files = {
         "header.svg": header(data),
         "whoami.svg": whoami(data),
@@ -440,30 +641,55 @@ def outputs(data):
         "footer-dark.svg": footer(DARK),
         "footer-light.svg": footer(LIGHT),
     }
+
+    def put(name, svg):
+        if name in files:
+            sys.exit(f"two items would both write assets/dist/{name}; rename one of them")
+        files[name] = svg
+
     for key, (icon, text, note) in data["titles"].items():
         note = fill_placeholders(note, data)
-        files[f"title-{key}-dark.svg"] = title(icon, text, note, DARK)
-        files[f"title-{key}-light.svg"] = title(icon, text, note, LIGHT)
-    for label, _ in data["profile"]["links"]:
-        files[f"nav-{slug(label)}.svg"] = pill(label)
+        put(f"title-{key}-dark.svg", title(icon, text, note, DARK))
+        put(f"title-{key}-light.svg", title(icon, text, note, LIGHT))
+    for label, _, icon in data["profile"]["links"]:
+        put(f"nav-{slug(label)}.svg", pill(label, icon))
     for item in data.get("projects", []):
-        files[f"project-{slug(item['name'])}.svg"] = project_card(item)
+        put(f"project-{slug(item['name'])}.svg", project_card(item))
+    for item in data.get("studying", []):
+        put(f"studying-{slug(item['name'])}.svg", studying_badge(item))
+    for i, post in enumerate(posts, 1):
+        put(f"post-{i}.svg", post_row(post))
     return {name: svg.render() for name, svg in files.items()}
 
 
 def main():
-    check = "--check" in sys.argv[1:]
+    args = sys.argv[1:]
+    check = "--check" in args
     data = tomllib.loads((ROOT / "profile.toml").read_text(encoding="utf-8"))
     data["titles"] = {k: tuple(v) for k, v in data.get("titles", {}).items()}
 
-    wanted = {DIST / name: body for name, body in outputs(data).items()}
+    if "--fetch-posts" in args:
+        posts = fetch_posts(data["posts"]["feed"], data["posts"]["count"])
+        fresh = json.dumps(posts, indent=2, ensure_ascii=False) + "\n"
+        if not POSTS.exists() or POSTS.read_text(encoding="utf-8") != fresh:
+            POSTS.write_text(fresh, encoding="utf-8")
+            print(f"wrote {POSTS.relative_to(REPO)} ({len(posts)} posts)")
+    posts = json.loads(POSTS.read_text(encoding="utf-8")) if POSTS.exists() else []
+
+    wanted = {DIST / name: body for name, body in outputs(data, posts).items()}
     readme = README.read_text(encoding="utf-8")
     readme_new = replace_block(readme, "NAV", nav_block(data))
+    readme_new = replace_block(readme_new, "CERTS", certs_block(data))
     readme_new = replace_block(readme_new, "PROJECTS", projects_block(data))
+    readme_new = replace_block(readme_new, "CVE-CARD", cve_card_block(data))
     readme_new = replace_block(readme_new, "CVE-TABLE", cve_table(data))
-    readme_new = replace_block(readme_new, "FOOTER", footer_block())
+    readme_new = replace_block(readme_new, "POSTS", posts_block(posts))
+    readme_new = replace_block(readme_new, "FOOTER", footer_block(data))
     if not readme_new.rstrip().endswith("<!-- FOOTER:END -->"):
         sys.exit("README.md must end with the FOOTER block (Made with ❤️ in Spain)")
+    missing = sorted({m for m in re.findall(r"assets/dist/([\w.-]+\.svg)", readme_new) if DIST / m not in wanted})
+    if missing:
+        sys.exit("README.md references SVGs the build does not produce: " + ", ".join(missing))
     wanted[README] = readme_new
 
     stale = [p for p in DIST.glob("*.svg") if p not in wanted]

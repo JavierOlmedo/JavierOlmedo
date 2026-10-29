@@ -1,13 +1,20 @@
 # Profile data for the Hackpuntes Dark README.
-# Edit this file and run `python assets/build.py` (or push and let the
-# "Build profile assets" workflow do it) to regenerate assets/dist/*.svg
-# and the generated sections of README.md.
+# Edit this file, then run:
+#   pip install -r assets/requirements.txt && python assets/build.py
+# to regenerate assets/dist/*.svg and the generated blocks of README.md.
+# The "Profile assets" workflow fails if you forget.
 
 [profile]
 name = "Javier Olmedo"
+github = "JavierOlmedo"
 tagline = "Senior Offensive Security Specialist"
 prompt = "javierolmedo@hackpuntes:~$"
-typed = "OSCP · OSWE · OSEP · CRTO · {cves} CVEs"
+# Phrases typed in the header, one after another. {cves} = number of CVEs.
+typed = [
+  "Hey, I'm Javier Olmedo 👋",
+  "OSCP · OSWE · OSEP · CRTO · {cves} CVEs",
+  "Author of Hackpuntes Blog · CTF Player",
+]
 
 # Rows of the `whoami` terminal card (emoji, key, value).
 whoami = [
@@ -20,15 +27,17 @@ whoami = [
   ["✍️", "blog", "hackpuntes.com · CTF write-ups & red team notes"],
 ]
 
-# Navigation pills under the header (label, url).
+# Navigation pills under the header (label, url, icon in assets/icons/).
 links = [
-  ["hackpuntes.com", "https://hackpuntes.com"],
-  ["writeups", "https://hackpuntes.com/writeups/"],
-  ["linkedin", "https://www.linkedin.com/in/jjavierolmedo/"],
-  ["x", "https://x.com/jjavierolmedo"],
-  ["hackthebox", "https://app.hackthebox.com/profile/37005"],
-  ["exploit-db", "https://www.exploit-db.com/?author=9580"],
-  ["youtube", "https://www.youtube.com/channel/UCBYLZkWHGMYo12nAD_HMRJw"],
+  ["hackpuntes.com", "https://hackpuntes.com", "hackpuntes"],
+  ["linkedin", "https://www.linkedin.com/in/jjavierolmedo/", "linkedin"],
+  ["hackthebox", "https://app.hackthebox.com/profile/37005", "hackthebox"],
+  ["exploit-db", "https://www.exploit-db.com/?author=9580", "exploit-db"],
+  # 0day.today now redirects to an unrelated casino site. To re-enable it,
+  # uncomment the line and add an icon as assets/icons/0day.svg.
+  # ["0day.today", "https://0day.today/author/33736", "0day"],
+  ["medium", "https://medium.com/@javierolmedo", "medium"],
+  ["x", "https://x.com/jjavierolmedo", "x"],
 ]
 
 # Section titles: key = [emoji, title, right-hand note]. {cves} = number of CVEs.
@@ -38,7 +47,53 @@ certs = ["🎓", "Certifications", "click a badge to verify"]
 projects = ["🛠️", "Projects & Tools", "hackpuntes.com/projects"]
 cves = ["🔐", "CVEs", "{cves} published"]
 posts = ["📝", "Recent Posts", "hackpuntes.com/posts"]
+summary = ["📊", "Profile Summary", "github activity"]
 activity = ["📈", "Activity", "contribution graph"]
+
+# Earned certifications (badge image and verification link), in display order.
+[[certs]]
+name = "OSCP"
+url = "https://www.credential.net/4e346191-179b-4063-89ed-2b5a197ff07f"
+img = "https://templates.images.credential.net/1677682410975725023965573912354.png"
+
+[[certs]]
+name = "OSWE"
+url = "https://www.credential.net/369e648b-bea5-4e59-837e-f2f9232e2223"
+img = "https://images.credly.com/images/0a375324-4f9e-412d-b276-b6e96c428709/image.png"
+
+[[certs]]
+name = "OSEP"
+url = "https://www.credential.net/1b534535-619f-4ba5-abba-cd198a111a1c"
+img = "https://images.credential.net/badge/tiny/ssgy95ir_1771760880920_badge.png"
+
+[[certs]]
+name = "CRTO"
+url = "https://certs.zeropointsecurity.co.uk/a4cbfb9a-a7d9-44a0-832a-9ea6e805d58a"
+img = "img/crto.png"
+
+[[certs]]
+name = "ICSI | CNSS"
+url = "https://www.credential.net/ccca6121-5126-4eb4-b85e-618d3e9d668b"
+img = "img/cnss.png"
+
+# Certifications in progress, shown after the earned badges.
+[[studying]]
+name = "CRTL"
+issuer = "Zero-Point Security"
+title = "Certified Red Team Lead"
+url = "https://www.zeropointsecurity.co.uk/course/red-team-ops-ii"
+
+[[studying]]
+name = "CAPE"
+issuer = "Hack The Box"
+title = "Certified Active Directory Pentesting Expert"
+url = "https://academy.hackthebox.com/preview/certifications/htb-certified-active-directory-pentesting-expert"
+
+# Recent Posts: refreshed daily by the "Latest blog posts" workflow
+# (python assets/build.py --fetch-posts writes assets/posts.json).
+[posts]
+feed = "https://hackpuntes.com/posts/index.xml"
+count = 6
 
 # Project / tool cards (2 per row in the README).
 [[projects]]
@@ -166,7 +221,7 @@ name = "Ticketly 1.0"
 vuln = "Multiple SQL Injection"
 class = "SQLi"
 cvss = 9.8
-edb = 45895
+edb = 45902
 link = "https://hackpuntes.com/es/posts/cve-2018-18923-ticketly-multiples-sql-injections/"
 
 [[cves]]
@@ -229,7 +284,7 @@ name = "Joplin <= 1.0.184"
 vuln = "Arbitrary File Read via XSS"
 class = "XSS"
 cvss = 5.4
-edb = 0
+edb = 48147
 link = "https://github.com/laurent22/joplin/commit/3db47b575b9cb0a765da3d283baa2c065df0d0bc"
 
 [[cves]]

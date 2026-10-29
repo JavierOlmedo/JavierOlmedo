@@ -114,10 +114,9 @@
 </picture>
 
 <table>
-<!-- BLOG-POST-LIST:START -->
-<tr><td><a href="https://hackpuntes.com/posts/hackthebox/challenges/dark-embargo/">Dark Embargo WriteUp</a></td><td align="right"><code>26 Oct 2026</code></td></tr>
+<!-- BLOG-POST-LIST:START --><tr><td><a href="https://hackpuntes.com/posts/hackthebox/challenges/dark-embargo/">Dark Embargo WriteUp</a></td><td align="right"><code>26 Oct 2026</code></td></tr>
 <tr><td><a href="https://hackpuntes.com/posts/hackthebox/machines/checkpoint-writeup/">Checkpoint WriteUp</a></td><td align="right"><code>24 Oct 2026</code></td></tr>
-<tr><td><a href="https://hackpuntes.com/posts/php2shell-php-rce-cve-2026-109618-109619/">PHP2Shell, the critical PHP RCE (CVE-2026-109618 and CVE-2026-109619)</a></td><td align="right"><code>21 Oct 2026</code></td></tr>
+<tr><td><a href="https://hackpuntes.com/posts/php2shell-php-rce-cve-2026-109618-109619/">PHP2Shell, the critical PHP RCE &lpar;CVE-2026-109618 and CVE-2026-109619&rpar;</a></td><td align="right"><code>21 Oct 2026</code></td></tr>
 <tr><td><a href="https://hackpuntes.com/posts/hackthebox/machines/eloquia-writeup/">Eloquia WriteUp</a></td><td align="right"><code>17 Oct 2026</code></td></tr>
 <tr><td><a href="https://hackpuntes.com/posts/hackthebox/machines/devhub-writeup/">DevHub WriteUp</a></td><td align="right"><code>10 Oct 2026</code></td></tr>
 <tr><td><a href="https://hackpuntes.com/posts/hackthebox/machines/reactor-writeup/">Reactor WriteUp</a></td><td align="right"><code>3 Oct 2026</code></td></tr>

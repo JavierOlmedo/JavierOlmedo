@@ -3,7 +3,8 @@
 
 Reads assets/profile.toml and writes:
   * assets/dist/*.svg  - header, cards, section titles, nav pills, footer
-  * README.md          - the blocks between NAV, PROJECTS and CVE-TABLE markers
+  * README.md          - the blocks between NAV, PROJECTS, CVE-TABLE and FOOTER
+                         markers; the README must always end with FOOTER
 
 Every SVG embeds a JetBrains Mono subset with only the glyphs it uses, so
 GitHub renders it with no external requests.
@@ -50,6 +51,8 @@ SEVERITY = [  # (label, min score, colour, emoji)
 ]
 W = 880
 CARD_W = 430
+# The profile always ends with this line (enforced by main()).
+FOOTER = ("Made with ", "❤️", " in Spain")
 ADVANCE = 0.6  # JetBrains Mono advance width, in em
 
 
@@ -198,18 +201,19 @@ def header(data):
     svg.text(W / 2, 214, p["name"], 34, c["accent"], 700, "middle", ' filter="url(#glow)"')
     svg.text(W / 2, 246, p["tagline"], 15, c["text"], 400, "middle")
 
-    # Terminal line typed out once, then a blinking block cursor.
+    # Terminal line: type, hold, erase, pause and start again.
     size, y = 15, 290
     prompt, typed = p["prompt"] + " ", fill_placeholders(p["typed"], data)
     x0 = (W - tw(prompt + typed + " ", size)) / 2
     x1 = svg.runs(x0, y, [(prompt, c["accent"], 700), (typed, c["head"], 400)], size)
     reveal, steps = x1 - (x0 + tw(prompt, size)), len(typed)
     start = x0 + tw(prompt, size)
+    shown, hidden = f"transform:translateX({reveal:.1f}px)", "transform:translateX(0)"
+    tick = f"animation-timing-function:steps({steps},end)"
     svg.css.append(
-        f".cover{{transform:translateX({reveal:.1f}px);animation:type 2.2s steps({steps}) .8s both}}"
-        f".cursor{{transform:translateX({reveal:.1f}px);animation:type 2.2s steps({steps}) .8s both,"
-        "blink 1.1s step-end 3s infinite}"
-        f"@keyframes type{{from{{transform:translateX(0)}}to{{transform:translateX({reveal:.1f}px)}}}}"
+        f".cover,.cursor{{{shown};animation:type 11s .6s infinite both}}"
+        ".cursor{animation:type 11s .6s infinite both,blink 1.1s step-end infinite}"
+        f"@keyframes type{{0%{{{hidden};{tick}}}22%{{{shown}}}72%{{{shown};{tick}}}86%,100%{{{hidden}}}}}"
         "@keyframes blink{50%{opacity:0}}"
         ".pulse{animation:pulse 4s ease-in-out infinite}"
         "@keyframes pulse{50%{opacity:.82}}"
@@ -262,8 +266,7 @@ def whoami(data):
     svg.defs.append(f'<clipPath id="clip"><rect x="1" y="1" width="{W - 2}" height="{h - 2}" rx="11"/></clipPath>')
     panel(svg)
     svg.add(f'<g clip-path="url(#clip)"><rect width="{W}" height="{top}" fill="{c["panel"]}"/>')
-    logo, lw = logo_markup(W - 186, h - 150, 124, c["accent"])
-    svg.add(f'<g opacity=".07">{logo}</g></g>')
+    svg.add("</g>")
     svg.add(f'<line x1="1" y1="{top + .5}" x2="{W - 1}" y2="{top + .5}" stroke="{c["border"]}"/>')
     for i, dot in enumerate(("#fb4934", "#fabd2f", c["accent"])):
         svg.add(f'<circle cx="{22 + i * 18}" cy="18" r="5.5" fill="{dot}"/>')
@@ -360,14 +363,15 @@ def project_card(item):
     return svg
 
 
-def footer(data, c):
-    p = data["profile"]
-    svg = Svg(W, 56, f'{p["name"]} · hackpuntes.com')
+def footer(c):
+    before, heart, after = FOOTER
+    size, heart_w = 14, 14 * 1.2
+    svg = Svg(W, 56, before + heart + after)
     svg.add(f'<line x1="0" y1="10.5" x2="{W}" y2="10.5" stroke="{c["border"]}"/>')
-    parts = [(p["name"], c["accent"], 700), ("  ·  ", c["muted"], 400), ("hackpuntes.com", c["text"], 400),
-             ("  ·  ", c["muted"], 400), ("Toledo, Spain", c["text"], 400)]
-    total = sum(tw(s, 13) for s, _, _ in parts)
-    svg.runs((W - total) / 2, 40, parts, 13)
+    x = (W - tw(before, size) - heart_w - tw(after, size)) / 2
+    x = svg.runs(x, 40, [(before, c["text"], 400)], size)
+    svg.emoji(x, 40, heart, size)
+    svg.runs(x + heart_w, 40, [(after, c["text"], 400)], size)
     return svg
 
 
@@ -379,6 +383,15 @@ def nav_block(data):
         for label, url in data["profile"]["links"]
     ]
     return "<p align=\"center\">\n" + "\n".join(items) + "\n</p>"
+
+
+def footer_block():
+    return (
+        "<picture>\n"
+        '  <source media="(prefers-color-scheme: light)" srcset="assets/dist/footer-light.svg">\n'
+        f'  <img src="assets/dist/footer-dark.svg" width="100%" alt="{"".join(FOOTER)}">\n'
+        "</picture>"
+    )
 
 
 def projects_block(data):
@@ -424,8 +437,8 @@ def outputs(data):
         "header.svg": header(data),
         "whoami.svg": whoami(data),
         "cves.svg": cve_card(data),
-        "footer-dark.svg": footer(data, DARK),
-        "footer-light.svg": footer(data, LIGHT),
+        "footer-dark.svg": footer(DARK),
+        "footer-light.svg": footer(LIGHT),
     }
     for key, (icon, text, note) in data["titles"].items():
         note = fill_placeholders(note, data)
@@ -448,6 +461,9 @@ def main():
     readme_new = replace_block(readme, "NAV", nav_block(data))
     readme_new = replace_block(readme_new, "PROJECTS", projects_block(data))
     readme_new = replace_block(readme_new, "CVE-TABLE", cve_table(data))
+    readme_new = replace_block(readme_new, "FOOTER", footer_block())
+    if not readme_new.rstrip().endswith("<!-- FOOTER:END -->"):
+        sys.exit("README.md must end with the FOOTER block (Made with ❤️ in Spain)")
     wanted[README] = readme_new
 
     stale = [p for p in DIST.glob("*.svg") if p not in wanted]

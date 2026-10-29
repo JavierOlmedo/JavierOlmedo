@@ -7,7 +7,7 @@
 
 <div align="center">
 
-<img src="assets/dist/header.svg" width="100%" alt="Javier Olmedo · Senior Red Team Operator · Offensive Security">
+<img src="assets/dist/header.svg" width="100%" alt="Javier Olmedo · Senior Offensive Security Specialist">
 
 <!-- NAV:START -->
 <p align="center">
@@ -28,7 +28,7 @@
   <img src="assets/dist/title-whoami-dark.svg" width="100%" alt="whoami">
 </picture>
 
-<img src="assets/dist/whoami.svg" width="100%" alt="whoami: Senior Red Team Operator based in Toledo, Spain. Red Team, Active Directory, web and mobile pentesting, reversing. OSCP, OSWE, OSEP, CRTO. Author of hackpuntes.com.">
+<img src="assets/dist/whoami.svg" width="100%" alt="whoami: Senior Offensive Security Specialist based in Toledo, Spain. Red Team, Active Directory, web and mobile pentesting, reversing. OSCP, OSWE, OSEP, CRTO. Author of hackpuntes.com.">
 
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="assets/dist/title-certs-light.svg">
@@ -134,7 +134,9 @@
 <img src="assets/snake/hackpuntes-snake.svg" width="100%" alt="Contribution graph eaten by a teal snake">
 </p>
 
+<!-- FOOTER:START -->
 <picture>
   <source media="(prefers-color-scheme: light)" srcset="assets/dist/footer-light.svg">
-  <img src="assets/dist/footer-dark.svg" width="100%" alt="Javier Olmedo · hackpuntes.com · Toledo, Spain">
+  <img src="assets/dist/footer-dark.svg" width="100%" alt="Made with ❤️ in Spain">
 </picture>
+<!-- FOOTER:END -->

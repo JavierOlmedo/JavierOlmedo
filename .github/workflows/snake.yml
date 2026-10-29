@@ -27,15 +27,16 @@ jobs:
       - name: Commit snake
         run: |
           mkdir -p assets/snake
-          mv dist/hackpuntes-snake.svg assets/snake/hackpuntes-snake.svg
+          # snk writes dist/ as root from its container: copy, don't move.
+          cp dist/hackpuntes-snake.svg assets/snake/hackpuntes-snake.svg
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add assets/snake/hackpuntes-snake.svg
           if git diff --cached --quiet; then
             echo "Snake unchanged"
             exit 0
           fi
-          git -c user.name="github-actions[bot]" \
-              -c user.email="41898282+github-actions[bot]@users.noreply.github.com" \
-              commit -m "🐍 Update contribution snake"
+          git commit -m "🐍 Update contribution snake"
           for attempt in 1 2 3; do
             git pull --rebase origin main && git push origin HEAD:main && exit 0
             sleep 10

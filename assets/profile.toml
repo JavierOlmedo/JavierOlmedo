@@ -5,13 +5,13 @@
 
 [profile]
 name = "Javier Olmedo"
-tagline = "Senior Red Team Operator · Offensive Security"
-prompt = "javier@hackpuntes:~$"
+tagline = "Senior Offensive Security Specialist"
+prompt = "javierolmedo@hackpuntes:~$"
 typed = "OSCP · OSWE · OSEP · CRTO · {cves} CVEs"
 
 # Rows of the `whoami` terminal card (emoji, key, value).
 whoami = [
-  ["🛡️", "role", "Senior Red Team Operator"],
+  ["🛡️", "role", "Senior Offensive Security Specialist"],
   ["📍", "base", "Toledo, Spain · UTC+1"],
   ["🎯", "focus", "Red Team · Active Directory · Web & Mobile pentesting · Reversing"],
   ["🧰", "arsenal", "Burp Suite · Frida · Nmap · custom tooling"],

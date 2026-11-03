@@ -1,5 +1,10 @@
 [
   {
+    "title": "MakeSense WriteUp",
+    "url": "https://hackpuntes.com/posts/hackthebox/machines/makesense-writeup/",
+    "date": "2026-10-31"
+  },
+  {
     "title": "Dark Embargo WriteUp",
     "url": "https://hackpuntes.com/posts/hackthebox/challenges/dark-embargo/",
     "date": "2026-10-26"
@@ -23,10 +28,5 @@
     "title": "DevHub WriteUp",
     "url": "https://hackpuntes.com/posts/hackthebox/machines/devhub-writeup/",
     "date": "2026-10-10"
-  },
-  {
-    "title": "Reactor WriteUp",
-    "url": "https://hackpuntes.com/posts/hackthebox/machines/reactor-writeup/",
-    "date": "2026-10-03"
   }
 ]

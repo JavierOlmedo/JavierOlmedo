@@ -121,12 +121,12 @@
 
 <!-- POSTS:START -->
 <p align="center">
-<a href="https://hackpuntes.com/posts/hackthebox/challenges/dark-embargo/"><img src="assets/dist/post-1.svg" width="100%" alt="Dark Embargo WriteUp · 26 Oct 2026"></a>
-<a href="https://hackpuntes.com/posts/hackthebox/machines/checkpoint-writeup/"><img src="assets/dist/post-2.svg" width="100%" alt="Checkpoint WriteUp · 24 Oct 2026"></a>
-<a href="https://hackpuntes.com/posts/php2shell-php-rce-cve-2026-109618-109619/"><img src="assets/dist/post-3.svg" width="100%" alt="PHP2Shell, the critical PHP RCE (CVE-2026-109618 and CVE-2026-109619) · 21 Oct 2026"></a>
-<a href="https://hackpuntes.com/posts/hackthebox/machines/eloquia-writeup/"><img src="assets/dist/post-4.svg" width="100%" alt="Eloquia WriteUp · 17 Oct 2026"></a>
-<a href="https://hackpuntes.com/posts/hackthebox/machines/devhub-writeup/"><img src="assets/dist/post-5.svg" width="100%" alt="DevHub WriteUp · 10 Oct 2026"></a>
-<a href="https://hackpuntes.com/posts/hackthebox/machines/reactor-writeup/"><img src="assets/dist/post-6.svg" width="100%" alt="Reactor WriteUp · 3 Oct 2026"></a>
+<a href="https://hackpuntes.com/posts/hackthebox/machines/makesense-writeup/"><img src="assets/dist/post-1.svg" width="100%" alt="MakeSense WriteUp · 31 Oct 2026"></a>
+<a href="https://hackpuntes.com/posts/hackthebox/challenges/dark-embargo/"><img src="assets/dist/post-2.svg" width="100%" alt="Dark Embargo WriteUp · 26 Oct 2026"></a>
+<a href="https://hackpuntes.com/posts/hackthebox/machines/checkpoint-writeup/"><img src="assets/dist/post-3.svg" width="100%" alt="Checkpoint WriteUp · 24 Oct 2026"></a>
+<a href="https://hackpuntes.com/posts/php2shell-php-rce-cve-2026-109618-109619/"><img src="assets/dist/post-4.svg" width="100%" alt="PHP2Shell, the critical PHP RCE (CVE-2026-109618 and CVE-2026-109619) · 21 Oct 2026"></a>
+<a href="https://hackpuntes.com/posts/hackthebox/machines/eloquia-writeup/"><img src="assets/dist/post-5.svg" width="100%" alt="Eloquia WriteUp · 17 Oct 2026"></a>
+<a href="https://hackpuntes.com/posts/hackthebox/machines/devhub-writeup/"><img src="assets/dist/post-6.svg" width="100%" alt="DevHub WriteUp · 10 Oct 2026"></a>
 </p>
 <!-- POSTS:END -->
 

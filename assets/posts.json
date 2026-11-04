@@ -1,5 +1,10 @@
 [
   {
+    "title": "Hackpuntes for Obsidian: a Theme for Pentest, Red Team and CTF Notes",
+    "url": "https://hackpuntes.com/posts/obsidian-hackpuntes-theme/",
+    "date": "2026-11-04"
+  },
+  {
     "title": "MakeSense WriteUp",
     "url": "https://hackpuntes.com/posts/hackthebox/machines/makesense-writeup/",
     "date": "2026-10-31"
@@ -23,10 +28,5 @@
     "title": "Eloquia WriteUp",
     "url": "https://hackpuntes.com/posts/hackthebox/machines/eloquia-writeup/",
     "date": "2026-10-17"
-  },
-  {
-    "title": "DevHub WriteUp",
-    "url": "https://hackpuntes.com/posts/hackthebox/machines/devhub-writeup/",
-    "date": "2026-10-10"
   }
 ]

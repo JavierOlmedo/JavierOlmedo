@@ -100,7 +100,7 @@ count = 6
 name = "Hackpuntes for Obsidian"
 tags = "project · CSS · Obsidian"
 url = "https://hackpuntes.com/projects/obsidian-hackpuntes-theme/"
-desc = "This blog's look as an Obsidian theme: teal accent, glowing headings and JetBrains Mono. Listed in the official community directory."
+desc = "Obsidian theme for pentest notes: callouts for vulns and creds, severity tags, 4 palettes and JetBrains Mono. Comes with a demo vault."
 
 [[projects]]
 name = "RedTeam Command Generator"

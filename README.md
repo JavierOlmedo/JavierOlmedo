@@ -67,7 +67,7 @@
 
 <!-- PROJECTS:START -->
 <p align="center">
-<a href="https://hackpuntes.com/projects/obsidian-hackpuntes-theme/"><img src="assets/dist/project-hackpuntes-for-obsidian.svg" width="49%" alt="Hackpuntes for Obsidian: This blog's look as an Obsidian theme: teal accent, glowing headings and JetBrains Mono. Listed in the official community directory."></a>
+<a href="https://hackpuntes.com/projects/obsidian-hackpuntes-theme/"><img src="assets/dist/project-hackpuntes-for-obsidian.svg" width="49%" alt="Hackpuntes for Obsidian: Obsidian theme for pentest notes: callouts for vulns and creds, severity tags, 4 palettes and JetBrains Mono. Comes with a demo vault."></a>
 <a href="https://hackpuntes.com/tools/redteam-command-generator/"><img src="assets/dist/project-redteam-command-generator.svg" width="49%" alt="RedTeam Command Generator: Like revshells.com / WADComs, but for Active Directory and red teaming: enter the target once and every command fills itself in."></a>
 <a href="https://hackpuntes.com/projects/ipdiscover/"><img src="assets/dist/project-ipdiscover.svg" width="49%" alt="ipdiscover: Concurrent domain-to-IP resolver for recon: turn hundreds of domains into a clean IP list before nmap or a mass scanner."></a>
 <a href="https://hackpuntes.com/projects/ultimate-cms-wordlists/"><img src="assets/dist/project-ultimate-cms-wordlists.svg" width="49%" alt="Ultimate CMS Wordlists: CMS-specific fuzzing dictionaries for WordPress, Joomla, Drupal and TYPO3: paths, plugins, themes and sensitive files."></a>

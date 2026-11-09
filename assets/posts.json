@@ -1,5 +1,10 @@
 [
   {
+    "title": "Garfield WriteUp",
+    "url": "https://hackpuntes.com/posts/hackthebox/machines/garfield-writeup/",
+    "date": "2026-11-07"
+  },
+  {
     "title": "Hackpuntes for Obsidian: a Theme for Pentest, Red Team and CTF Notes",
     "url": "https://hackpuntes.com/posts/obsidian-hackpuntes-theme/",
     "date": "2026-11-04"
@@ -23,10 +28,5 @@
     "title": "PHP2Shell, the critical PHP RCE (CVE-2026-109618 and CVE-2026-109619)",
     "url": "https://hackpuntes.com/posts/php2shell-php-rce-cve-2026-109618-109619/",
     "date": "2026-10-21"
-  },
-  {
-    "title": "Eloquia WriteUp",
-    "url": "https://hackpuntes.com/posts/hackthebox/machines/eloquia-writeup/",
-    "date": "2026-10-17"
   }
 ]
